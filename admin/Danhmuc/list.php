@@ -29,7 +29,8 @@
                 <tr>
                     <th>Mã Danh Mục</th>
                     <th colspan="5">Tên Danh Mục</th>
-                    <th >Thao Tác</th>
+                
+                    <!-- <th >Thao Tác</th> -->
                 </tr>
             </thead>
             <tbody>
@@ -40,9 +41,10 @@
                         extract($dm);
                         $suadm = "index.php?act=editdm";
                         $xoadm = "index.php?act=xoadm&ma_loai=".$ma_loai; // đường liên kết 
-                        echo '<tr>
+                    echo '<tr>
                         <td>'.$ma_loai.'</td>
                         <td>'.$ten_loai.'</td>
+
                         <td> <a href="'.$suadm.'"><button class=" btn status completed">Sửa</button></a> 
                         <a href="'.$xoadm.'"><button class="btn status pending">xóa</button></a></td>
                     </tr>';
