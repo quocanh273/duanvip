@@ -23,7 +23,7 @@
 	<section id="sidebar">
 		<a href="#" class="brand">
 			<i class='bx bxs-alarm-add	'></i>
-			<span class="text">AdminHub</span>
+			<span class="text">Ok</span>
 		</a>
 		<ul class="side-menu top">
 			<li class="<?php echo (!isset($_GET['act']) || $_GET['act'] === 'home') ? 'active' : ''; ?>">
