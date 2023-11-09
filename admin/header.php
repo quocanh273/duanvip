@@ -84,12 +84,12 @@
 					<span class="text">Thống Kê</span>
 				</a>
 			</li>
-            <li class="<?php echo (!isset($_GET['act']) || $_GET['act'] === 'bieudo') ? 'active' : ''; ?>">
+            <!-- <li class="">
 				<a href="index.php?act=bieudo">
 					<i class='bx bxs-chart' ></i>
 					<span class="text">Biểu Đồ</span>
 				</a>
-			</li>
+			</li> -->
 		
 		</ul>
 		

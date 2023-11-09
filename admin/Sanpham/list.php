@@ -42,7 +42,8 @@
                 <th>Office</th>
                 <th>Age</th>
                 <th>Start date</th>
-                <th>Salary</th>
+                <th>Gia</th>
+                
               
             </tr>
         </thead>
