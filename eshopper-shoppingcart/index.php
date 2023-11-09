@@ -7,6 +7,9 @@ if (isset($_GET['act'])) {
         case 'lssanpham' :
             include "view/sanpham.php";
             break;
+            case 'ctsanpham' :
+                include "view/chitietsanpham.php";
+                break;
         default:
             include "home.php";
             break;
