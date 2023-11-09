@@ -1,15 +1,14 @@
 <?php
 include "header.php";
 include "home.php";
-include "footer.php";
+
 include "taikhoan/dangnhap.php";
 if (isset($_GET['act'])) {
     $act = $_GET['act'];
     switch ($act) {
-        case 'dangnhap':
-            include "taikhoan/dangnhap.php";
+        case 'lssanpham' :
+            include "eshopper-shoppingcart/view/sanpham.php";
             break;
-    
         default:
             include "home.php";
             break;

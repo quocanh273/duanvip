@@ -109,15 +109,15 @@
                                 <a href="" class="dropdown-item">Baby's Dresses</a>
                             </div>
                         </div>
-                        <a href="" class="nav-item nav-link">Shirts</a>
-                        <a href="" class="nav-item nav-link">Jeans</a>
-                        <a href="" class="nav-item nav-link">Swimwear</a>
-                        <a href="" class="nav-item nav-link">Sleepwear</a>
-                        <a href="" class="nav-item nav-link">Sportswear</a>
-                        <a href="" class="nav-item nav-link">Jumpsuits</a>
-                        <a href="" class="nav-item nav-link">Blazers</a>
-                        <a href="" class="nav-item nav-link">Jackets</a>
-                        <a href="" class="nav-item nav-link">Shoes</a>
+                        <a href="index.php?act=lssanpham" class="nav-item nav-link">Shirts</a>
+                        <a href="lssanpham" class="nav-item nav-link">Jeans</a>
+                        <a href="lssanpham" class="nav-item nav-link">Swimwear</a>
+                        <a href="lssanpham" class="nav-item nav-link">Sleepwear</a>
+                        <a href="lssanpham" class="nav-item nav-link">Sportswear</a>
+                        <a href="lssanpham" class="nav-item nav-link">Jumpsuits</a>
+                        <a href="lssanpham" class="nav-item nav-link">Blazers</a>
+                        <a href="lssanpham" class="nav-item nav-link">Jackets</a>
+                        <a href="lssanpham" class="nav-item nav-link">Shoes</a>
                     </div>
                 </nav>
             </div>
