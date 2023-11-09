@@ -64,7 +64,9 @@ body {
 	overflow-x: hidden;
 }
 
-
+.piechart {
+	border-radius: 5px;
+}
 
 
 
