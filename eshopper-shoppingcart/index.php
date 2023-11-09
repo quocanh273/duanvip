@@ -1,6 +1,6 @@
 <?php
 include "header.php";
-include "home.php";
+// include "home.php";
 if (isset($_GET['act'])) {
     $act = $_GET['act'];
     switch ($act) {

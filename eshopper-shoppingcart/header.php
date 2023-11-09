@@ -132,20 +132,20 @@
                     <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                         <div class="navbar-nav mr-auto py-0">
                             <a href="index.php" class="nav-item nav-link active">Trang Chủ</a>
-                            <a href="shop.html" class="nav-item nav-link">Sản Phẩm</a>
+                            <a href="index.php?act=lssanpham" class="nav-item nav-link">Sản Phẩm</a>
                             <a href="detail.html" class="nav-item nav-link">Giới Thiệu</a>
                             <div class="nav-item dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Trang</a>
                                 <div class="dropdown-menu rounded-0 m-0">
-                                    <a href="cart.html" class="dropdown-item">Shopping Cart</a>
-                                    <a href="checkout.html" class="dropdown-item">Checkout</a>
+                                    <a href="cart.html" class="dropdown-item">SGiỏ hàng</a>
+                                    <a href="checkout.html" class="dropdown-item">Thanh toán</a>
                                 </div>
                             </div>
-                            <a href="contact.html" class="nav-item nav-link">Contact</a>
+                            <a href="contact.html" class="nav-item nav-link">Liên hệ</a>
                         </div>
                         <div class="navbar-nav ml-auto py-0">
-                            <a href="index.php?act=dangnhap.php" class="nav-item nav-link">Login</a>
-                            <a href="" class="nav-item nav-link">Register</a>
+                            <a href="index.php?act=dangnhap.php" class="nav-item nav-link">Đăng nhập</a>
+                            <a href="" class="nav-item nav-link">Đăng ký</a>
                         </div>
                     </div>
                 </nav>
