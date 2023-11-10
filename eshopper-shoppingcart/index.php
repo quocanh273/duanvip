@@ -10,6 +10,12 @@ if (isset($_GET['act'])) {
             case 'ctsanpham' :
                 include "view/chitietsanpham.php";
                 break;
+            case "giohang":
+                include "giohang/content.php";
+                break;
+            case "thanhtoan":
+                include "thanhtoan/checkout.php";
+                break;
         default:
             include "home.php";
             break;

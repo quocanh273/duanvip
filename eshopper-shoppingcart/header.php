@@ -118,6 +118,7 @@
                         <a href="index.php?act=lssanpham" class="nav-item nav-link">Áo blazer</a>
                         <a href="index.php?act=lssanpham" class="nav-item nav-link">Áo khoác</a>
                         <a href="index.php?act=lssanpham" class="nav-item nav-link">Đôi giày</a>
+                        
                     </div>
                 </nav>
             </div>
@@ -137,8 +138,8 @@
                             <div class="nav-item dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Trang</a>
                                 <div class="dropdown-menu rounded-0 m-0">
-                                    <a href="cart.html" class="dropdown-item">Shopping Cart</a>
-                                    <a href="checkout.html" class="dropdown-item">Checkout</a>
+                                    <a href="index.php?act=giohang" class="dropdown-item">Shopping Cart</a>
+                                    <a href="index.php?act=thanhtoan" class="dropdown-item">Checkout</a>
                                 </div>
                             </div>
                             <a href="contact.html" class="nav-item nav-link">Contact</a>
