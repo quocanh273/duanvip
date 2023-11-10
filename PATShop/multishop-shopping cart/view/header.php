@@ -43,7 +43,7 @@
                     <div class="btn-group">
                         <button type="button" class="btn btn-sm btn-light dropdown-toggle" data-toggle="dropdown">Tài Khoản</button>
                         <div class="dropdown-menu dropdown-menu-right">
-                            <button class="dropdown-item" type="button">Đăng Ký </button>
+                            <a href="index.php?act=dangky"><button class="dropdown-item" type="button">Đăng Ký </button></a>
                             <button class="dropdown-item" type="button">Đăng Nhập</button>
                         </div>
                     </div>
