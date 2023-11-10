@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<!-- Mirrored from html.digiboard.codebasket.xyz/update-password.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 10 Nov 2023 12:55:06 GMT -->
+<!-- Mirrored from html.digiboard.codebasket.xyz/reset-password.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 10 Nov 2023 12:51:58 GMT -->
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Update Password | Digiboard</title>
+    <title>Reset Password | Digiboard</title>
     
     <link rel="shortcut icon" href="favicon.png">
     <link rel="stylesheet" href="assets/vendor/css/all.min.css">
@@ -37,25 +37,22 @@
                 <a href="index.html"><i class="fa-duotone fa-house-chimney"></i></a>
             </div>
             <div class="bottom">
-                <h3 class="panel-title">Update Password</h3>
+                <h3 class="panel-title">Reset Password</h3>
                 <form>
                     <div class="input-group mb-25">
-                        <span class="input-group-text"><i class="fa-regular fa-lock"></i></span>
-                        <input type="password" class="form-control" placeholder="New Password">
+                        <span class="input-group-text"><i class="fa-regular fa-envelope"></i></span>
+                        <input type="text" class="form-control" placeholder="Username or email address">
                     </div>
-                    <div class="input-group mb-25">
-                        <span class="input-group-text"><i class="fa-regular fa-lock"></i></span>
-                        <input type="password" class="form-control" placeholder="Confirm New Password">
-                    </div>
-                    <button class="btn btn-primary w-100 login-btn">Update Password</button>
+                    <button class="btn btn-primary w-100 login-btn">Get Link</button>
                 </form>
+                <div class="other-option">
+                    <p class="mb-0">Remember the password? <a href="login.html">Login</a></p>
+                </div>
             </div>
         </div>
 
         <!-- footer start -->
-        <div class="footer">
-            <p>Copyright© <script>document.write(new Date().getFullYear())</script> All Rights Reserved By <span class="text-primary">Digiboard</span></p>
-        </div>
+        
         <!-- footer end -->
     </div>
     <!-- main content end -->
@@ -74,5 +71,5 @@
     <!-- for demo purpose -->
 </body>
 
-<!-- Mirrored from html.digiboard.codebasket.xyz/update-password.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 10 Nov 2023 12:55:06 GMT -->
+<!-- Mirrored from html.digiboard.codebasket.xyz/reset-password.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 10 Nov 2023 12:51:58 GMT -->
 </html>
