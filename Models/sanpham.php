@@ -1,4 +1,5 @@
 <?php 
+require_once 'connect.php';
  function loadall_sanpham() {
     $sql = "SELECT * FROM sanpham WHERE 1 ORDER BY id ASC";
     $listsanpham = pdo_query($sql);
