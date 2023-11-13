@@ -47,9 +47,12 @@
                     <div class="btn-group">
                         <button type="button" class="btn btn-sm btn-light dropdown-toggle" data-toggle="dropdown">Tài Khoản</button>
                         <div class="dropdown-menu dropdown-menu-right">
-                            <button class="dropdown-item" type="button">Đăng Ký </button>
+
+
+                           <a href="index.php?act=dangky"><button class="dropdown-item" type="button">Đăng Ký </button></a>
                             <a href="index.php?act=dangnhap"><button class="dropdown-item" type="button">Đăng Nhập</button></a>
                             <a href="index.php?act=doimk"><button class="dropdown-item" type="button">Đổi mật khẩu</button></a>
+
                         </div>
                     </div>
                     <div class="btn-group mx-2">

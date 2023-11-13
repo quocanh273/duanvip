@@ -30,11 +30,11 @@
                <label for="">
                     Mã Danh Mục
                 </label> <br />
-                <input type="text" name="category_id" id="" value="" readonly class="rounded-2 w-75"> <br />
+                <input type="text" name="ma_Loai" readonly class="rounded-2 w-75"> <br />
                 <label for="" class="label pt-2">
                     Tên Danh Mục
                 </label><br />
-                <input type="text" name="category_name" id="" value="" placeholder="Nhập tên danh mục "
+                <input type="text" name="ten_loai" placeholder="Nhập tên danh mục "
                     class="input w-75 rounded-2">
                </div>
 
@@ -45,11 +45,9 @@
                
             </form>
             <a href="index.php?act=danhmuc"><button class="btn btn-insert  status completed mt-4">Về Trang Danh Sách </button></button></a>
-            <?php
-            if (isset($Notification) && $Notification != "") {
-              echo $Notification;
-            }
-          ?>
+            <?php 
+            if(isset($thongbao)&&($thongbao!="")) echo $thongbao;
+            ?>
         </div>
 
     </div>
