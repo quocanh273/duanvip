@@ -3,6 +3,7 @@ require "header.php";
 require "../Models/connect.php";
 require "../Models/danhmuc.php";
 require "../Models/sanpham.php";
+require "../Models/khachhang.php";
 require "../Models/binhluan.php";
 require "../Models/thongke.php";
 require "../Models/cart.php";
@@ -167,12 +168,49 @@ if (isset($_GET['act'])) {
 
         // Khách Hàng 
         case 'listkhachhang':
-            include "Khachhang/list.php";
-            break;
+                $listkhachhang =   ds_khachhang();
+                include "Khachhang/list.php";
+                break;
 
+
+        case 'createkh':
+            if (isset($_POST['themmoi'])&&($_POST['themmoi']) ) {
+                $tenkh =$_POST['ten_nguoi_dung'];
+                $pass =$_POST['mat_khau'];
+                $mail =$_POST['email']; // so luong
+                $ngaysinh =$_POST['ngay_sinh'];
+                $diachi =$_POST['dia_chi'];
+                $sodienthoai =$_POST['mausac'];
+                $trangthai =$_POST['trang_Thai'];
+                $htaotaihoan =$_POST['thoi_gian_tao_tai_khoan'];
+                $hcapnhat =$_POST['thoi_gian_cap_nhat_gan_day'];
+                
+                
+                $image = $_FILES['img']['name'];
+                $target_dir = "../upload/";
+                $target_file = $target_dir . basename($_FILES["img"]["name"]);
+                if (move_uploaded_file($_FILES["img"]["tmp_name"], $target_file)) {
+                    // echo "The file ". htmlspecialchars( basename( $_FILES["hinh"]["name"])). " has been uploaded.";
+                } else {
+                    // echo "Sorry, there was an error uploading your file.";
+                }
+                
+                insert_khachhang($tenkh,$giasp,$pass,$mail,$ngaysinh
+                ,$diachi,$sodienthoai,$trangthai,$htaotaihoan,$hcapnhat,$image);
+
+                $thongbao ="Thêm thành công";
+                }
+               
+                $listkhachhang =   ds_khachhang();
+                include "Khachhang/create.php";
+                break;        
         // xóa kh 
-        case 'deletekh':
-            include "Khachhang/delete.php";
+        case 'xoakh':
+            if (isset($_GET['id'])&&($_GET['id']>0)) {
+                delete_kh($_GET['id']);
+            }
+            $listkhachhang =   ds_khachhang();
+            include "sanpham/list.php";
             break;
 
 

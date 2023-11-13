@@ -15,23 +15,80 @@
 
 </div>
 
-<div class="table-data">
+<div class="table-data" >
     <div class="order">
         <div class="head">
-            <h3>Quản Lý Khách Hàng</h3>
-          
+            <h3>Sản Phẩm</h3>
         </div>
-        <table>
-            <thead>
-                <tr>
-                    <th>Mã Khách Hàng </th>
-                    <th>Tên Khách Hàng</th>
-                    <th>Email</th>
-                    <th>Số Điện Thoại</th>
-                    
-                    <th >Thao Tác</th>
+      <div class="form-group  d-flex ">
+      <form action="index.php?act=createkh" method="post"class="pb-4" > 
+          
+          <a href="index.php?act=createkh"><button class="btn btn-insert">Thêm Khách Hàng</button></a>
+      </form> 
+      <form action="" method="post" class="form-group form-search-sp">
+              <div class="form-input pb-2 d-flex    ">
+                <span class="w-25 pt-2 ">Tìm Kiếm </span>
+              <input type="text" name="search" width="50px"  placeholder="Search..." class="form-control px-2" >	
+                  <input type="submit" name="locsp" value="Lọc " class=" btn btn-insert px-2">
+              </div>
+          </form>
+      </div>
+      
+      <table id="example" class="table table-striped"  style="width:100%">
+        <thead>
+    <tr>
+                    <th></th>
+                        <th>Mã Khách Hàng </th>
+                        <th>Tên Khách Hàng</th>
+                        <th>Mật khẩu</th>
+                        <th>Email</th>
+                        <th>Ngày sinh</th>
+                        <th>Địa chỉ</th>
+                        <th>Số Điện Thoại</th>
+                        <th>Ảnh</th>
+                        <th >Trạng thái</th>
+                        <th>Thời gian tạo tài khoản</th>
+                        <th>Thời gian cập nhật gần đây</th>
+                        <th>Thao tác</th>
+                        
+                    <th></th>
                 </tr>
-            </thead>
+                <?php 
+                        
+                        foreach($listkhachhang as $khachhang){
+                            extract($khachhang);
+                            $suasp = "index.php?act=suakh&id=".$id;
+                            $xoasp = "index.php?act=xoakh&id=".$id; // đường liên kết 
+                            $hinhpath = "../upload/".$img;
+                            if (is_file($hinhpath)) {
+                                $img="<img src='".$hinhpath."' height='80'>" ;
+                            }else{
+                                $img = "không có hình";
+                            }
+                            echo '<tr>
+                            <td></td>
+                            <td>'.$id.'</td>
+                            <td>'.$ten_nguoi_dung.'</td>
+                            <td>'.$mat_khau.'</td>
+                            <td>'.$email.'</td>
+                            <td>'.$ngay_sinh.'</td>
+                            <td>'.$dia_chi.'</td>
+                            <td>'.$dia_chi.'</td>
+                            <td>'.$img.'</td>
+                            <td>'.$trang_Thai.'</td>
+                            <td>'.$thoi_gian_tao_tai_khoan.'</td>
+                            <td>'.$thoi_gian_cap_nhat_gan_day.'</td>
+
+
+                            <td>   
+                            <a href="'.$suakh.'"><input type="button" value="Sửa"></a> 
+                            <a href="'.$xoakh.'"><input type="button" value="Xóa"></a>
+                            
+                            </td>
+                        </tr>';
+                        }
+                        ?>
+            <!-- </thead>
             <tbody>
                 <tr class="tr-shadow">
                     <td>
@@ -68,7 +125,7 @@
                     <a href="index.php?act=deletekh"><button class="btn status pending">xóa</button></a>
                     <a href="'.$suadm.'"><button class=" btn status completed">Sửa</button>
                     </td>
-                </tr>
+                </tr> -->
                 
                
                 
