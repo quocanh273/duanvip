@@ -48,9 +48,8 @@
                         <th>Địa chỉ</th>
                         <th>Số Điện Thoại</th>
                         <th>Ảnh</th>
-                        <th >Trạng thái</th>
-                        <th>Thời gian tạo tài khoản</th>
-                        <th>Thời gian cập nhật gần đây</th>
+                       
+                     
                         <th>Thao tác</th>
                         
                     <th></th>
@@ -75,16 +74,14 @@
                             <td>'.$email.'</td>
                             <td>'.$ngay_sinh.'</td>
                             <td>'.$dia_chi.'</td>
-                            <td>'.$dia_chi.'</td>
+                            <td>'.$so_dien_thoai.'</td>
                             <td>'.$img.'</td>
                             <td>'.$trang_Thai.'</td>
-                            <td>'.$thoi_gian_tao_tai_khoan.'</td>
-                            <td>'.$thoi_gian_cap_nhat_gan_day.'</td>
 
 
                             <td>   
                             <a href="'.$suakh.'"><input type="button" value="Sửa"></a> 
-                            <a href="'.$xoakh.'"><input type="button" value="Xóa"></a>
+                            <a href="'.$xoakh.'"><input type="button" onclick=  value="Xóa"></a>
                             
                             </td>
                         </tr>';

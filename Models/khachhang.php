@@ -5,25 +5,16 @@ function ds_khachhang(){
     return $listkhachhang; 
 }
 
-function insert_khachhang($tenkh,$giasp,$pass,$mail,$ngaysinh
-,$diachi,$sodienthoai,$trangthai,$htaotaihoan,$hcapnhat,$image){
-    $sql="INSERT INTO nguoi_dung(ten_nguoi_dung,
-    mat_khau,email,
-    ngay_sinh,dia_chi,
-    img,trang_Thai,
-    thoi_gian_tao_tai_khoan,
-    thoi_gian_cap_nhat_gan_day) 
+function insert_khachhang($tenkh,$pass,$mail,$ngaysinh,$diachi,$sodienthoai,$image){
+    $sql="INSERT INTO nguoi_dung(ten_nguoi_dung,mat_khau,email,ngay_sinh,dia_chi,so_dien_thoai,img) 
     values
-     ('$tenkh',
-     '$giasp',
+     (
+    '$tenkh',
      '$pass',
      '$mail',
-     '$ngaysinh'
-     ,'$diachi',
+     '$ngaysinh',
+     '$diachi',
      '$sodienthoai',
-     '$trangthai',
-     '$htaotaihoan',
-     '$hcapnhat',
      '$image')";
     pdo_execute($sql);
 }

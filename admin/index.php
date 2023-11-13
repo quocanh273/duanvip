@@ -194,34 +194,29 @@ if (isset($_GET['act'])) {
 
         case 'createkh':
             if (isset($_POST['themmoi'])&&($_POST['themmoi']) ) {
-                $tenkh =$_POST['ten_nguoi_dung'];
-                $pass =$_POST['mat_khau'];
-                $mail =$_POST['email']; // so luong
-                $ngaysinh =$_POST['ngay_sinh'];
-                $diachi =$_POST['dia_chi'];
-                $sodienthoai =$_POST['mausac'];
-                $trangthai =$_POST['trang_Thai'];
-                $htaotaihoan =$_POST['thoi_gian_tao_tai_khoan'];
-                $hcapnhat =$_POST['thoi_gian_cap_nhat_gan_day'];
-                
-                
-                $image = $_FILES['img']['name'];
+                $tenkh =$_POST['tenkh'];
+                $pass =$_POST['pass'];
+                $mail =$_POST['mail']; // so luong
+                $ngaysinh =$_POST['ngaysinh'];
+                $diachi =$_POST['diachi'];
+                $sodienthoai =$_POST['sodienthoai'];
+                $image = $_FILES['image']['name'];
                 $target_dir = "../upload/";
-                $target_file = $target_dir . basename($_FILES["img"]["name"]);
-                if (move_uploaded_file($_FILES["img"]["tmp_name"], $target_file)) {
+                $target_file = $target_dir . basename($_FILES["image"]["name"]);
+                if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
                     // echo "The file ". htmlspecialchars( basename( $_FILES["hinh"]["name"])). " has been uploaded.";
                 } else {
                     // echo "Sorry, there was an error uploading your file.";
                 }
                 
-                insert_khachhang($tenkh,$giasp,$pass,$mail,$ngaysinh
-                ,$diachi,$sodienthoai,$trangthai,$htaotaihoan,$hcapnhat,$image);
+                insert_khachhang($tenkh,$pass,$mail,$ngaysinh
+                ,$diachi,$sodienthoai,$image);
 
                 $thongbao ="Thêm thành công";
                 }
                
                 $listkhachhang =   ds_khachhang();
-                include "Khachhang/create.php";
+                include "Khachhang/list.php";
                 break;        
         // xóa kh 
         case 'xoakh':
@@ -229,7 +224,7 @@ if (isset($_GET['act'])) {
                 delete_kh($_GET['id']);
             }
             $listkhachhang =   ds_khachhang();
-            include "sanpham/list.php";
+            include "Khachhang/list.php";
             break;
 
 

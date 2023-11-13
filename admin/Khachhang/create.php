@@ -64,26 +64,6 @@
                         Ảnh
                     </label><br />
                     <input type="file" name="image" id="" value="" width="150px" class="input w-75 rounded-2"><br />
-
-                    <label for="" class="label pt-2">
-                        Trạng Thái:
-                    </label><br />
-                    <input type="text" name="trangthai" id="" value="" placeholder="Nhập trạng thái "
-                        class="input w-75 rounded-2"><br />
-                        <label for="" class="label pt-2">
-                        Thời gian tạo tài khoản: 
-                    </label><br />
-                    <input type="date" name="htaotaihoan" id="" value="" placeholder="Nhập ngày  "
-                        class="input w-75 rounded-2"><br />
-                        <label for="" class="label pt-2">
-                        
-                        Thời gian cập nhật gần đây: 
-                    </label><br />
-                    <input type="date" name="hcapnhat" id="" value="" placeholder="Nhập ngày "
-                        class="input w-75 rounded-2"><br />
-                        <label for="" class="label pt-2">
-                        
-                   
                 </div>
 
 
