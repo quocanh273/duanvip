@@ -37,25 +37,21 @@
       </div>
       
       <table id="example" class="table table-striped"  style="width:100%">
-        <thead>
-    <tr>
-                    <th></th>
-                        <th>Mã Khách Hàng </th>
-                        <th>Tên Khách Hàng</th>
-                        <th>Mật khẩu</th>
-                        <th>Email</th>
-                        <th>Ngày sinh</th>
-                        <th>Địa chỉ</th>
-                        <th>Số Điện Thoại</th>
-                        <th>Ảnh</th>
-                       
-                     
-                        <th>Thao tác</th>
-                        
-                    <th></th>
-                </tr>
-                <?php 
-                        
+                        <thead>
+                        <tr>
+                            <th></th>
+                            <th>ID</th>
+                            <th>TÊN</th>
+                            <th>MẬT KHẨU</th>
+                            <th>EMAIL</th>
+                            <th>NGÀY SINH</th>
+                            <th>ĐỊA CHỈ</th>
+                            <th>SỐ ĐIỆN THOẠI</th>
+                            <th>IMG</th>
+                            <th>THAO TÁC</th>
+                            <th></th>                       </tr>
+                            </thead>
+                <?php                      
                         foreach($listkhachhang as $khachhang){
                             extract($khachhang);
                             $suakh = "index.php?act=suakh&id=".$id;
@@ -76,19 +72,15 @@
                             <td>'.$dia_chi.'</td>
                             <td>'.$so_dien_thoai.'</td>
                             <td>'.$img.'</td>
-                            <td>'.$trang_Thai.'</td>
-
-
                             <td>   
                             <a href="'.$suakh.'"><input type="button" value="Sửa"></a> 
-                            <a href="'.$xoakh.'"><input type="button" onclick=  value="Xóa"></a>
-                            
+                            <a href="'.$xoakh.'"><input type="button" onclick=""  value="Xóa"></a>
                             </td>
                         </tr>';
                         }
                         ?>
-            <!-- </thead>
-            <tbody>
+             </thead>
+            <!-- <tbody>
                 <tr class="tr-shadow">
                     <td>
                        1
@@ -129,7 +121,7 @@
                
                 
              
-            </tbody>    
+            <!-- </tbody>    -->
         </table>
        
     </div>

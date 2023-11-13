@@ -215,8 +215,8 @@ if (isset($_GET['act'])) {
                 $thongbao ="Thêm thành công";
                 }
                
-                $listkhachhang =   ds_khachhang();
-                include "Khachhang/list.php";
+                $listkhachhang =ds_khachhang();
+                include "Khachhang/create.php";
                 break;        
         // xóa kh 
         case 'xoakh':
