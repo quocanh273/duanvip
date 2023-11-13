@@ -42,6 +42,7 @@
                     <td>0343014882</td>
                     <td >
                     <a href="index.php?act=deletekh"><button class="btn status pending">xóa</button></a>
+                    <a href="'.$suadm.'"><button class=" btn status completed">Sửa</button>
                     </td>
                 </tr>
                 <tr class="tr-shadow">
@@ -53,6 +54,7 @@
                     <td>0343014882</td>
                     <td >
                     <a href="index.php?act=deletekh"><button class="btn status pending">xóa</button></a>
+                    <a href="'.$suadm.'"><button class=" btn status completed">Sửa</button>
                     </td>
                 </tr>
                 <tr class="tr-shadow">
@@ -64,6 +66,7 @@
                     <td>0343014882</td>
                     <td >
                     <a href="index.php?act=deletekh"><button class="btn status pending">xóa</button></a>
+                    <a href="'.$suadm.'"><button class=" btn status completed">Sửa</button>
                     </td>
                 </tr>
                 
