@@ -39,7 +39,6 @@
       <table id="example" class="table table-striped"  style="width:100%">
                         <thead>
                         <tr>
-                            <th></th>
                             <th>ID</th>
                             <th>TÊN</th>
                             <th>MẬT KHẨU</th>
@@ -48,8 +47,8 @@
                             <th>ĐỊA CHỈ</th>
                             <th>SỐ ĐIỆN THOẠI</th>
                             <th>IMG</th>
-                            <th>THAO TÁC</th>
-                            <th></th>                       </tr>
+                            <th>THAO TÁC</th>                    
+                         </tr>
                             </thead>
                 <?php                      
                         foreach($listkhachhang as $khachhang){
