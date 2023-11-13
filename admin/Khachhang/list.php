@@ -49,8 +49,7 @@
                         <th>Số Điện Thoại</th>
                         <th>Ảnh</th>
                         <th >Trạng thái</th>
-                        <th>Thời gian tạo tài khoản</th>
-                        <th>Thời gian cập nhật gần đây</th>
+                     
                         <th>Thao tác</th>
                         
                     <th></th>
@@ -78,8 +77,6 @@
                             <td>'.$dia_chi.'</td>
                             <td>'.$img.'</td>
                             <td>'.$trang_Thai.'</td>
-                            <td>'.$thoi_gian_tao_tai_khoan.'</td>
-                            <td>'.$thoi_gian_cap_nhat_gan_day.'</td>
 
 
                             <td>   
