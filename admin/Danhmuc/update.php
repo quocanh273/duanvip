@@ -1,4 +1,8 @@
-
+<?php 
+if (is_array($dsdm)) {
+    extract($dsdm);
+}
+?>
 <main>
     <div class="head-title">
         <div class="left">
@@ -32,18 +36,18 @@
                         Mã Danh Mục
                     </label> <br />
                     <input type="text" name="ma_loai" id=""  readonly class="rounded-2 w-75 px-3"
-                        value="ANh yeeu em"> <br />
+                        value="<?= $ma_loai?>"> <br />
                     <label for="" class="label pt-2">
                         Tên Danh Mục
                     </label><br />
                     <input type="text" name="ten_loai" id=""placeholder="Nhập tên danh mục "
-                        value="Ao da bong" class="input w-75 rounded-2 px-3">
+                        value="<?= $ten_loai?>" class="input w-75 rounded-2 px-3">
                 </div>
-
-                <input type="submit" name="updatedm" id="" value="Cập Nhật" class="btn btn-insert  status completed ">
+                <input type="hidden" name="ma_loai" value="<?php if(isset($ma_loai)&&($ma_loai>0)) echo $ma_loai?>">
+                <input type="submit" name="capnhat" value="Cập Nhật" class="btn btn-insert  status completed ">
                 <input type="reset" name="reset" id="" value="Nhập Lại" class=" btn btn-reset ">
                 
-                <a href="index.php?act=danhmuc"><button class="btn btn-insert  status completed" >Về Trang Danh Sách</button>
+                <button class="btn btn-insert  status completed" >Về Trang Danh Sách</button>
             </form>
         </div>
 

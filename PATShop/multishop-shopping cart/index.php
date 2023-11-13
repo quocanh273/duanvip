@@ -19,7 +19,17 @@ if ((isset($_GET['act']))&&($_GET['act']!="")) {
         include "view/lienhe.php";
         break;
     case 'dangky':
-        include "view/taikhoan/dangky.php";
+        include "view/login/dangky.php";
+        break;
+    case 'dangnhap':
+        include "view/login/dangnhap.php";
+        break;
+    case 'quenmk':
+        include "view/login/quenmk.php";
+        break;
+    case 'doimk':
+        include "view/login/doimk.php";
+
         break;
     default:
         # code...

@@ -39,7 +39,7 @@
                     foreach ($dsdm as $dm) {
 
                         extract($dm);
-                        $suadm = "index.php?act=editdm";
+                        $suadm = "index.php?act=editdm&ma_loai=".$ma_loai;
                         $xoadm = "index.php?act=xoadm&ma_loai=".$ma_loai; // đường liên kết 
                     echo '<tr>
                         <td>'.$ma_loai.'</td>

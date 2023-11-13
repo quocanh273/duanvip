@@ -24,6 +24,10 @@
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="view/css/style.css" rel="stylesheet">
+    <link rel="shortcut icon" href="favicon.png">
+
+   
+   
 </head>
 
 <body>
@@ -43,8 +47,12 @@
                     <div class="btn-group">
                         <button type="button" class="btn btn-sm btn-light dropdown-toggle" data-toggle="dropdown">Tài Khoản</button>
                         <div class="dropdown-menu dropdown-menu-right">
-                            <a href="index.php?act=dangky"><button class="dropdown-item" type="button">Đăng Ký </button></a>
-                            <button class="dropdown-item" type="button">Đăng Nhập</button>
+
+
+                           <a href="index.php?act=dangky"><button class="dropdown-item" type="button">Đăng Ký </button></a>
+                            <a href="index.php?act=dangnhap"><button class="dropdown-item" type="button">Đăng Nhập</button></a>
+                            <a href="index.php?act=doimk"><button class="dropdown-item" type="button">Đổi mật khẩu</button></a>
+
                         </div>
                     </div>
                     <div class="btn-group mx-2">

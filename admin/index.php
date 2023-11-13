@@ -18,66 +18,55 @@ if (isset($_GET['act'])) {
             break;
 
 
-        // Danh mục
+// Danh mục
+          //create dm
+
+
+          case 'createdm':
+            if (isset($_POST['submitdm'])&&($_POST['submitdm'])) {
+                $ten_loai =$_POST['ten_loai'];  
+                loai_insert($ten_loai);
+                $thongbao="Them Thanh Cong" ;
+                
+            }
+            include "Danhmuc/create.php";
+            break;
+        // list
+
         case 'danhmuc':
             //lấy all danh mục
             $dsdm=loai_select_all();
             include "danhmuc/list.php";
             break;
-        
-        // case 'danhmuc_add':
-        //     $dsdm=loai_select_all();
-        //     include "danhmuc/add.php";
-        //     break;
 
-        // add dm 
-        case "createdm":
+        // xoa dm 
+        case "xoadm":
+            if (isset($_GET['ma_loai'])&&($_GET['ma_loai']>0)) {
+                loai_delete($_GET['ma_loai']);
+            }
             $dsdm=loai_select_all();
-            include "Danhmuc/create.php";
+            include "Danhmuc/list.php";
             break;
 
-        // // update dm 
+        // sua dm 
         case 'editdm':
+            if (isset($_GET['ma_loai'])&&($_GET['ma_loai']>0)) {
+                $dsdm = loai_select_by_id($_GET['ma_loai']);
+            }
             include "Danhmuc/update.php";
             break;
-
-        // case 'updatedm':
-        //     $loai_update = loai_update();
-        //     include "Danhmuc/update.php";
-        //     break;
-
-
-        // // delete dm 
-        // case 'deletedm':
-        //     if (isset($_GET['id_cate']) && ($_GET['id_cate'] > 0)) {
-        //         $id_category = $_GET['id_cate'];
-        //         delete_categories($_GET['id_cate']);
-        //     }
-        //     $sellect_categories = sellect_all_categories();
-        //     include "Danhmuc/list.php";
-        //     break;
-
-                // Danh mục con 
-                // case "createdm_items":
-                //     if (isset($_POST['submitdm_items']) && $_POST['submitdm_items']) {
-                //         $id_category = $_POST['category_id'];
-                //         $category_name_items = $_POST['category_name_items'];
-                //         insert_categories_items($category_name_items,$id_category);
-                //         $Notification = "Thêm Thành Công";
-                //     }
-
-                //     include "Danhmuc/Danhmuccon/create.php";
-                //     break;
-                // case "listdm_items":
-
-                //     // lấy ra tên danh mục cha 
-                //     $one_categories_items = sellect_one_categories($_GET['id_cate']);
-                    
-                //     // tìm trong Danhmuc/danhmuccon/list.php lấy ra tên danh mục con
-                //     $sellect_all_categories_item=sellect_all_categories_item($_GET['id_cate']);
-
-                
-
+        // update dm 
+        case 'updatedm':
+            if (isset($_POST['capnhat'])&&($_POST['capnhat'])) {
+                $ma_loai = $_POST['ma_loai'];
+                $ten_loai = $_POST['ten_loai'];
+                loai_update($ma_loai,$ten_loai);
+}
+            $dsdm=loai_select_all();
+            include "Danhmuc/list.php";
+            break;
+      
+  
 
         // Sản phẩm 
         case 'listsp':
