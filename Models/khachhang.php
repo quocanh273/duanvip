@@ -6,13 +6,14 @@ function ds_khachhang(){
 }
 
 function insert_khachhang($tenkh,$pass,$mail,$ngaysinh,$diachi,$sodienthoai,$image){
-    $sql="INSERT INTO nguoi_dung(ten_nguoi_dung,mat_khau,email,ngay_sinh,dia_chi,img) 
+    $sql="INSERT INTO nguoi_dung(ten_nguoi_dung,mat_khau,email,ngay_sinh,dia_chi,so_dien_thoai,img) 
     values
-     ('$tenkh',
+     (
+    '$tenkh',
      '$pass',
      '$mail',
-     '$ngaysinh'
-     ,'$diachi',
+     '$ngaysinh',
+     '$diachi',
      '$sodienthoai',
      '$image')";
     pdo_execute($sql);

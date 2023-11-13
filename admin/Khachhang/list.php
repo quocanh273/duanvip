@@ -48,7 +48,7 @@
                         <th>Địa chỉ</th>
                         <th>Số Điện Thoại</th>
                         <th>Ảnh</th>
-                        <th >Trạng thái</th>
+                       
                      
                         <th>Thao tác</th>
                         
@@ -74,7 +74,7 @@
                             <td>'.$email.'</td>
                             <td>'.$ngay_sinh.'</td>
                             <td>'.$dia_chi.'</td>
-                            <td>'.$dia_chi.'</td>
+                            <td>'.$so_dien_thoai.'</td>
                             <td>'.$img.'</td>
                             <td>'.$trang_Thai.'</td>
 

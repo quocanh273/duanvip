@@ -181,9 +181,6 @@ if (isset($_GET['act'])) {
                 $ngaysinh =$_POST['ngaysinh'];
                 $diachi =$_POST['diachi'];
                 $sodienthoai =$_POST['sodienthoai'];
-                
-                
-                
                 $image = $_FILES['image']['name'];
                 $target_dir = "../upload/";
                 $target_file = $target_dir . basename($_FILES["image"]["name"]);
@@ -194,7 +191,7 @@ if (isset($_GET['act'])) {
                 }
                 
                 insert_khachhang($tenkh,$pass,$mail,$ngaysinh
-                ,$diachi,$sodienthoai);
+                ,$diachi,$sodienthoai,$image);
 
                 $thongbao ="Thêm thành công";
                 }
