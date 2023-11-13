@@ -2,17 +2,12 @@
 if(is_array($sanpham)){
     extract($sanpham);
 }
-$hinhpath = "../upload/".$img;
-if (is_file($hinhpath)) {
-    $img="<img src='".$hinhpath."' height='80'>" ;
-}else{
-    $img = "không có hình";
-} 
+
 ?>
 <main>
     <div class="head-title">
         <div class="left">
-            <h1>Thêm Sản Phẩm</h1>
+            <h1>Sửa Sản Phẩm</h1>
             <ul class="breadcrumb">
                 <li>
                     <a href="#">Trang Chủ</a>
@@ -23,7 +18,7 @@ if (is_file($hinhpath)) {
                 </li>
                 <li><i class='bx bx-chevron-right'></i></li>
                 <li>
-                    <a class="active" href="#">Thêm Sản Phẩm </a>
+                    <a class="active" href="#">Sửa Sản Phẩm </a>
                 </li>
             </ul>
         </div>
