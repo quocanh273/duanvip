@@ -36,7 +36,7 @@ if (is_file($hinhpath)) {
                 <h3>Sản Phẩm</h3>
 
             </div>
-            <form action="index.php?act=createsp" class="form-input" method="post" enctype="multipart/form-data">
+            <form action="index.php?act=updatesp" class="form-input" method="post" enctype="multipart/form-data">
                 <div class="form-group pb-4">
                    
                     <label for="" class="label pt-3">Danh Mục</label><br />
