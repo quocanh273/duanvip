@@ -197,7 +197,7 @@ if (isset($_GET['act'])) {
                 }
                
                 $listkhachhang =   ds_khachhang();
-                include "Khachhang/create.php";
+                include "Khachhang/list.php";
                 break;        
         // xóa kh 
         case 'xoakh':
@@ -205,7 +205,7 @@ if (isset($_GET['act'])) {
                 delete_kh($_GET['id']);
             }
             $listkhachhang =   ds_khachhang();
-            include "sanpham/list.php";
+            include "Khachhang/list.php";
             break;
 
 

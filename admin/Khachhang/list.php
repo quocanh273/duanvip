@@ -81,7 +81,7 @@
 
                             <td>   
                             <a href="'.$suakh.'"><input type="button" value="Sửa"></a> 
-                            <a href="'.$xoakh.'"><input type="button" value="Xóa"></a>
+                            <a href="'.$xoakh.'"><input type="button" onclick=  value="Xóa"></a>
                             
                             </td>
                         </tr>';
