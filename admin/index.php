@@ -40,7 +40,7 @@ if (isset($_GET['act'])) {
                 }
                 loai_insert($ten_loai,$hinh);
             }
-            
+           
             include "Danhmuc/create.php";
             break;
         // list
