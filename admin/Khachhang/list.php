@@ -93,7 +93,7 @@
                             <th>ĐỊA CHỈ</th>
                             <th>SỐ ĐIỆN THOẠI</th>
                             <th>IMG</th>
-                            <th>THAO TÁC</th>
+                            <th>TTHAO TÁC</th>
                             <th></th>                     
                           </tr>
         </tfoot>
