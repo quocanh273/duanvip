@@ -4,6 +4,7 @@ function ds_khachhang(){
     $listkhachhang=pdo_query($sql);
     return $listkhachhang; 
 }
+
 function insert_khachhang($tenkh,$giasp,$pass,$mail,$ngaysinh
 ,$diachi,$sodienthoai,$trangthai,$htaotaihoan,$hcapnhat,$image){
     $sql="INSERT INTO nguoi_dung(ten_nguoi_dung,

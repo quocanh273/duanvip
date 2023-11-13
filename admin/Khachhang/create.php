@@ -91,12 +91,14 @@
                     <input type="submit" name="themmoi" id="" value="Thêm"
                         class="btn btn-insert  status completed "> </a>
                 <input type="reset" name="reset" id="" value="Nhập Lại" class=" btn btn-reset ">
+                
                 <?php
            if (isset($thongbao)&&($thongbao!="")) 
            echo $thongbao;
        ?>
           
             </form>
+            <a href="index.php?act=listkhachhang"><button class="btn btn-insert  status completed mt-4">Về Trang Danh Sách </button></button></a>
         </div>
 
     </div>

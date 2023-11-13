@@ -29,8 +29,8 @@
                 <tr>
                     <th>Mã Danh Mục</th>
                     <th colspan="5">Tên Danh Mục</th>
-                
-                    <!-- <th >Thao Tác</th> -->
+<!--                 
+                    <th >Thao Tác</th> -->
                 </tr>
             </thead>
             <tbody>

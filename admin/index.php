@@ -76,7 +76,7 @@ if (isset($_GET['act'])) {
 
         // add sp 
         case "createsp":
-            case 'addsp':
+       
                 // kiểm tra xem người dùng có click vào nút add hay ko
                 if (isset($_POST['themmoi'])&&($_POST['themmoi']) ) {
                 $iddm =$_POST['iddm'];
@@ -168,7 +168,7 @@ if (isset($_GET['act'])) {
 
         // Khách Hàng 
         case 'listkhachhang':
-                $listkhachhang =   ds_khachhang();
+                $listkhachhang = ds_khachhang();
                 include "Khachhang/list.php";
                 break;
 

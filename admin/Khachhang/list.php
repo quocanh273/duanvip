@@ -1,3 +1,5 @@
+
+
 <main>
 <div class="head-title">
     <div class="left">
@@ -18,7 +20,7 @@
 <div class="table-data" >
     <div class="order">
         <div class="head">
-            <h3>Sản Phẩm</h3>
+            <h3>Khách Hàng</h3>
         </div>
       <div class="form-group  d-flex ">
       <form action="index.php?act=createkh" method="post"class="pb-4" > 
@@ -27,9 +29,9 @@
       </form> 
       <form action="" method="post" class="form-group form-search-sp">
               <div class="form-input pb-2 d-flex    ">
-                <span class="w-25 pt-2 ">Tìm Kiếm </span>
-              <input type="text" name="search" width="50px"  placeholder="Search..." class="form-control px-2" >	
-                  <input type="submit" name="locsp" value="Lọc " class=" btn btn-insert px-2">
+                <!-- <span class="w-25 pt-2 ">Tìm Kiếm </span>
+              <input type="text" name="search" width="50px"  placeholder="Search..." class="form-control px-2" >	 -->
+                  <!-- <input type="submit" name="locsp" value="Lọc " class=" btn btn-insert px-2"> -->
               </div>
           </form>
       </div>
@@ -57,8 +59,8 @@
                         
                         foreach($listkhachhang as $khachhang){
                             extract($khachhang);
-                            $suasp = "index.php?act=suakh&id=".$id;
-                            $xoasp = "index.php?act=xoakh&id=".$id; // đường liên kết 
+                            $suakh = "index.php?act=suakh&id=".$id;
+                            $xoakh = "index.php?act=xoakh&id=".$id; // đường liên kết 
                             $hinhpath = "../upload/".$img;
                             if (is_file($hinhpath)) {
                                 $img="<img src='".$hinhpath."' height='80'>" ;

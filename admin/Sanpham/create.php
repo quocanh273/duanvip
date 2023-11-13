@@ -98,6 +98,7 @@
        ?>
           
             </form>
+            <a href="index.php?act=listsp"><button class="btn btn-insert  status completed mt-4">Về Trang Danh Sách </button></button></a>
         </div>
 
     </div>
