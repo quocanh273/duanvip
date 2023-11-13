@@ -27,19 +27,20 @@ if (isset($_GET['act'])) {
           case 'createdm':
             if (isset($_POST['submitdm'])&&($_POST['submitdm'])) {
                 $ten_loai =$_POST['ten_loai'];  
-                loai_insert($ten_loai);
+                
                 $thongbao="Them Thanh Cong" ;
                 
-                $hinh = $_FILES['image']['name'];
+                $hinh = $_FILES['img']['name'];
                 $target_dir = "../upload/";
-                $target_file = $target_dir . basename($_FILES["image"]["name"]);
-                if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
+                $target_file = $target_dir . basename($_FILES["img"]["name"]);
+                if (move_uploaded_file($_FILES["img"]["tmp_name"], $target_file)) {
                     // echo "The file ". htmlspecialchars( basename( $_FILES["hinh"]["name"])). " has been uploaded.";
                 } else {
                     // echo "Sorry, there was an error uploading your file.";
                 }
                 
             }
+            loai_insert($ten_loai,$hinh);
             include "Danhmuc/create.php";
             break;
         // list

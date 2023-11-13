@@ -6,8 +6,8 @@ require_once 'connect.php';
 //     pdo_execute($sql, $ten_loai);
 // }
 function loai_insert($ten_loai,$hinh){
-    $sql= "INSERT INTO sanpham(ten_loai,img)
-     value ('$ten_loai','$hinh')";
+    $sql= "INSERT INTO loai(ten_loai,img)
+     values ('$ten_loai','$hinh')";
     pdo_execute($sql);
 }
 // function loai_update($ma_loai,$hinh,$ten_loai){

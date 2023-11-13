@@ -25,7 +25,7 @@
                 <h3>Danh Mục</h3>
 
             </div>
-            <form action="index.php?act=createdm" class="form-input" method="post">
+            <form action="index.php?act=createdm" class="form-input" method="post" enctype="multipart/form-data">
                <div class="form-group pb-4">
                <label for="">
                     Mã Danh Mục
