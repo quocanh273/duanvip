@@ -4,7 +4,7 @@
             <h1>Thêm Sản Phẩm</h1>
             <ul class="breadcrumb">
                 <li>
-                    <a href="#">Trang Chủ</a>
+                    <a href="index.php">Trang Chủ</a>
                 </li>
                 <li><i class='bx bx-chevron-right'></i></li>
                 <li>
@@ -25,16 +25,22 @@
                 <h3>Sản Phẩm</h3>
 
             </div>
-            <form action="index.php?act=createsp" class="form-input" method="post">
+            <form action="index.php?act=createsp" class="form-input" method="post" enctype="multipart/form-data">
                 <div class="form-group pb-4">
-                    <label for="">
-                        Mã Sản Phẩm
-                    </label> <br />
-                    <input type="text" name="product_id" id="" value="" readonly class="rounded-2 w-75"> <br />
+                   
+                    <label for="" class="label pt-3">Danh Mục</label><br />
+                    <select name="iddm">
+                            <?php 
+                            foreach ($listdanhmuc as $danhmuc) {
+                                extract($danhmuc);
+                                echo '  <option value="'.$id.'">'.$tendanhmuc.'</option>';
+                            }
+                            ?> 
+                            </select><br />
                     <label for="" class="label pt-2">
                         Tên Sản Phẩm
                     </label><br />
-                    <input type="text" name="product_name" id="" value="" placeholder="Nhập tên sản phẩm "
+                    <input type="text" name="tensp" id="" value="" placeholder="Nhập tên sản phẩm "
                         class="input w-75 rounded-2"><br />
                     <label for="" class="label pt-2">
                         Ảnh
@@ -44,7 +50,7 @@
                     <label for="" class="label pt-2">
                         Giá
                     </label><br />
-                    <input type="number" name="price" id="" value="" placeholder="Nhập số lượng "
+                    <input type="number" name="giasp" id="" value="" placeholder="Nhập GIA "
                         class="input w-75 rounded-2"><br />
 
                     <label for="product_size" class="label pt-2">
@@ -54,46 +60,43 @@
                         <option value="M">M</option>
                         <option value="L">L</option>
                     </select><br />
-
-                    <label for="product_color" class="label pt-2">Màu sắc:</label><br />
-                    <input type="radio" id="red" name="product_color" value="Red">
-                    <label for="red">Đỏ</label>
-                    <input type="radio" id="blue" name="product_color" value="Blue">
-                    <label for="blue">Xanh</label><br />
-                    <label for="" class="label pt-2">
-                        Mô Tả
-                    </label><br />
-                    <textarea name="description" id="" cols="30" rows="10"></textarea><br />
-                    <label for="" class="label pt-2">
+                   
                         Số Lượng
                     </label><br />
                     <input type="number" name="quantity" id="" value="" placeholder="Nhập số lượng "
                         class="input w-75 rounded-2 "><br />
-                    <label for="" class="label pt-3">Danh Mục</label><br />
-                        <select name="category_id" id="" class="rounded-2 ">
-                            <option value="">
-                                Danh Mục 1
-                            </option>
-                            <option value="">
-                                Danh Mục 2
-                            </option>
-                            <option value="">
-                                Danh Mục 3
-                            </option>
-                        </select>
+
+                        <label for="product_color" class="label pt-2">Màu sắc:</label><br />
+                    <input type="text" name="mausac" id="" value="" placeholder="Nhập màu sắc sản phẩm "
+                        class="input w-75 rounded-2"><br />
+                        Mô Tả
+                    </label><br />
+                    <textarea name="description" id="" cols="30" rows="10"></textarea><br />
+                    <label for="" class="label pt-2">
+                   
                       
-                
+                        <label for="trangthai" class="label pt-2">
+                        Trạng Thái:</label>
+                    <select id="trangthai" name="trangthai">
+                    <option value="Còn Hàng">Còn hàng</option>
+                        <option value="Hết hàng">Hết hàng</option>
+                    </select><br />
+                    Khuyến Mại:
+                    <input type="text" name="khuyenmai" id="" value="" placeholder="Nhập khuyến mại "
+                        class="input w-75 rounded-2"><br />
+                        </label>
+                    <br />
                 </div>
 
 
-                <a href="index.php?act=listsp"><input type="submit" name="submit" id="" value="Thêm"
+                <a href="index.php?act=listsp"><input type="submit" name="themmoi" id="" value="Thêm"
                         class="btn btn-insert  status completed "> </a>
                 <input type="reset" name="reset" id="" value="Nhập Lại" class=" btn btn-reset ">
                 <?php
-            if (isset($Notification) && $Notification != "") {
-              echo $Notification;
-            }
-          ?>
+           if (isset($thongbao)&&($thongbao!="")) 
+           echo $thongbao;
+       ?>
+          
             </form>
         </div>
 

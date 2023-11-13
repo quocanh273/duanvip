@@ -35,7 +35,7 @@ if (isset($_GET['act'])) {
 
         case 'danhmuc':
             //lấy all danh mục
-            $dsdm=loai_select_all();
+            $listdanhmuc =  loadall_danhmuc();
             include "danhmuc/list.php";
             break;
 
@@ -70,23 +70,88 @@ if (isset($_GET['act'])) {
 
         // Sản phẩm 
         case 'listsp':
+            $listsanpham =  loadall_sanpham();
             include "Sanpham/list.php";
             break;
 
         // add sp 
         case "createsp":
-            include "Sanpham/create.php";
-            break;
+            case 'addsp':
+                // kiểm tra xem người dùng có click vào nút add hay ko
+                if (isset($_POST['themmoi'])&&($_POST['themmoi']) ) {
+                $iddm =$_POST['iddm'];
+                $tensp =$_POST['tensp'];
+                $giasp =$_POST['giasp'];
+                $quantity =$_POST['quantity']; // so luong
+                $description =$_POST['description'];
+                $product_size =$_POST['product_size'];
+                $mausac =$_POST['mausac'];
+                $trangthai =$_POST['trangthai'];
+                $khuyenmai =$_POST['khuyenmai'];
+                
+                $hinh = $_FILES['image']['name'];
+                $target_dir = "../upload/";
+                $target_file = $target_dir . basename($_FILES["image"]["name"]);
+                if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
+                    // echo "The file ". htmlspecialchars( basename( $_FILES["hinh"]["name"])). " has been uploaded.";
+                } else {
+                    // echo "Sorry, there was an error uploading your file.";
+                }
+                
+                insert_sanpham($tensp,$giasp,$quantity,$description,$product_size
+                ,$mausac,$trangthai,$khuyenmai,$hinh,$iddm);
+                $thongbao ="Thêm thành công";
+                }
+                $listdanhmuc = loadall_danhmuc();
+                include "Sanpham/create.php";
+                break;
 
-        // edit sp 
-        case 'editsp':
-            include "Sanpham/update.php";
-            break;
-        // update sp 
-        case 'updatesp':
-            include "Sanpham/update.php";
-            break;
-
+                case 'xoasp':
+                    if (isset($_GET['id'])&&($_GET['id']>0)) {
+                        delete_sanpham($_GET['id']);
+                    }
+                    $listsanpham =  loadall_sanpham("",0);;
+                    include "sanpham/list.php";
+                    break;
+            
+                case 'suasp':
+                    if (isset($_GET['id'])&&($_GET['id']>0)) {
+                        
+                        $sanpham=loadone_sanpham($_GET['id']);
+                    }
+                    $listdanhmuc =  loadall_danhmuc();
+                    include "Sanpham/update.php";
+                    break;
+                    case 'updatesp':
+                        if (isset($_POST['sua'])&&($_POST['sua']) ) {
+                            $id = $_POST['id'];
+                            $iddm =$_POST['iddm'];
+                            $tensp =$_POST['tensp'];
+                            $giasp =$_POST['giasp'];
+                            $quantity =$_POST['quantity']; // so luong
+                            $description =$_POST['description'];
+                            $product_size =$_POST['product_size'];
+                            $mausac =$_POST['mausac'];
+                            $trangthai =$_POST['trangthai'];
+                            $khuyenmai =$_POST['khuyenmai'];
+                            
+                            $hinh = $_FILES['image']['name'];
+                            $target_dir = "../upload/";
+                            $target_file = $target_dir . basename($_FILES["image"]["name"]);
+                            if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
+                                // echo "The file ". htmlspecialchars( basename( $_FILES["hinh"]["name"])). " has been uploaded.";
+                            } else {
+                                // echo "Sorry, there was an error uploading your file.";
+                            }
+                            update_sanpham($id,$tensp,$giasp,$quantity,$description,$product_size
+                            ,$mausac,$trangthai,$khuyenmai,$hinh,$iddm);
+                            $thongbao ="Cập nhật thành công";
+                            }
+                            $listdanhmuc =  loadall_danhmuc();
+                            
+                            $listsanpham =  loadall_sanpham("",0);
+                        include "Sanpham/update.php";
+                        break;
 
         // Bình Luận
         case 'listbinhluan':
