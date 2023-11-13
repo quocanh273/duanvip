@@ -38,9 +38,9 @@ if (isset($_GET['act'])) {
                 } else {
                     // echo "Sorry, there was an error uploading your file.";
                 }
-                
+                loai_insert($ten_loai,$hinh);
             }
-            loai_insert($ten_loai,$hinh);
+            
             include "Danhmuc/create.php";
             break;
         // list
