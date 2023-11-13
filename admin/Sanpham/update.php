@@ -2,7 +2,6 @@
 if(is_array($sanpham)){
     extract($sanpham);
 }
-
 ?>
 <main>
     <div class="head-title">

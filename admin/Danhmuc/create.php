@@ -31,6 +31,12 @@
                     Mã Danh Mục
                 </label> <br />
                 <input type="text" name="ma_Loai" readonly class="rounded-2 w-75"> <br />
+
+                <label for="">
+                   Ảnh danh mục
+                    </label> <br />
+                    <input type="file" name="img" id="" readonly class="rounded-2 w-75 px-3"><br />
+
                 <label for="" class="label pt-2">
                     Tên Danh Mục
                 </label><br />

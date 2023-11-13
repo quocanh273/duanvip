@@ -58,11 +58,11 @@
                             }
                           echo '  <tr>
                           <td>'.$ma_loai.'</td>
-                          <td>'.$img.'</td>
                           <td>'.$ten_loai.'</td>
+                          <td>'.$img.'</td>
                           
-                          <td>   <a href="'.$suadm.'"><input type="button" value="Sửa"></a> 
-                                 <a href="'.$xoadm.'"><input type="button" value="Xóa"></a>
+                          <td>   <a href="'.$suasp.'"><input type="button" value="Sửa"></a> 
+                                 <a href="'.$xoasp.'"><input type="button" value="Xóa"></a>
                                  
                                  </td>
                       </tr>';

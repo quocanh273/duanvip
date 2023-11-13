@@ -37,6 +37,14 @@ if (is_array($dsdm)) {
                     </label> <br />
                     <input type="text" name="ma_loai" id=""  readonly class="rounded-2 w-75 px-3"
                         value="<?= $ma_loai?>"> <br />
+                        <!-- cách -->
+                    <label for="">
+                   Ảnh danh mục
+                    </label> <br />
+                    <input type="file" name="img" id="" readonly class="rounded-2 w-75 px-3"
+                    value="<?= $img?>"> <br />
+
+                    <!-- cách -->
                     <label for="" class="label pt-2">
                         Tên Danh Mục
                     </label><br />

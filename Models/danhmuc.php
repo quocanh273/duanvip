@@ -1,14 +1,32 @@
 <?php
 require_once 'connect.php';
 
-function loai_insert($ten_loai){
-    $sql = "INSERT INTO loai(ten_loai) VALUES(?)";
-    pdo_execute($sql, $ten_loai);
+// function loai_insert($ten_loai,$hinh){
+//     $sql = "INSERT INTO loai(ten_loai,img) VALUES(?)";
+//     pdo_execute($sql, $ten_loai);
+// }
+function loai_insert($ten_loai,$hinh){
+    $sql= "INSERT INTO sanpham(ten_loai,img)
+     value ('$ten_loai','$hinh')";
+    pdo_execute($sql);
 }
-function loai_update($ma_loai, $ten_loai){
-    $sql = "UPDATE loai SET ten_loai=? WHERE ma_loai=?";
-    pdo_execute($sql, $ten_loai, $ma_loai);
+// function loai_update($ma_loai,$hinh,$ten_loai){
+//     $sql = "UPDATE loai SET ten_loai=? WHERE ma_loai=?";
+//     pdo_execute($sql, $ten_loai,$img, $ma_loai);
+// }
+
+
+function  loai_update($ma_loai,$hinh,$ten_loai){
+    if ($hinh!="") 
+        $sql = "update loai set ten_loai='".$ten_loai."',
+      img='".$hinh."'
+      where ma_loai=".$ma_loai;
+    else
+    $sql = "update loai set ten_loai='".$ten_loai."',
+     where ma_loai=".$ma_loai;   
+      pdo_execute($sql);
 }
+
 function loai_delete($ma_loai){
     $sql = "DELETE FROM loai WHERE ma_loai=?";
     if(is_array($ma_loai)){

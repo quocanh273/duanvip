@@ -30,6 +30,15 @@ if (isset($_GET['act'])) {
                 loai_insert($ten_loai);
                 $thongbao="Them Thanh Cong" ;
                 
+                $hinh = $_FILES['image']['name'];
+                $target_dir = "../upload/";
+                $target_file = $target_dir . basename($_FILES["image"]["name"]);
+                if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
+                    // echo "The file ". htmlspecialchars( basename( $_FILES["hinh"]["name"])). " has been uploaded.";
+                } else {
+                    // echo "Sorry, there was an error uploading your file.";
+                }
+                
             }
             include "Danhmuc/create.php";
             break;
@@ -63,6 +72,16 @@ if (isset($_GET['act'])) {
                 $ma_loai = $_POST['ma_loai'];
                 $ten_loai = $_POST['ten_loai'];
                 loai_update($ma_loai,$ten_loai);
+                $hinh = $_FILES['image']['name'];
+                $target_dir = "../upload/";
+                $target_file = $target_dir . basename($_FILES["image"]["name"]);
+                if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
+                    // echo "The file ". htmlspecialchars( basename( $_FILES["hinh"]["name"])). " has been uploaded.";
+                } else {
+                    // echo "Sorry, there was an error uploading your file.";
+                }
+                loai_update($ma_loai,$hinh,$ten_loai);
+                $thongbao ="Cập nhật thành công";
 }
             $dsdm=loai_select_all();
             include "Danhmuc/list.php";
@@ -151,7 +170,7 @@ if (isset($_GET['act'])) {
                         $listdanhmuc =  loai_select_all();
                         
                         $listsanpham =  loadall_sanpham("",0);
-                    include "Sanpham/update.php";
+                    include "Sanpham/list.php";
                     break;
 
         // Bình Luận
