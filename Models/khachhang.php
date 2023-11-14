@@ -1,4 +1,5 @@
 <?php 
+
 function ds_khachhang(){
     $sql="select*from nguoi_dung order by id desc";
     $listkhachhang=pdo_query($sql);

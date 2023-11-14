@@ -24,11 +24,7 @@ function loadone_sanpham($id){
 function  update_sanpham($id,$tensp,$giasp,$quantity,$description,$product_size
 ,$mausac,$trangthai,$khuyenmai,$hinh,$ma_loai){
     if ($hinh!="") 
-<<<<<<< HEAD
         $sql = "update sanpham set ma_loai='".$ma_loai."',
-=======
-        $sql = "update sanpham set id_dm='".$ma_loai."',
->>>>>>> f77bdbf9384c09445f42ab5549d2be33aa03d53e
      ten_san_pham='".$tensp."',
       gia='".$giasp."',
       so_luong='".$quantity."',
@@ -40,11 +36,7 @@ function  update_sanpham($id,$tensp,$giasp,$quantity,$description,$product_size
       img='".$hinh."'
       where id=".$id;
     else
-<<<<<<< HEAD
     $sql = "update sanpham set ma_loai='".$ma_loai."',
-=======
-    $sql = "update sanpham set id_dm='".$ma_loai."',
->>>>>>> f77bdbf9384c09445f42ab5549d2be33aa03d53e
     ten_san_pham='".$tensp."',
      gia='".$giasp."',
      so_luong='".$quantity."',

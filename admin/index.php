@@ -147,10 +147,6 @@ if (isset($_GET['act'])) {
                     if (isset($_POST['sua'])&&($_POST['sua']) ) {
                         $ma_loai =$_POST['ma_loai'];
                         $id = $_POST['id'];
-<<<<<<< HEAD
-=======
-                        $ma_loai =$_POST['ma_loai'];
->>>>>>> f77bdbf9384c09445f42ab5549d2be33aa03d53e
                         $tensp =$_POST['tensp'];
                         $giasp =$_POST['giasp'];
                         $quantity =$_POST['quantity']; // so luong
@@ -233,9 +229,8 @@ if (isset($_GET['act'])) {
             include "Khachhang/list.php";
             break;
 
-            case 'suasp':
+            case 'suakh':
                 if (isset($_GET['id'])&&($_GET['id']>0)) {
-                    
                     $nguoi_dung=loadone_kh($_GET['id']);
                 }
                 include "Khachhang/update.php";
