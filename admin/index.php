@@ -99,7 +99,7 @@ if (isset($_GET['act'])) {
        
                 // kiểm tra xem người dùng có click vào nút add hay ko
                 if (isset($_POST['themmoi'])&&($_POST['themmoi']) ) {
-                $iddm =$_POST['iddm'];
+                $ma_loai =$_POST['ma_loai'];
                 $tensp =$_POST['tensp'];
                 $giasp =$_POST['giasp'];
                 $quantity =$_POST['quantity']; // so luong
@@ -118,8 +118,8 @@ if (isset($_GET['act'])) {
                     // echo "Sorry, there was an error uploading your file.";
                 }
                 
-                insert_sanpham($tensp,$giasp,$quantity,$description,$product_size
-                ,$mausac,$trangthai,$khuyenmai,$hinh,$iddm);
+                insert_sanpham($ma_loai,$tensp,$giasp,$quantity,$description,$product_size
+                ,$mausac,$trangthai,$khuyenmai,$hinh);
                 $thongbao ="Thêm thành công";
                 }
                 $listdanhmuc = loai_select_all();
@@ -241,15 +241,17 @@ if (isset($_GET['act'])) {
 
         // Thống Kê
         case 'listthongke':
+            $listthongke = loadall_thongke();
             include "Thongke/thongke.php";
             break;
 
         //  Biểu đồ 
         case 'bieudo':
+            $listthongke = loadall_thongke();
             include "Thongke/bieudo.php";
             break;
 
-
+            
 
         default:
             include "home.php";

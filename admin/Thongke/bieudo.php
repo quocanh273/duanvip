@@ -1,5 +1,6 @@
-
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<div class="bieudo">
+				
+			<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
       google.charts.load('current', {'packages':['corechart']});
       google.charts.setOnLoadCallback(drawChart);
@@ -26,4 +27,3 @@
     </script>
 
     <div id="piechart" style="width: 100%; height: 750px;"></div>
- 

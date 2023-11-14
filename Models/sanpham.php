@@ -5,11 +5,11 @@ require_once 'connect.php';
     $listsanpham = pdo_query($sql);
     return $listsanpham;
 }
-function insert_sanpham($tensp,$giasp,$quantity,$description,$product_size
-,$mausac,$trangthai,$khuyenmai,$hinh,$iddm){
-    $sql= "INSERT INTO sanpham(ten_san_pham,gia,so_luong,mo_ta,loai_sp,mau_sac,trangthai,thong_tin_km,img,id_dm)
-     value ('$tensp','$giasp','$quantity','$description','$product_size'
-,'$mausac','$trangthai','$khuyenmai','$hinh','$iddm')";
+function insert_sanpham($ma_loai,$tensp,$giasp,$quantity,$description,$product_size
+,$mausac,$trangthai,$khuyenmai,$hinh){
+    $sql= "INSERT INTO sanpham(ma_loai,ten_san_pham,gia,so_luong,mo_ta,loai_sp,mau_sac,trangthai,thong_tin_km,img)
+     values ('$ma_loai','$tensp','$giasp','$quantity','$description','$product_size'
+,'$mausac','$trangthai','$khuyenmai','$hinh')";
     pdo_execute($sql);
 }
 function delete_sanpham($id){

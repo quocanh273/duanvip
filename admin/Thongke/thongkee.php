@@ -19,12 +19,12 @@
 <div class="table-data" >
     <div class="order">
         <div class="head">
-            <h3>Thống kê</h3>
+            <h3>Danh mục</h3>
         </div>
       <div class="form-group  d-flex ">
-      <form action="index.php?act=bieudo" method="post"class="pb-4" > 
+      <form action="index.php?act=createdm" method="post"class="pb-4" > 
           
-          <a href="index.php?act=bieudo"><button class="btn btn-insert">Xem Biểu Đồ</button></a>
+          <a href="index.php?act=createdm"><button class="btn btn-insert">Thêm danh mục</button></a>
       </form> 
       <form action="" method="post" class="form-group form-search-sp">
               <div class="form-input pb-2 d-flex    ">

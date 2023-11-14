@@ -31,9 +31,9 @@
                     <label for="" class="label pt-3">Danh Mục</label><br />
                     <select name="ma_loai">
                             <?php 
-                            foreach ($dsdm as $danhmuc) {
+                            foreach ($listdanhmuc as $danhmuc) {
                                 extract($danhmuc);
-                                echo '  <option value="'.$id.'">'.$ten_loai.'</option>';
+                                echo '  <option value="'.$ma_loai.'">'.$ten_loai.'</option>';
                             }
                             ?> 
                             </select><br />

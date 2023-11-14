@@ -64,7 +64,7 @@
                                 $img = "không có hình";
                             }
                           echo '  <tr>
-                          <td>'.$id_dm.'</td>
+                          <td>'.$ma_loai.'</td>
                           <td>'.$ten_san_pham.'</td>
                           <td>'.$img.'</td>
                           <td>'.$gia.'</td>
