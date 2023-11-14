@@ -7,6 +7,7 @@ require "../Models/khachhang.php";
 require "../Models/hoadon.php";
 require "../Models/binhluan.php";
 require "../Models/thongke.php";
+require "../Models/hoadon.php";
 require "../Models/cart.php";
 
 
@@ -267,6 +268,11 @@ if (isset($_GET['act'])) {
         case 'listdonhang':
             $listdonhang = hd_select_all();
             include "Qldonhang/list.php";
+            break;
+
+        case 'donhangchitiet':
+            $dhchitiet =  hd_select_all();
+            include "Qldonhang/donhangchitiet.php";
             break;
 
         // dh chi tiết

@@ -55,7 +55,7 @@
                             extract($donhang);
                             $suakh = "index.php?act=updatekh&id=".$id;
                             $xoakh = "index.php?act=xoakh&id=".$id; // đường liên kết 
-                            $chitethoadon = "index.php?act=order_detail&id=".$id; // đường liên kết
+                            $chitethoadon = "index.php?act=donhangchitiet&id=".$id; // đường liên kết
                             // $hinhpath = "../upload/".$img;
                             // if (is_file($hinhpath)) {
                             //     $img="<img src='".$hinhpath."' height='80'>" ;
