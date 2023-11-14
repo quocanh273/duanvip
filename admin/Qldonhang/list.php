@@ -47,7 +47,7 @@
                     <td><span class="status completed">Hoàn Thành</span></td>
                     <td >
 
-                    <a href="index.php?act=order_detail"><button class="btn btn-submit">Chi Tiết Đơn Hàng</button></a>
+                    <a href="index.php?act=donhangchitiet"><button class="btn btn-submit">Chi Tiết Đơn Hàng</button></a>
                     </td>
                 </tr>
                 <tr class="tr-shadow">

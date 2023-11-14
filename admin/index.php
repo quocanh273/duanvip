@@ -6,6 +6,7 @@ require "../Models/sanpham.php";
 require "../Models/khachhang.php";
 require "../Models/binhluan.php";
 require "../Models/thongke.php";
+require "../Models/hoadon.php";
 require "../Models/cart.php";
 
 
@@ -265,6 +266,11 @@ if (isset($_GET['act'])) {
         // Đơn Hàng
         case 'listdonhang':
             include "Qldonhang/list.php";
+            break;
+
+        case 'donhangchitiet':
+            $dhchitiet =  hd_select_all();
+            include "Qldonhang/donhangchitiet.php";
             break;
 
         // dh chi tiết

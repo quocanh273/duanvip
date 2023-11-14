@@ -8,61 +8,69 @@
             </li>
             <li><i class='bx bx-chevron-right'></i></li>
             <li>
-                <a class="active" href="#">Quản Lý Đơn Hàng </a>
+                <a class="active" href="#">Chi Tiết Đơn Hàng </a>
             </li>
         </ul>
     </div>
 
 </div>
 
-<div class="table-data">
-    <div class="order">
-        <div class="head">
-            <h3>Chi Tiết Đơn Hàng</h3>
-          
-        </div>
-        <table>
-            <thead>
-                <tr>
-                    <th>Mã Đặt Hàng</th>
-                    <th>Mã Sản Phẩm</th>
-                    <th>Số Lượng</th>
-                    <th>Size</th>
-                    <th>Màu Sắc</th>
-                    <th>Người Nhận</th>
-                    <th>Số Điện Thoại</th>
-                    <th>Địa Chỉ</th>
-                    <th>Tình Trạng Thanh Toán</th>
-                    <th>Tình Trạng Giao Hàng</th>
-                  
-                 
-                </tr>
-            </thead>
-            <tbody>
-                <tr class="tr-shadow">
-                    <td>
-                       1
-                    </td>
-                    <td> 2</td>
-                    <td>2</td>
-                    <td>L</td>
-                    <td>Đỏ</td>
-                    <td>Nguyễn Quang Phúc</td>
-                    <td>0343014882</td>
-                    <td>Vĩnh Phúc</td>
-                    <td>Đã Thanh Toán</td>
-                    <td><span class="status completed">Hoàn Thành</span></td>
-                  
-                </tr>
-             
+<table id="example" class="table table-striped"  style="width:100%">
+        <thead>
+    <tr>
         
-               
-                
-             
-            </tbody>    
-        </table>
-       
+                    <th>ID HÓA ĐƠN</th>
+                    <th>TÊN NGƯỜI DÙNG</th>
+                    <th>SỐ LƯỢNG SẢN PHẨM</th>
+                    <th>TỔNG GIÁ TRỊ ĐƠN HÀNG</th>
+                    <th>TRẠNG THÁI</th>
+                    <th>ĐỊA CHỈ</th>
+                    <th>PHƯƠNG THỨC THANH TOÁN</th>
+                    <th>KHUYẾN MÃI </th>
+                    <th>NGÀY TẠO HÓA ĐƠN</th>
+    </tr>
+        </thead>
+        <tbody>
+        <?php 
+                        foreach ($dhchitiet  as $ct) {
+                            extract($ct);
+                          echo '  <tr>
+                          <td>'.$id.'</td>
+                          <td>'.$ten_nguoi_dung.'</td>
+                          <td>'.$sl_sp.'</td>
+                          <td>'.$tong_gt_hd.'</td>
+                          <td>'.$trang_thai.'</td>
+                          <td>'.$dia_chi.'</td>
+                          <td>'.$pt_tt.'</td>
+                          <td>'.$thong_tin_km.'</td>
+                          <td>'.$ngay_thd.'</td>
+                      </tr>';
+                        }
+                        
+                        ?>                    
+    
+        </tbody>
+        <tfoot>
+            <tr>
+                    <th>ID HÓA ĐƠN</th>
+                    <th>TÊN NGƯỜI DÙNG</th>
+                    <th>SỐ LƯỢNG SẢN PHẨM</th>
+                    <th>TỔNG GIÁ TRỊ ĐƠN HÀNG</th>
+                    <th>TRẠNG THÁI</th>
+                    <th>ĐỊA CHỈ</th>
+                    <th>PHƯƠNG THỨC THANH TOÁN</th>
+                    <th>KHUYẾN MÃI </th>
+                    <th>NGÀY TẠO HÓA ĐƠN</th>
+            </tr>
+        </tfoot>
+    </table>
+        <script>
+    function xoa(){
+        return confirm("ban co chac chan muon xoa k");
+    }
+</script>
+     
     </div>
 
 </div>
-</main>     
+</main>
