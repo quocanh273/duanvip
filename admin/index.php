@@ -146,7 +146,7 @@ if (isset($_GET['act'])) {
                 case 'updatesp':
                     if (isset($_POST['sua'])&&($_POST['sua']) ) {
                         $id = $_POST['id'];
-                        $iddm =$_POST['iddm'];
+                        $ma_loai =$_POST['ma_loai'];
                         $tensp =$_POST['tensp'];
                         $giasp =$_POST['giasp'];
                         $quantity =$_POST['quantity']; // so luong
@@ -165,7 +165,7 @@ if (isset($_GET['act'])) {
                             // echo "Sorry, there was an error uploading your file.";
                         }
                         update_sanpham($id,$tensp,$giasp,$quantity,$description,$product_size
-                        ,$mausac,$trangthai,$khuyenmai,$hinh,$iddm);
+                        ,$mausac,$trangthai,$khuyenmai,$hinh,$ma_loai);
                         $thongbao ="Cập nhật thành công";
                         }
                         $listdanhmuc =  loai_select_all();
@@ -196,6 +196,7 @@ if (isset($_GET['act'])) {
         case 'createkh':
             if (isset($_POST['themmoi'])&&($_POST['themmoi']) ) {
                 $tenkh =$_POST['tenkh'];
+                $tendn =$_POST['tendn'];
                 $pass =$_POST['pass'];
                 $mail =$_POST['mail']; // so luong
                 $ngaysinh =$_POST['ngaysinh'];
@@ -210,7 +211,7 @@ if (isset($_GET['act'])) {
                     // echo "Sorry, there was an error uploading your file.";
                 }
                 
-                insert_khachhang($tenkh,$pass,$mail,$ngaysinh
+                insert_khachhang($tenkh,$tendn,$pass,$mail,$ngaysinh
                 ,$diachi,$sodienthoai,$image);
 
                 $thongbao ="Thêm thành công";
@@ -228,6 +229,39 @@ if (isset($_GET['act'])) {
             include "Khachhang/list.php";
             break;
 
+            case 'suasp':
+                if (isset($_GET['id'])&&($_GET['id']>0)) {
+                    
+                    $nguoi_dung=loadone_kh($_GET['id']);
+                }
+                include "Khachhang/update.php";
+                break;
+        case 'updatekh':
+            if (isset($_POST['suakh'])&&($_POST['suakh']) ) {
+                $tenkh =$_POST['tenkh'];
+                $tendn =$_POST['tendn'];
+                $pass =$_POST['pass'];
+                $mail =$_POST['mail']; // so luong
+                $ngaysinh =$_POST['ngaysinh'];
+                $diachi =$_POST['diachi'];
+                $sodienthoai =$_POST['sodienthoai'];
+                $image = $_FILES['image']['name'];
+                $target_dir = "../upload/";
+                $target_file = $target_dir . basename($_FILES["image"]["name"]);
+                if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
+                    // echo "The file ". htmlspecialchars( basename( $_FILES["hinh"]["name"])). " has been uploaded.";
+                } else {
+                    // echo "Sorry, there was an error uploading your file.";
+                }
+                
+                suakh($tenkh,$tendn,$pass,$mail,$ngaysinh,$diachi,$sodienthoai,$image);
+
+                $thongbao ="Thêm thành công";
+                }
+               
+                $listkhachhang =ds_khachhang("",0);
+                include "Khachhang/update.php";
+                break;     
 
         // Đơn Hàng
         case 'listdonhang':

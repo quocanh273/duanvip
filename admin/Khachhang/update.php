@@ -1,18 +1,23 @@
+<?php 
+if(is_array($nguoi_dung)){
+    extract($nguoi_dung);
+}
+?>
 <main>
     <div class="head-title">
         <div class="left">
-            <h1>Thêm Sản Phẩm</h1>
+            <h1>Khách Hàng</h1>
             <ul class="breadcrumb">
                 <li>
                     <a href="index.php">Trang Chủ</a>
                 </li>
                 <li><i class='bx bx-chevron-right'></i></li>
                 <li>
-                    <a class="" href="#">Sản Phẩm </a>
+                    <a class="" href="#">Khách Hàng </a>
                 </li>
                 <li><i class='bx bx-chevron-right'></i></li>
                 <li>
-                    <a class="active" href="#">Thêm Sản Phẩm </a>
+                    <a class="active" href="#">Sửa Khách Hàng </a>
                 </li>
             </ul>
         </div>
@@ -25,45 +30,44 @@
                 <h3>Sản Phẩm</h3>
 
             </div>
-            <form action="index.php?act=createkh" class="form-input" method="post" enctype="multipart/form-data">
+            <form action="index.php?act=updatekh" class="form-input" method="post" enctype="multipart/form-data">
                 <div class="form-group pb-4">
                 
                     <label for="" class="label pt-2">
                         Tên Khách: 
                     </label><br />
-                    <input type="text" name="tenkh" id="" value="" placeholder="Nhập họ tên "
+                    <input type="text" name="tenkh" id="" value="<?=$ten_nguoi_dung?>" 
                         class="input w-75 rounded-2"><br />
                         <label for="" class="label pt-2">
                         Tên Đăng Nhập: 
                     </label><br />
-                    <input type="text" name="tendn" id="" value="" placeholder="Nhập tên đăng nhập "
+                    <input type="text" name="tendn" id="" value="<?=$ten_dang_nhap?>" 
                         class="input w-75 rounded-2"><br />
                         <label for="" class="label pt-2">
                         Mật Khẩu: 
                     </label><br />
-                    <input type="text" name="pass" id="" value="" placeholder="Nhập mật khẩu "
+                    <input type="text" name="pass" id="" value="<?=$mat_khau?>" 
                         class="input w-75 rounded-2"><br />
                     
                         <label for="" class="label pt-2">
                         Email: 
                     </label><br />
-                    <input type="text" name="mail" id="" value="" placeholder="Nhập tên email "
+                    <input type="text" name="mail" id="" value="<?=$email?>"  
                         class="input w-75 rounded-2"><br />
                     
                         <label for="" class="label pt-2">
                         Ngày Sinh: 
                     </label><br />
-                    <input type="date" name="ngaysinh" id="" value="" placeholder="Nhập ngày sinh "
-                        class="input w-75 rounded-2"><br />
+                    <input type="date" name="ngaysinh" id="" value="<?=$ngay_sinh?>" 
                         <label for="" class="label pt-2">
                         Địa Chỉ: 
                     </label><br />
-                    <input type="text" name="diachi" id="" value="" placeholder="Nhập địa chỉ "
+                    <input type="text" name="diachi" id="" value="<?=$dia_chi?>"  
                         class="input w-75 rounded-2"><br />
                         <label for="" class="label pt-2">
                         Số Điện Thoại: 
                     </label><br />
-                    <input type="number" name="sodienthoai" id="" value="" placeholder="Nhập SDT"
+                    <input type="number" name="sodienthoai" id="" value="<?=$so_dien_thoai?>" 
                         class="input w-75 rounded-2"><br />
                     <label for="" class="label pt-2">
                         Ảnh
@@ -72,8 +76,8 @@
                 </div>
 
 
-                <a href="index.php?act=listkhachhang">
-                    <input type="submit" name="themmoi" id="" value="Thêm"
+                <a href="index.php?act=updatekh">
+                    <input type="submit" name="suakh" id="" value="Sửa"
                         class="btn btn-insert  status completed "> </a>
                 <input type="reset" name="reset" id="" value="Nhập Lại" class=" btn btn-reset ">
                 

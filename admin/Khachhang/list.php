@@ -42,6 +42,7 @@
                             <th></th>
                             <th>ID</th>
                             <th>TÊN</th>
+                            <th>TÊN ĐĂNG NHẬP</th>
                             <th>MẬT KHẨU</th>
                             <th>EMAIL</th>
                             <th>NGÀY SINH</th>
@@ -55,7 +56,7 @@
                 <?php                      
                         foreach($listkhachhang as $khachhang){
                             extract($khachhang);
-                            $suakh = "index.php?act=suakh&id=".$id;
+                            $suakh = "index.php?act=updatekh&id=".$id;
                             $xoakh = "index.php?act=xoakh&id=".$id; // đường liên kết 
                             $hinhpath = "../upload/".$img;
                             if (is_file($hinhpath)) {
@@ -68,6 +69,7 @@
                         <td></td>
                         <td>'.$id.'</td>
                         <td>'.$ten_nguoi_dung.'</td>
+                        <td>'.$ten_dang_nhap.'</td>
                         <td>'.$mat_khau.'</td>
                         <td>'.$email.'</td>
                         <td>'.$ngay_sinh.'</td>
