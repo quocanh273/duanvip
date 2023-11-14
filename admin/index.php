@@ -145,8 +145,8 @@ if (isset($_GET['act'])) {
 
                 case 'updatesp':
                     if (isset($_POST['sua'])&&($_POST['sua']) ) {
+                        $ma_loai =$_POST['ma_loai'];
                         $id = $_POST['id'];
-                        $iddm =$_POST['iddm'];
                         $tensp =$_POST['tensp'];
                         $giasp =$_POST['giasp'];
                         $quantity =$_POST['quantity']; // so luong
@@ -165,7 +165,7 @@ if (isset($_GET['act'])) {
                             // echo "Sorry, there was an error uploading your file.";
                         }
                         update_sanpham($id,$tensp,$giasp,$quantity,$description,$product_size
-                        ,$mausac,$trangthai,$khuyenmai,$hinh,$iddm);
+                        ,$mausac,$trangthai,$khuyenmai,$hinh,$ma_loai);
                         $thongbao ="Cập nhật thành công";
                         }
                         $listdanhmuc =  loai_select_all();

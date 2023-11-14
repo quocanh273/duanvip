@@ -22,9 +22,9 @@ function loadone_sanpham($id){
     return  $sanpham;
 }
 function  update_sanpham($id,$tensp,$giasp,$quantity,$description,$product_size
-,$mausac,$trangthai,$khuyenmai,$hinh,$iddm){
+,$mausac,$trangthai,$khuyenmai,$hinh,$ma_loai){
     if ($hinh!="") 
-        $sql = "update sanpham set id_dm='".$iddm."',
+        $sql = "update sanpham set ma_loai='".$ma_loai."',
      ten_san_pham='".$tensp."',
       gia='".$giasp."',
       so_luong='".$quantity."',
@@ -36,7 +36,7 @@ function  update_sanpham($id,$tensp,$giasp,$quantity,$description,$product_size
       img='".$hinh."'
       where id=".$id;
     else
-    $sql = "update sanpham set id_dm='".$iddm."',
+    $sql = "update sanpham set ma_loai='".$ma_loai."',
     ten_san_pham='".$tensp."',
      gia='".$giasp."',
      so_luong='".$quantity."',

@@ -34,11 +34,11 @@ if(is_array($sanpham)){
                 <div class="form-group pb-4">
                    
                     <label for="" class="label pt-3">Danh Mục</label><br />
-                    <select name="iddm">
+                    <select name="ma_loai">
                             <?php 
                             foreach ($listdanhmuc as $danhmuc) {
                                 extract($danhmuc);
-                                echo '  <option value="'.$id.'">'.$tendanhmuc.'</option>';
+                                echo '  <option value="'.$ma_loai.'">'.$ten_loai.'</option>';
                             }
                             ?> 
                             </select><br />
