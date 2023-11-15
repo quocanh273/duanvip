@@ -23,7 +23,28 @@ if (isset($_GET['act'])) {
 
 // Danh mục
           //create dm
+          case 'dangnhap':
+            if (isset($_POST['dangnhap'])&&($_POST['dangnhap'])) {
+                $tendn = $_POST['tendn'];
+                $pass = $_POST['pass'];
+                $checkuser = checkuser($tendn, $pass);
+                if(is_array($checkuser)){
+                    $_SESSION['ten_dang_nhap']=$checkuser;
+                    // $thongbao="Bạn đã đăng nhập thành công";
+                    $thongbao="Đã đăng nhập thành công";
+                    header('location: index.php');
 
+                
+                }else{
+                    $thongbao="Tài khoản không tồn tại, vui lòng kiểm tra lại hoặc đăng ký";
+                }
+            }
+            include "login/dangnhap.php";
+            break;
+        case 'thoat':
+            session_unset();
+            header('location: index.php');
+            break;
 
           case 'createdm':
             if (isset($_POST['submitdm'])&&($_POST['submitdm'])) {
@@ -73,15 +94,15 @@ if (isset($_GET['act'])) {
             if (isset($_POST['capnhat'])&&($_POST['capnhat'])) {
                 $ma_loai = $_POST['ma_loai'];
                 $ten_loai = $_POST['ten_loai'];
-                loai_update($ma_loai,$ten_loai);
-                $hinh = $_FILES['image']['name'];
+                $hinh = $_FILES['img']['name'];
                 $target_dir = "../upload/";
-                $target_file = $target_dir . basename($_FILES["image"]["name"]);
-                if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
+                $target_file = $target_dir . basename($_FILES["img"]["name"]);
+                if (move_uploaded_file($_FILES["img"]["tmp_name"], $target_file)) {
                     // echo "The file ". htmlspecialchars( basename( $_FILES["hinh"]["name"])). " has been uploaded.";
                 } else {
                     // echo "Sorry, there was an error uploading your file.";
                 }
+                
                 loai_update($ma_loai,$hinh,$ten_loai);
                 $thongbao ="Cập nhật thành công";
 }

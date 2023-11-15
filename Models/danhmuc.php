@@ -17,13 +17,16 @@ function loai_insert($ten_loai,$hinh){
 
 
 function loai_update($ma_loai,$hinh,$ten_loai){
-    if ($hinh!=""){
-        $sql = "update loai set ten_loai='".$ten_loai."',
-      img='".$hinh."'
-      where ma_loai=".$ma_loai;
+    // var_dump($hinh);
+    // die;
+    if ($hinh==""){
+        $sql = "UPDATE `loai`
+        SET `ten_loai`='{$ten_loai}'
+        WHERE `loai`.`ma_loai`=$ma_loai";
     }else{
-    $sql = "update loai set ten_loai='".$ten_loai."',
-     where ma_loai=".$ma_loai;   
+        $sql = "UPDATE `loai`
+        SET `ten_loai`='{$ten_loai}',`img`='{$hinh}'
+        WHERE `loai`.`ma_loai`=$ma_loai";   
       pdo_execute($sql);
     }
 }

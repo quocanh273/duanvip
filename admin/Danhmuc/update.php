@@ -30,7 +30,7 @@ if (is_array($dsdm)) {
                 <h3>Danh Mục</h3>
 
             </div>
-            <form action="index.php?act=updatedm" class="form-input" method="post">
+            <form action="index.php?act=updatedm" class="form-input" method="post" enctype="multipart/form-data">
                 <div class="form-group pb-4">
                     <label for="">
                         Mã Danh Mục
@@ -41,7 +41,7 @@ if (is_array($dsdm)) {
                     <label for="">
                    Ảnh danh mục
                     </label> <br />
-                    <input type="file" name="img" id="" readonly class="rounded-2 w-75 px-3"
+                    <input type="file" name="img" id="" class="rounded-2 w-75 px-3"
                     value="<?= $img?>"> <br />
 
                     <!-- cách -->
