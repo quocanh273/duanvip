@@ -29,12 +29,12 @@
 
     <!-- main content start -->
     <div class="main-content login-panel login-panel-2">
-        <h3 class="panel-title">Registration </h3>
+        <h3 class="panel-title">Đăng Ký </h3>
         <div class="login-body login-body-2">
             <div class="top d-flex justify-content-between align-items-center">
-                <div class="logo">
+                <!-- <div class="logo">
                     <img src="assets/images/logo-black.png" alt="Logo">
-                </div>
+                </div> -->
                 <a href="index.html"><i class="fa-duotone fa-house-chimney"></i></a>
             </div>
             <div class="bottom">

@@ -1,29 +1,53 @@
-<div class="bieudo">
-				
-			<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-      google.charts.load('current', {'packages':['corechart']});
-      google.charts.setOnLoadCallback(drawChart);
 
-      function drawChart() {
 
-        var data = google.visualization.arrayToDataTable([
-          ['Task', 'Hours per Day'],
-          ['Work',     11],
-          ['Eat',      2],
-          ['Commute',  2],
-          ['Watch TV', 2],
-          ['Sleep',    7]
-        ]);
+<script src="https://www.gstatic.com/charts/loader.js"></script>
+<div
+id="myChart" style="width:100%; max-width:100%; height:800px;">
+</div>
 
-        var options = {
-          title: 'My Daily Activities'
-        };
+<script>
+  
+google.charts.load('current', {'packages':['corechart']});
+google.charts.setOnLoadCallback(drawChart);
 
-        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+function drawChart() {
 
-        chart.draw(data, options);
-      }
-    </script>
+// Set Data
+const data = google.visualization.arrayToDataTable([
+  ['Danh mục', 'Số lượng sản phẩm'],
+  <?php
+  $tongdm = count($listthongke);
+  $i=1;
+foreach($listthongke as $value){
+    extract($value);
+    if($i == $tongdm)
+        $dauplay = "";
+    else
+        $dauplay =",";
 
-    <div id="piechart" style="width: 100%; height: 750px;"></div>
+        echo "['".$value['ten_loai']."',".$value['countsp']."]".$dauplay;
+$i=+1;
+    }
+
+
+?>
+//   ['Italy',54.8],
+//   ['France',48.6],
+//   ['Spain',44.4],
+//   ['USA',23.9],
+//   ['Argentina',14.5]
+]);
+
+// Set Options
+
+const options = {
+  title:'Biểu đồ thống kê danh mục và danh sách sản phẩm',
+  is3D:true
+};
+
+// Draw
+const chart = new google.visualization.PieChart(document.getElementById('myChart'));
+chart.draw(data, options);
+
+}
+</script>

@@ -23,7 +23,7 @@
 
     <!-- main content start -->
     <div class="main-conten login-panel login-panel-2">
-        <h3 class="panel-title">Login</h3>
+        <h3 class="panel-title">Đăng nhập</h3>
         <div class="login-body login-body-2">
             <div class="top d-flex justify-content-between align-items-center">
                 
@@ -49,7 +49,7 @@
                     <button class="btn btn-primary w-100 login-btn">Đăng Nhập</button>
                 </form>
                 <div class="other-option">
-                    <p class="mb-0">Don't have an account? <a href="registration-2.html" class="text-white text-decoration-underline">create</a></p>
+                    <p class="mb-0">Bạn chưa có tài khoản ? <a href="index.php?act=dangky" class="text-white text-decoration-underline">Tạo</a></p>
                 </div>
             </div>
         </div>

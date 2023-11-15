@@ -8,86 +8,67 @@
             </li>
             <li><i class='bx bx-chevron-right'></i></li>
             <li>
-                <a class="active" href="#">Quản Lý Đơn Hàng </a>
+                <a class="active" href="#">Chi Tiết Đơn Hàng </a>
             </li>
         </ul>
     </div>
 
 </div>
 
-<div class="table-data">
-    <div class="order">
-        <div class="head">
-            <h3>Quản Lý Đơn Hàng</h3>
-          
-        </div>
-        <table>
-            <thead>
-                <tr>
-                    <th>Mã Đặt Hàng</th>
-                    <th>Mã Sản Phẩm</th>
-                    <th>Số Lượng</th>
-                    <th>Size</th>
-                    <th>Màu Sắc</th>
-                    <th>Tình Trạng Thanh Toán</th>
-                    <th>Tình Trạng Giao Hàng</th>
-                    <th >Thao Tác</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr class="tr-shadow">
-                    <td>
-                       1
-                    </td>
-                    <td> 2</td>
-                    <td>2</td>
-                    <td>L</td>
-                    <td>Đỏ</td>
-                    <td>Đã Thanh Toán</td>
-                    <td><span class="status completed">Hoàn Thành</span></td>
-                    <td >
-
-                    <a href="index.php?act=donhangchitiet"><button class="btn btn-submit">Chi Tiết Đơn Hàng</button></a>
-                    </td>
-                </tr>
-                <tr class="tr-shadow">
-                    <td>
-                       1
-                    </td>
-                    <td> 2</td>
-                    <td>2</td>
-                    <td>L</td>
-                    <td>Đỏ</td>
-                    <td>Đã Thanh Toán</td>
-                    <td><span class="status process">Đang Giao</span></td>
-                    <td >
-
-                    <a href="index.php?act=order_detail"><button class="btn btn-submit   ">Chi Tiết Đơn Hàng</button></a>
-                    </td>
-                </tr>
-                <tr class="tr-shadow">
-                    <td>
-                       1
-                    </td>
-                    <td> 2</td>
-                    <td>2</td>
-                    <td>L</td>
-                    <td>Đỏ</td>
-                    <td>Đã Thanh Toán</td>
-                    <td><span class="status pending">Chờ Xử Lý</span></td>  
-                    <td >
-
-                    <a href="index.php?act=order_detail"><button class="btn  btn-submit ">Chi Tiết Đơn Hàng</button></a>
-                    </td>
-                </tr>
-                
-               
-                
-             
-            </tbody>    
-        </table>
-       
+<table id="example" class="table table-striped"  style="width:100%">
+        <thead>
+    <tr>
+        
+                    <th>ID HÓA ĐƠN</th>
+                    <th>TÊN NGƯỜI DÙNG</th>
+                    <th>SỐ LƯỢNG SẢN PHẨM</th>
+                  
+                    <th>TRẠNG THÁI</th>
+                    
+                    <th>THAO TÁC</th>
+    </tr>
+        </thead>
+        <tbody>
+        <?php 
+                        foreach ($dhchitiet  as $ct) {
+                            extract($ct);
+                            $suadh = "index.php?act=editdh&ma_loai=".$id;
+                            $xoadh = "index.php?act=xoadh&ma_loai=".$id; // đường liên kết 
+                            $xemchitiet = "index.php?act=donhangchitiet&id=".$id;
+                          echo '  <tr>
+                          <td>'.$id.'</td>
+                          <td>'.$ten_nguoi_dung.'</td>
+                          <td>'.$sl_sp.'</td>
+                          <td>'.$trang_thai.'</td>
+                          <td>   <a href="'.$suadh.'"><input type="button" value="Sửa"></a> 
+                                 <a href="'.$xoadh.'"><input type="button" value="Xóa"></a>
+                                 <a href="'.$xemchitiet.'"><input type="button" value="Xem chi tiết"></a> 
+                                 </td>
+                      </tr>';
+                        }
+                        
+                        ?>                    
+    
+        </tbody>
+        <tfoot>
+            <tr>
+                    <th>ID HÓA ĐƠN</th>
+                    <th>TÊN NGƯỜI DÙNG</th>
+                    <th>SỐ LƯỢNG SẢN PHẨM</th>
+                    
+                    <th>TRẠNG THÁI</th>
+                  
+                    <th>THAO TÁC</th>
+            </tr>
+        </tfoot>
+    </table>
+        <script>
+    function xoa(){
+        return confirm("ban co chac chan muon xoa k");
+    }
+</script>
+     
     </div>
 
 </div>
-</main>     
+</main>

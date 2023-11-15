@@ -59,7 +59,8 @@ if(is_array($nguoi_dung)){
                         Ngày Sinh: 
                     </label><br />
                     <input type="date" name="ngaysinh" id="" value="<?=$ngay_sinh?>" 
-                        <label for="" class="label pt-2">
+                         class="input w-75 rounded-2"><br/>
+                         <label for="" class="label pt-2">       
                         Địa Chỉ: 
                     </label><br />
                     <input type="text" name="diachi" id="" value="<?=$dia_chi?>"  

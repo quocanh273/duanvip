@@ -265,6 +265,7 @@ if (isset($_GET['act'])) {
 
         // Đơn Hàng
         case 'listdonhang':
+            $dhchitiet =  hd_select_all();
             include "Qldonhang/list.php";
             break;
 
