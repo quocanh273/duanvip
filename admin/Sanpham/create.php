@@ -89,13 +89,21 @@
                 </div>
 
 
-                <a href="index.php?act=listsp"><input type="submit" name="themmoi" id="" value="Thêm"
+                <a href="index.php?act=listsp"><input type="submit" onclick="return thanhcong();" name="themmoi" id="" value="Thêm"
                         class="btn btn-insert  status completed "> </a>
                 <input type="reset" name="reset" id="" value="Nhập Lại" class=" btn btn-reset ">
                 <?php
            if (isset($thongbao)&&($thongbao!="")) 
            echo $thongbao;
        ?>
+       <script>
+    function xoa(){
+        return confirm("ban co chac chan muon xoa k");
+    }
+    function thanhcong(){
+        return alert("thanh cong");
+    }
+</script>
           
             </form>
             <a href="index.php?act=listsp"><button class="btn btn-insert  status completed mt-4">Về Trang Danh Sách </button></button></a>

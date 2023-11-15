@@ -76,7 +76,7 @@
                           <td>'.$mo_ta.'</td>
                           
                           <td>   <a href="'.$suasp.'"><input type="button" value="Sửa"></a> 
-                                 <a href="'.$xoasp.'"><input type="button" value="Xóa"></a>
+                                 <a href="'.$xoasp.'"><input " type="button" onclick="return xoa();" value="Xóa"></a>
                                  
                                  </td>
                       </tr>';
@@ -84,7 +84,14 @@
                         
                         ?>
 
-
+<script>
+    function xoa(){
+        return confirm("ban co chac chan muon xoa k");
+    }
+    function thanhcong(){
+        return alert("thanh cong");
+    }
+</script>
 
 
 
@@ -184,11 +191,7 @@
              
             </tbody>    
         </table> -->
-        <script>
-    function xoa(){
-        return confirm("ban co chac chan muon xoa k");
-    }
-</script>
+      
      
     </div>
 

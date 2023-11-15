@@ -84,39 +84,60 @@
 					<span class="text">Thống Kê</span>
 				</a>
 			</li>
-            <!-- <li class="">
-				<a href="index.php?act=bieudo">
+            <li class="">
+				<a href="index.php?act=dangnhap">
 					<i class='bx bxs-chart' ></i>
 					<span class="text">Biểu Đồ</span>
 				</a>
-			</li> -->
+			</li>
 		
 		</ul>
 		
 	</section>
     <section id="content">
     <nav>
+	<?php
+        if (isset($_SESSION['ten_dang_nhap'])) {?>
 			<i class='bx bx-menu' ></i>
 	
-			<form action="#">
-				<div class="form-input">
-					<input type="search" placeholder="Search...">
-					<button type="submit" class="search-btn"><i class='bx bx-search' ></i></button>
-				</div>
-			</form>
-			<input type="checkbox" id="switch-mode" hidden>
-			<label for="switch-mode" class="switch-mode"></label>
+	<form action="index?act=thoat">
+		<div class="form-input">
+			<input type="search" placeholder="Search...">
+			<button type="submit" class="search-btn"><i class='bx bx-search' ></i></button>
+		</div>
+	</form>
+	<input type="checkbox" id="switch-mode" hidden>
+	<label for="switch-mode" class="switch-mode"></label>
+	
+	<a href="#" class="profile">
+		<img src="img/people.png">
+	</a>
+	<ul class="side-menu pt-3 px-3">
+
+	<li>
+
+		<a href="index.php?act=thoat" class="logout">
+			<i class='bx bxs-log-out-circle' ></i>
+			<span class="text">Logout</span> 
+
+
+		</a>
+	</li>
+</ul>
+       <?php }else{?>
+		<ul class="side-menu pt-3 px-3">
+
+	<li>
+
+		<a href="index.php?act=dangnhap" class="logout">
+			<i class='bx bxs-log-out-circle' ></i>
+			<span class="text">Đăng nhập</span> 
+
+
+		</a>
+	</li>
+            
 			
-			<a href="#" class="profile">
-				<img src="img/people.png">
-			</a>
-			<ul class="side-menu pt-3 px-3">
-		
-			<li>
-				<a href="#" class="logout">
-					<i class='bx bxs-log-out-circle' ></i>
-					<span class="text">Logout</span>
-				</a>
-			</li>
-		</ul>
+		<?php }?>
 		</nav>
+		

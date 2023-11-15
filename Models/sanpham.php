@@ -13,6 +13,7 @@ function insert_sanpham($ma_loai,$tensp,$giasp,$quantity,$description,$product_s
     pdo_execute($sql);
 }
 function delete_sanpham($id){
+    
     $sql = "delete from sanpham where id=".$id;
     pdo_execute($sql);
 }
