@@ -16,16 +16,18 @@ function loai_insert($ten_loai,$hinh){
 // }
 
 
-function  loai_update($ma_loai,$hinh,$ten_loai){
-    if ($hinh!="") 
+function loai_update($ma_loai,$hinh,$ten_loai){
+    if ($hinh!=""){
         $sql = "update loai set ten_loai='".$ten_loai."',
       img='".$hinh."'
       where ma_loai=".$ma_loai;
-    else
+    }else{
     $sql = "update loai set ten_loai='".$ten_loai."',
      where ma_loai=".$ma_loai;   
       pdo_execute($sql);
+    }
 }
+
 
 function loai_delete($ma_loai){
     $sql = "DELETE FROM loai WHERE ma_loai=?";

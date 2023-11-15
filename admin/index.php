@@ -1,15 +1,12 @@
-
 <?php
-session_start();
 require "header.php";
 require "../Models/connect.php";
 require "../Models/danhmuc.php";
 require "../Models/sanpham.php";
 require "../Models/khachhang.php";
-require "../Models/hoadon.php";
 require "../Models/binhluan.php";
 require "../Models/thongke.php";
-
+require "../Models/hoadon.php";
 require "../Models/cart.php";
 
 
@@ -27,28 +24,6 @@ if (isset($_GET['act'])) {
 // Danh mục
           //create dm
 
-        case 'dangnhap':
-            if (isset($_POST['dangnhap'])&&($_POST['dangnhap'])) {
-                $tendn = $_POST['tendn'];
-                $pass = $_POST['pass'];
-                $checkuser = checkuser($tendn, $pass);
-                if(is_array($checkuser)){
-                    $_SESSION['ten_dang_nhap']=$checkuser;
-                    // $thongbao="Bạn đã đăng nhập thành công";
-                    $thongbao="Đã đăng nhập thành công";
-                    header('location: index.php');
-
-                
-                }else{
-                    $thongbao="Tài khoản không tồn tại, vui lòng kiểm tra lại hoặc đăng ký";
-                }
-            }
-            include "login/dangnhap.php";
-            break;
-        case 'thoat':
-            session_unset();
-            header('location: index.php');
-            break;
 
           case 'createdm':
             if (isset($_POST['submitdm'])&&($_POST['submitdm'])) {

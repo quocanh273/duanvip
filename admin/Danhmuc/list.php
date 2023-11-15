@@ -68,7 +68,15 @@
                       </tr>';
                         }
                         
-                        ?>                    
+                        ?>       
+              <script>
+                function xoa(){
+                    return confirm("ban co chac chan muon xoa k");
+                }
+                function thanhcong(){
+                    return alert("thanh cong");
+                }
+            </script>             
     
         </tbody>
         <tfoot>

@@ -30,13 +30,7 @@
 
     <!-- main content start -->
     <div class="main-conten login-panel login-panel-2">
-<<<<<<< HEAD:PATShop/multishop-shopping cart/view/login/dangnhap.php
         <h3 class="panel-title">Đăng nhập</h3>
-=======
-
-            <a href="index.php?act=dangnhap"><h3 class="panel-title">Login</h3></a>
-       
->>>>>>> 526b835a5685132376c698b2591b127911affbe1:admin/login/dangnhap.php
         <div class="login-body login-body-2">
             <div class="top d-flex justify-content-between align-items-center">
                 
