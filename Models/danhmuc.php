@@ -67,3 +67,9 @@ function loai_exist($ma_loai){
     $sql = "SELECT count(*) FROM loai WHERE ma_loai=?";
     return pdo_query_value($sql, $ma_loai) > 0;
 }
+
+function loadall_danhmuc_home(){
+    $sql = "SELECT * FROM loai WHERE 1 ORDER BY id desc";
+    $listsanpham = pdo_query($sql);
+    return $listsanpham;
+}

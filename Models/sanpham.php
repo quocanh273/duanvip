@@ -50,4 +50,11 @@ function  update_sanpham($id,$tensp,$giasp,$quantity,$description,$product_size
      where id=".$id;   
       pdo_execute($sql);
 }
+
+function loadall_sanpham_home() {
+    $sql = "SELECT * FROM sanpham WHERE 1 ORDER BY id desc limit 0,16";
+    $listsanpham = pdo_query($sql);
+    return $listsanpham;
+}
 ?>
+
