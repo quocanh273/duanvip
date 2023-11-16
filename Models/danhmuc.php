@@ -69,7 +69,6 @@ function loai_exist($ma_loai){
 }
 
 function loadall_danhmuc_home(){
-    $sql = "SELECT * FROM loai WHERE 1 ORDER BY id desc";
-    $listsanpham = pdo_query($sql);
-    return $listsanpham;
+    $sql = "SELECT * FROM loai WHERE 1 ORDER BY ma_loai desc";
+    return pdo_query($sql);
 }

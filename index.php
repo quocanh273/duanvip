@@ -2,15 +2,18 @@
 include "view/header.php";
 include "Models/connect.php";
 include "Models/sanpham.php";
+include "Models/danhmuc.php";
 include "global.php";
 
 $spnew =loadall_sanpham_home();
+$dmnew = loadall_danhmuc_home();
 if ((isset($_GET['act']))&&($_GET['act']!="")) {
   $act = $_GET['act'];
   switch ($act) {
     case 'ctsanpham':
         include "view/chitiet.php";
         break;
+        
     case 'sanpham':
         include "view/sanpham.php";
         break;
