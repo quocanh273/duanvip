@@ -300,6 +300,9 @@ if (isset($_GET['act'])) {
             include "Qldonhang/donhangchitiet.php";
             break;
 
+       
+
+
         // Thống Kê
         case 'listthongke':
             $listthongke = loadall_thongke();

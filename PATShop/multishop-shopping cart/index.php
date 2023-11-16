@@ -1,5 +1,7 @@
 <?php 
 include "view/header.php";
+include "../../Models/connect.php";
+
 if ((isset($_GET['act']))&&($_GET['act']!="")) {
   $act = $_GET['act'];
   switch ($act) {

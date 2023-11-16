@@ -1,4 +1,5 @@
-    <main>
+   
+   <main>
 			<div class="head-title">
 				<div class="left">
 					<h1>Tổng Quan</h1>
@@ -38,8 +39,14 @@
 					</span>
 				</li>
 			</ul>
+			
+		
+        	<?php 
+		
 
-
+  include "Thongke/bieudo.php";
+		?>
+	
 			<!-- <div class="table-data">
 				<div class="order">
 					<div class="head">
@@ -101,13 +108,10 @@
 				</div>
 				
 			</div> -->
-
-<?php include "Thongke/bieudo.php";?>
-		
  
 
 			</div>
+			
 		</main>
-        </section>
-        
+	
       
