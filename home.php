@@ -16,23 +16,6 @@
       
     }
 ?>
-                        <!-- <div class="nav-item dropdown dropright">
-                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Quần áo <i class="fa fa-angle-right float-right mt-1"></i></a>
-                            <div class="dropdown-menu position-absolute rounded-0 border-0 m-0">
-                                <a href="" class="dropdown-item">Men's Dresses</a>
-                                <a href="" class="dropdown-item">Women's Dresses</a>
-                                <a href="" class="dropdown-item">Baby's Dresses</a>
-                            </div>
-                        </div>
-                        <a href="index.php?act=sanpham" class="nav-item nav-link">Shirts</a>
-                        <a href="index.php?act=sanpham" class="nav-item nav-link">Jeans</a>
-                        <a href="index.php?act=sanpham" class="nav-item nav-link">Swimwear</a>
-                        <a href="index.php?act=sanpham" class="nav-item nav-link">Sleepwear</a>
-                        <a href="index.php?act=sanpham" class="nav-item nav-link">Sportswear</a>
-                        <a href="index.php?act=sanpham" class="nav-item nav-link">Jumpsuits</a>
-                        <a href="index.php?act=sanpham" class="nav-item nav-link">Blazers</a>
-                        <a href="index.php?act=sanpham" class="nav-item nav-link">Jackets</a>
-                        <a href="index.php?act=sanpham" class="nav-item nav-link">Shoes</a> -->
                     </div>
                 </nav>
             </div>
@@ -171,54 +154,42 @@
             </div>
         </div>
     </div>
-    <!-- Featured End -->
-    <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4"><span class="bg-secondary pr-3">DANH MỤC</span></h2>
-    <?php 
-    $count = 0; // Initialize a counter
-    foreach ($dmnew as $dm){
-        extract($dm);
-        $hinhpath = "upload/".$img;
-        if (is_file($hinhpath)) {
-            $imgTag = "<img class='img-fluid' style='width:100%; height:200px;' src='".$hinhpath."' alt='Product Image'>";
-        } else {
-            $imgTag = "<p>không có hình</p>";
-        }
-
-        // Check if it's the first product or a multiple of 4
-        if ($count % 4 == 0) {
-            // If it's the first product or a multiple of 4, start a new row
-            echo '<div class="row">';
-        }
-
-        echo '<div class="col-lg-3 col-md-4 col-sm-6 pb-1">
-        <a class="text-decoration-none" href="">
-            <div class="cat-item d-flex align-items-center mb-4">
-                <div class="overflow-hidden" style="width: 100px; height: 100px;">
-                    '.$imgTag.'
-                </div>
-                <div class="flex-fill pl-3">
-                    <h6>'.$ten_loai.'</h6>
-                    <small class="text-body">Sản phẩm chất lượng</small>
-                </div>
-            </div>
-        </a>
-    </div>';
-
-        // Increment the counter
-        $count++;
-
-        // Check if it's the last product or a multiple of 4
-        if ($count % 4 == 0 || $count == count($dmnew)) {
-            // If it's the last product or a multiple of 4, close the row
-            echo '</div>';
-        }
-    }
-?>
+   
 
     <!-- Categories Start -->
-    <!-- <div class="container-fluid pt-5">
-        <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4"><span class="bg-secondary pr-3">Categories</span></h2>
+    <div class="container-fluid pt-5">
+        <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4"><span class="bg-secondary pr-3">DANH MỤC</span></h2>
         <div class="row px-xl-5 pb-3">
+        <?php 
+             foreach ($dmnew as $dm){
+             extract($dm);
+        $hinhpath = "upload/".$img;
+        if (is_file($hinhpath)) {
+            $img="<img src='".$hinhpath."' width= '100%' height='200'>" ;
+        }else{
+            $img = "không có hình";
+        }
+
+
+        echo '
+        <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+            <a class="text-decoration-none" href="">
+                <div class="cat-item d-flex align-items-center mb-4">
+                    <div class="overflow-hidden" style="width: 100%; height: 200px;">
+                  '.$img.'
+                    </div>
+                    <div class="flex-fill pl-3">
+                        <h6>'.$ten_loai.'</h6>
+                        <small class="text-body">100 Products</small>
+                    </div>
+                </div>
+            </a>
+        </div>
+        ';
+    }
+?>
+</div>
+        <!-- <div class="row px-xl-5 pb-3">
             <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
                 <a class="text-decoration-none" href="">
                     <div class="cat-item d-flex align-items-center mb-4">
@@ -232,6 +203,7 @@
                     </div>
                 </a>
             </div>
+            </div>
             <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
                 <a class="text-decoration-none" href="">
                     <div class="cat-item img-zoom d-flex align-items-center mb-4">
@@ -375,13 +347,16 @@
                     </div>
                 </a>
             </div>
-        </div>
-    </div> -->
+        </div> -->
+    </div>
     <!-- Categories End -->
 <!-- 
   load sản phẩm -->
-  <?php 
-    $count = 0; // Initialize a counter
+
+    <div class="container-fluid pt-5 pb-3">
+    <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4"><span class="bg-secondary pr-3">SẢN PHẨM</span></h2>
+    <div class="row px-xl-5">
+        <?php 
     foreach ($spnew as $sp) {
         extract($sp);
         $hinhpath = "upload/".$img;
@@ -391,13 +366,7 @@
             $imgTag = "<p>không có hình</p>";
         }
 
-        // Check if it's the first product or a multiple of 4
-        if ($count % 4 == 0) {
-            // If it's the first product or a multiple of 4, start a new row
-            echo '<div class="row">';
-        }
-
-        echo '<div class="col-lg-3 col-md-4 col-sm-6 pb-1 " >
+        echo '<div class="col-lg-3 col-md-4 col-sm-6 pb-1">
             <div class="product-item bg-light mb-4">
                 <div class="product-img position-relative overflow-hidden">
                     ' . $imgTag . '
@@ -424,23 +393,9 @@
                 </div>
             </div>
         </div>';
-
-        // Increment the counter
-        $count++;
-
-        // Check if it's the last product or a multiple of 4
-        if ($count % 4 == 0 || $count == count($spnew)) {
-            // If it's the last product or a multiple of 4, close the row
-            echo '</div>';
-        }
     }
 ?>
-
-  
-    <!-- Products Start -->
-    <!-- <div class="container-fluid pt-5 pb-3">
-        <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4"><span class="bg-secondary pr-3">Featured Products</span></h2>
-        <div class="row px-xl-5">
+        <!-- <div class="row px-xl-5">
             <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
                 <div class="product-item bg-light mb-4">
                     <div class="product-img position-relative overflow-hidden">
@@ -657,8 +612,9 @@
                     </div>
                 </div>
             </div>
+        </div> -->
         </div>
-    </div> -->
+    </div>
     <!-- Products End -->
 
 
