@@ -32,12 +32,8 @@ if (is_array($dsdm)) {
             </div>
             <form action="index.php?act=updatedm" class="form-input" method="post" enctype="multipart/form-data">
                 <div class="form-group pb-4">
-                    <label for="">
-                        Mã Danh Mục
-                    </label> <br />
-                    <input type="text" name="ma_loai" id=""  readonly class="rounded-2 w-75 px-3"
-                        value="<?= $ma_loai?>"> <br />
-                        <!-- cách -->
+                    
+                   
                     <label for="">
                    Ảnh danh mục
                     </label> <br />
@@ -51,7 +47,7 @@ if (is_array($dsdm)) {
                     <input type="text" name="ten_loai" id=""placeholder="Nhập tên danh mục "
                         value="<?= $ten_loai?>" class="input w-75 rounded-2 px-3">
                 </div>
-                <input type="hidden" name="ma_loai" value="<?php if(isset($ma_loai)&&($ma_loai>0)) echo $ma_loai?>">
+                <input type="hidden" name="ma_loai" value="<?= $ma_loai?>">
                 <input type="submit" name="capnhat" value="Cập Nhật" class="btn btn-insert  status completed ">
                 <input type="reset" name="reset" id="" value="Nhập Lại" class=" btn btn-reset ">
                 

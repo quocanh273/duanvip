@@ -56,7 +56,7 @@
                 <?php                      
                         foreach($listkhachhang as $khachhang){
                             extract($khachhang);
-                            $suakh = "index.php?act=updatekh&id=".$id;
+                            $suakh = "index.php?act=suakh&id=".$id;
                             $xoakh = "index.php?act=xoakh&id=".$id; // đường liên kết 
                             $hinhpath = "../upload/".$img;
                             if (is_file($hinhpath)) {

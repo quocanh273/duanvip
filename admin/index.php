@@ -92,6 +92,7 @@ if (isset($_GET['act'])) {
         // update dm 
         case 'updatedm':
             if (isset($_POST['capnhat'])&&($_POST['capnhat'])) {
+            
                 $ma_loai = $_POST['ma_loai'];
                 $ten_loai = $_POST['ten_loai'];
                 $hinh = $_FILES['img']['name'];
@@ -263,35 +264,39 @@ if (isset($_GET['act'])) {
             case 'suakh':
                 if (isset($_GET['id'])&&($_GET['id']>0)) {
                     $nguoi_dung=loadone_kh($_GET['id']);
+                
                 }
                 include "Khachhang/update.php";
                 break;
-        case 'updatekh':
-            if (isset($_POST['suakh'])&&($_POST['suakh']) ) {
-                $tenkh =$_POST['tenkh'];
-                $tendn =$_POST['tendn'];
-                $pass =$_POST['pass'];
-                $mail =$_POST['mail']; // so luong
-                $ngaysinh =$_POST['ngaysinh'];
-                $diachi =$_POST['diachi'];
-                $sodienthoai =$_POST['sodienthoai'];
-                $image = $_FILES['image']['name'];
-                $target_dir = "../upload/";
-                $target_file = $target_dir . basename($_FILES["image"]["name"]);
-                if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
-                    // echo "The file ". htmlspecialchars( basename( $_FILES["hinh"]["name"])). " has been uploaded.";
-                } else {
-                    // echo "Sorry, there was an error uploading your file.";
-                }
+                case 'updatekh':
+                    if (isset($_POST['update']) && ($_POST['update'])) {
+                        $id = $_POST['id'];
+                        $tenkh = $_POST['tenkh'];
+                        $tendn = $_POST['tendn'];
+                        $pass = $_POST['pass'];
+                        $mail = $_POST['mail'];
+                        $ngaysinh = $_POST['ngaysinh'];
+                        $diachi = $_POST['diachi'];
+                        $sodienthoai = $_POST['sodienthoai'];
+                        $image = $_FILES['image']['name'];
+                        $target_dir = "../upload/";
+                        $target_file = $target_dir . basename($_FILES["image"]["name"]);
                 
-                suakh($tenkh,$tendn,$pass,$mail,$ngaysinh,$diachi,$sodienthoai,$image);
-
-                $thongbao ="Thêm thành công";
-                }
-               
-                $listkhachhang =ds_khachhang("",0);
-                include "Khachhang/update.php";
-                break;     
+                        if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
+                            // File upload success
+                        } else {
+                            // File upload error
+                        }
+                
+                        suakh($id, $tenkh, $tendn, $pass, $mail, $ngaysinh, $diachi, $sodienthoai, $image);
+                
+                        $thongbao = "Cập nhật thành công";
+                    }
+                    
+                    $listkhachhang = ds_khachhang("", 0);
+                    include "Khachhang/list.php";
+                    break;
+                   
 
         // Đơn Hàng
         case 'listdonhang':

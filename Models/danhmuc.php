@@ -19,16 +19,18 @@ function loai_insert($ten_loai,$hinh){
 function loai_update($ma_loai,$hinh,$ten_loai){
     // var_dump($hinh);
     // die;
+    // cậu lên để id chứ ko lên để mã loại
     if ($hinh==""){
         $sql = "UPDATE `loai`
         SET `ten_loai`='{$ten_loai}'
         WHERE `loai`.`ma_loai`=$ma_loai";
+        
     }else{
         $sql = "UPDATE `loai`
         SET `ten_loai`='{$ten_loai}',`img`='{$hinh}'
         WHERE `loai`.`ma_loai`=$ma_loai";   
-      pdo_execute($sql);
     }
+    pdo_execute($sql);
 }
 
 
