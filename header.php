@@ -1,33 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8">
     <title>MultiShop - Online Shop Website Template</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Free HTML Templates" name="keywords">
     <meta content="Free HTML Templates" name="description">
-
     <!-- Favicon -->
     <link href="img/favicon.ico" rel="icon">
-
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">  
-
     <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-
     <!-- Libraries Stylesheet -->
     <link href="view/lib/animate/animate.min.css" rel="stylesheet">
+<<<<<<< HEAD:header.php
     <link href="view/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">                        
 
+=======
+    <link href="view/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+>>>>>>> 96e964398757a3c884455016b9f9d77e7bc2ef32:view/header.php
     <!-- Customized Bootstrap Stylesheet -->
     <link href="view/css/style.css" rel="stylesheet">
     <link rel="shortcut icon" href="favicon.png">
-
-   
-   
 </head>
 
 <body>
@@ -45,15 +41,31 @@
             <div class="col-lg-6 text-center text-lg-right">
                 <div class="d-inline-flex align-items-center">
                     <div class="btn-group">
+                        <?php 
+                        if(isset($_SESSION['ten_dang_nhap'])){
+                            extract($_SESSION['ten_dang_nhap']);
+                        ?>
+                        <button type="button" class="btn btn-sm btn-light dropdown-toggle" data-toggle="dropdown"><?= $ten_dang_nhap?></button>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            <a href="index.php?act=doimk"><button class="dropdown-item" type="button">Đổi mật khẩu</button></a>
+                            <a href="index.php?act=thoat"><button class="dropdown-item" type="button">Đăng xuất</button></a>
+                        <?php
+                        }else{
+
+                       
+                        ?>
                         <button type="button" class="btn btn-sm btn-light dropdown-toggle" data-toggle="dropdown">Tài Khoản</button>
                         <div class="dropdown-menu dropdown-menu-right">
 
 
                            <a href="index.php?act=dangky"><button class="dropdown-item" type="button">Đăng Ký </button></a>
                             <a href="index.php?act=dangnhap"><button class="dropdown-item" type="button">Đăng Nhập</button></a>
-                            <a href="index.php?act=doimk"><button class="dropdown-item" type="button">Đổi mật khẩu</button></a>
-
+                            <!-- <a href="index.php?act=doimk"><button class="dropdown-item" type="button">Đổi mật khẩu</button></a> -->
+                            <?php }?>
                         </div>
+                        
+
+
                     </div>
                     <div class="btn-group mx-2">
                         <button type="button" class="btn btn-sm btn-light dropdown-toggle" data-toggle="dropdown">USD</button>
@@ -113,4 +125,4 @@
 
 
     <!-- Navbar Start -->
-   
+  

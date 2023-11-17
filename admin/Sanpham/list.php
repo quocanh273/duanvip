@@ -57,7 +57,7 @@
                             extract($sanpham);
                             $suasp = "index.php?act=suasp&id=".$id;
                             $xoasp = "index.php?act=xoasp&id=".$id; 
-                            $xembinhluan = "index.php?act=listbinhluan&id=".$id;// đường liên kết 
+                            $xem = "index.php?act=chitiet&id=".$id;// đường liên kết 
                             $hinhpath = "../upload/".$img;
                             if (is_file($hinhpath)) {
                                 $img="<img src='".$hinhpath."' height='80'>" ;
@@ -79,7 +79,7 @@
                           <td>   <a href="'.$suasp.'"><input type="button" value="Sửa"></a> 
                                 
                                  <a href="'.$xoasp.'"><input " type="button" onclick="return xoa();" value="Xóa"></a>
-                                 <a href="'.$xembinhluan.'"><input type="button" value="Xem Bình Luận"></a> 
+                                 <a href="'.$xem.'"><input type="button" value="Xem Sản Phẩm"></a> 
                                  </td>
                       </tr>';
                         }

@@ -47,10 +47,12 @@ function delete_kh($id){
     pdo_execute($sql);
 }
 
-function checkuser($tendn,$pass){
-    $sql = "select * from nguoi_dung where ten_dang_nhap='".$tendn."' AND mat_khau='".$pass."'" ;
-    $nguoi_dung =pdo_query_one($sql);
-    return  $nguoi_dung;
+
+
+function checkuser($ten_dang_nhap,$mat_khau){
+    $sql = "select * from nguoi_dung where ten_dang_nhap='".$ten_dang_nhap."' AND mat_khau='".$mat_khau."'";
+    $sp =pdo_query_one($sql);
+    return  $sp;
 }
 
 ?>

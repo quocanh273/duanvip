@@ -1,40 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<!-- Mirrored from html.digiboard.codebasket.xyz/registration-2.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 10 Nov 2023 12:51:58 GMT -->
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registration | Digiboard</title>
-    
-    <link rel="shortcut icon" href="favicon.png">
-    <link rel="stylesheet" href="assets/vendor/css/all.min.css">
-    <link rel="stylesheet" href="assets/vendor/css/OverlayScrollbars.min.css">
-    <link rel="stylesheet" href="assets/vendor/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" id="primaryColor" href="assets/css/blue-color.css">
-    <link rel="stylesheet" id="rtlStyle" href="#">
-</head>
-<body class="light-theme">
-    <!-- preloader start -->
-    <div class="preloader d-none">
-        <div class="loader">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-    </div>
-    <!-- preloader end -->
 
     <!-- main content start -->
     <div class="main-content login-panel login-panel-2">
         <h3 class="panel-title">Đăng Ký </h3>
         <div class="login-body login-body-2">
             <div class="top d-flex justify-content-between align-items-center">
-                <!-- <div class="logo">
-                    <img src="assets/images/logo-black.png" alt="Logo">
-                </div> -->
                 <a href="index.html"><i class="fa-duotone fa-house-chimney"></i></a>
             </div>
             <div class="bottom">
@@ -56,8 +25,8 @@
                     <div class="d-flex justify-content-end mb-25">
                         <div class="form-check">
                             <input class="form-check-input" type="checkbox" value="" id="loginCheckbox">
-                            <label class="form-check-label text-white" for="loginCheckbox">
-                                I agree <a href="#" class="text-white text-decoration-underline">Terms & Policy</a>
+                            <label for="loginCheckbox">
+                            Tôi đồng ý <a href="#">Điều khoản & Chính sách</a>
                             </label>
                         </div>
                     </div>
@@ -66,6 +35,15 @@
                 <div class="other-option">
                     <p class="mb-0">Already have an account? <a href="index.php?act=dangnhap" class="text-white text-decoration-underline">Login</a></p>
                 </div>
+                <h2 class="thongbao">
+                <?php
+              
+                if(isset($thong_bao)&&($thong_bao!="")){
+                    echo $thong_bao;
+                }
+                
+                ?>
+                </h2>
             </div>
         </div>
 
