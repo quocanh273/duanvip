@@ -3,6 +3,7 @@ include "view/header.php";
 include "Models/connect.php";
 include "Models/sanpham.php";
 include "Models/danhmuc.php";
+include "Models/khachhang.php";
 include "global.php";
 
 $spnew =loadall_sanpham_home();
@@ -27,6 +28,13 @@ if ((isset($_GET['act']))&&($_GET['act']!="")) {
         include "view/lienhe.php";
         break;
     case 'dangky':
+        if (isset($_POST['dangky'])&&($_POST['dangky'])) {
+            $ten_dang_nhap=$_POST['ten_dang_nhap'];
+            $email =$_POST['email'];
+            $mat_khau =$_POST['mat_khau'];
+            insert_taikhoan($ten_dang_nhap,$email,$mat_khau);
+            $thong_bao="Đã đăng ký thành công ! Vui lòng đăng nhập";
+        }
         include "login/dangky.php";
         break;
     case 'dangnhap':

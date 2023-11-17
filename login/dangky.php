@@ -32,49 +32,53 @@
         <h3 class="panel-title">Đăng Ký </h3>
         <div class="login-body login-body-2">
             <div class="top d-flex justify-content-between align-items-center">
-                <!-- <div class="logo">
-                    <img src="assets/images/logo-black.png" alt="Logo">
-                </div> -->
                 <a href="index.html"><i class="fa-duotone fa-house-chimney"></i></a>
             </div>
             <div class="bottom">
-                <form>
+                <form action="index.php?act=dangky" method="post">
                     <div class="input-group mb-25">
-                        <input type="text" class="form-control" placeholder="Username">
+                        <input type="text" class="form-control" placeholder="Tên" name="ten_dang_nhap">
                         <span class="input-group-text"><i class="fa-regular fa-user"></i></span>
                     </div>
                     <div class="input-group mb-25">
-                        <input type="email" class="form-control" placeholder="Email">
+                        <input type="email" class="form-control" placeholder="Email" name="email">
                         <span class="input-group-text"><i class="fa-regular fa-envelope"></i></span>
                     </div>
                     <div class="input-group mb-25">
-                        <input type="password" class="form-control" placeholder="Password">
+                        <input type="password" class="form-control" placeholder="Mật Khẩu" name="mat_khau">
                         <span class="input-group-text"><i class="fa-regular fa-lock"></i></span>
                     </div>
-                    <div class="input-group mb-20">
-                        <input type="password" class="form-control" placeholder="Confirm Password">
-                        <span class="input-group-text"><i class="fa-regular fa-lock"></i></span>
-                    </div>
+                    
                     <div class="d-flex justify-content-end mb-25">
                         <div class="form-check">
                             <input class="form-check-input" type="checkbox" value="" id="loginCheckbox">
-                            <label class="form-check-label text-white" for="loginCheckbox">
-                                I agree <a href="#" class="text-white text-decoration-underline">Terms & Policy</a>
+                            <label for="loginCheckbox">
+                            Tôi đồng ý <a href="#">Điều khoản & Chính sách</a>
                             </label>
                         </div>
                     </div>
-                    <button class="btn btn-primary w-100 login-btn">Sign Up</button>
+                    <input class="btn btn-primary w-100 login-btn" type="submit" value="Đăng Ký" name="dangky">
+                    
                 </form>
                 <div class="other-option">
-                    <p class="mb-0">Already have an account? <a href="login-2.html" class="text-white text-decoration-underline">Login</a></p>
+                    <p class="mb-0">Bạn có sẵn một tài khoản?<a href="login-2.html">Đăng Nhập</a></p>
                 </div>
+                <h2 class="thongbao">
+                <?php
+              
+                if(isset($thong_bao)&&($thong_bao!="")){
+                    echo $thong_bao;
+                }
+                
+                ?>
+                </h2>
             </div>
         </div>
 
         <!-- footer start -->
-        <div class="footer">
+        <!-- <div class="footer">
             <p>Copyright© <script>document.write(new Date().getFullYear())</script> All Rights Reserved By <span class="text-primary">Digiboard</span></p>
-        </div>
+        </div> -->
         <!-- footer end -->
     </div>
     <!-- main content end -->

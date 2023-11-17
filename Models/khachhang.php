@@ -60,4 +60,17 @@ function checkuser($tendn,$pass){
     $nguoi_dung =pdo_query_one($sql);
     return  $nguoi_dung;
 }
+
+
+function insert_taikhoan($ten_dang_nhap,$email,$mat_khau){
+    $sql="INSERT INTO nguoi_dung(ten_dang_nhap,email,mat_khau) 
+    values
+     (
+    '$ten_dang_nhap',
+     '$email',
+     '$mat_khau')";
+    pdo_execute($sql);
+}
+
+
 ?>

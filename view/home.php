@@ -16,23 +16,6 @@
       
     }
 ?>
-                        <!-- <div class="nav-item dropdown dropright">
-                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Quần áo <i class="fa fa-angle-right float-right mt-1"></i></a>
-                            <div class="dropdown-menu position-absolute rounded-0 border-0 m-0">
-                                <a href="" class="dropdown-item">Men's Dresses</a>
-                                <a href="" class="dropdown-item">Women's Dresses</a>
-                                <a href="" class="dropdown-item">Baby's Dresses</a>
-                            </div>
-                        </div>
-                        <a href="index.php?act=sanpham" class="nav-item nav-link">Shirts</a>
-                        <a href="index.php?act=sanpham" class="nav-item nav-link">Jeans</a>
-                        <a href="index.php?act=sanpham" class="nav-item nav-link">Swimwear</a>
-                        <a href="index.php?act=sanpham" class="nav-item nav-link">Sleepwear</a>
-                        <a href="index.php?act=sanpham" class="nav-item nav-link">Sportswear</a>
-                        <a href="index.php?act=sanpham" class="nav-item nav-link">Jumpsuits</a>
-                        <a href="index.php?act=sanpham" class="nav-item nav-link">Blazers</a>
-                        <a href="index.php?act=sanpham" class="nav-item nav-link">Jackets</a>
-                        <a href="index.php?act=sanpham" class="nav-item nav-link">Shoes</a> -->
                     </div>
                 </nav>
             </div>
@@ -171,9 +154,12 @@
             </div>
         </div>
     </div>
-    <!-- Featured End -->
-    <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4"><span class="bg-secondary pr-3">DANH MỤC</span></h2>
-    <?php 
+   
+
+    <!-- Categories Start -->
+    <div class="container-fluid pt-5">
+        <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4"><span class="bg-secondary pr-3">DANH MỤC</span></h2>
+        <?php 
     $count = 0; // Initialize a counter
     foreach ($dmnew as $dm){
         extract($dm);
@@ -214,11 +200,7 @@
         }
     }
 ?>
-
-    <!-- Categories Start -->
-    <!-- <div class="container-fluid pt-5">
-        <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4"><span class="bg-secondary pr-3">Categories</span></h2>
-        <div class="row px-xl-5 pb-3">
+        <!-- <div class="row px-xl-5 pb-3">
             <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
                 <a class="text-decoration-none" href="">
                     <div class="cat-item d-flex align-items-center mb-4">
@@ -375,12 +357,15 @@
                     </div>
                 </a>
             </div>
-        </div>
-    </div> -->
+        </div> -->
+    </div>
     <!-- Categories End -->
 <!-- 
   load sản phẩm -->
-  <?php 
+
+    <div class="container-fluid pt-5 pb-3">
+    <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4"><span class="bg-secondary pr-3">SẢN PHẨM</span></h2>
+        <?php 
     $count = 0; // Initialize a counter
     foreach ($spnew as $sp) {
         extract($sp);
@@ -397,7 +382,7 @@
             echo '<div class="row">';
         }
 
-        echo '<div class="col-lg-3 col-md-4 col-sm-6 pb-1 " >
+        echo '<div class="col-lg-3 col-md-4 col-sm-6 pb-1">
             <div class="product-item bg-light mb-4">
                 <div class="product-img position-relative overflow-hidden">
                     ' . $imgTag . '
@@ -435,12 +420,7 @@
         }
     }
 ?>
-
-  
-    <!-- Products Start -->
-    <!-- <div class="container-fluid pt-5 pb-3">
-        <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4"><span class="bg-secondary pr-3">Featured Products</span></h2>
-        <div class="row px-xl-5">
+        <!-- <div class="row px-xl-5">
             <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
                 <div class="product-item bg-light mb-4">
                     <div class="product-img position-relative overflow-hidden">
@@ -657,8 +637,8 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </div> -->
+        </div> -->
+    </div>
     <!-- Products End -->
 
 
