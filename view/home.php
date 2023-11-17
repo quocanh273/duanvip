@@ -159,47 +159,36 @@
     <!-- Categories Start -->
     <div class="container-fluid pt-5">
         <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4"><span class="bg-secondary pr-3">DANH MỤC</span></h2>
+        <div class="row px-xl-5 pb-3">
         <?php 
-    $count = 0; // Initialize a counter
-    foreach ($dmnew as $dm){
-        extract($dm);
+             foreach ($dmnew as $dm){
+             extract($dm);
         $hinhpath = "upload/".$img;
         if (is_file($hinhpath)) {
-            $imgTag = "<img class='img-fluid' style='width:100%; height:200px;' src='".$hinhpath."' alt='Product Image'>";
-        } else {
-            $imgTag = "<p>không có hình</p>";
+            $img="<img src='".$hinhpath."' width= '100%' height='200'>" ;
+        }else{
+            $img = "không có hình";
         }
 
-        // Check if it's the first product or a multiple of 4
-        if ($count % 4 == 0) {
-            // If it's the first product or a multiple of 4, start a new row
-            echo '<div class="row">';
-        }
 
-        echo '<div class="col-lg-3 col-md-4 col-sm-6 pb-1">
-        <a class="text-decoration-none" href="">
-            <div class="cat-item d-flex align-items-center mb-4">
-                <div class="overflow-hidden" style="width: 100px; height: 100px;">
-                    '.$imgTag.'
+        echo '
+        <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+            <a class="text-decoration-none" href="">
+                <div class="cat-item d-flex align-items-center mb-4">
+                    <div class="overflow-hidden" style="width: 100%; height: 200px;">
+                  '.$img.'
+                    </div>
+                    <div class="flex-fill pl-3">
+                        <h6>'.$ten_loai.'</h6>
+                        <small class="text-body">100 Products</small>
+                    </div>
                 </div>
-                <div class="flex-fill pl-3">
-                    <h6>'.$ten_loai.'</h6>
-                    <small class="text-body">Sản phẩm chất lượng</small>
-                </div>
-            </div>
-        </a>
-    </div>';
-
-        // Increment the counter
-        $count++;
-
-        // Check if it's the last product or a multiple of 4
-        if ($count % 4 == 0 || $count == count($dmnew)) {
-            // If it's the last product or a multiple of 4, close the row
-            echo '</div>';
-        }
+            </a>
+        </div>
+        ';
     }
 ?>
+</div>
         <!-- <div class="row px-xl-5 pb-3">
             <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
                 <a class="text-decoration-none" href="">
@@ -213,6 +202,7 @@
                         </div>
                     </div>
                 </a>
+            </div>
             </div>
             <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
                 <a class="text-decoration-none" href="">
@@ -365,8 +355,8 @@
 
     <div class="container-fluid pt-5 pb-3">
     <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4"><span class="bg-secondary pr-3">SẢN PHẨM</span></h2>
+    <div class="row px-xl-5">
         <?php 
-    $count = 0; // Initialize a counter
     foreach ($spnew as $sp) {
         extract($sp);
         $hinhpath = "upload/".$img;
@@ -374,12 +364,6 @@
             $imgTag = "<img class='img-fluid' style='width:100%; height:200px;' src='".$hinhpath."' alt='Product Image'>";
         } else {
             $imgTag = "<p>không có hình</p>";
-        }
-
-        // Check if it's the first product or a multiple of 4
-        if ($count % 4 == 0) {
-            // If it's the first product or a multiple of 4, start a new row
-            echo '<div class="row">';
         }
 
         echo '<div class="col-lg-3 col-md-4 col-sm-6 pb-1">
@@ -409,15 +393,6 @@
                 </div>
             </div>
         </div>';
-
-        // Increment the counter
-        $count++;
-
-        // Check if it's the last product or a multiple of 4
-        if ($count % 4 == 0 || $count == count($spnew)) {
-            // If it's the last product or a multiple of 4, close the row
-            echo '</div>';
-        }
     }
 ?>
         <!-- <div class="row px-xl-5">
@@ -638,6 +613,7 @@
                 </div>
             </div>
         </div> -->
+        </div>
     </div>
     <!-- Products End -->
 

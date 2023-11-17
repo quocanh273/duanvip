@@ -7,9 +7,6 @@ include "Models/connect.php";
 include "Models/sanpham.php";
 include "Models/danhmuc.php";
 include "Models/khachhang.php";
-include "global.php";
-
-
 $spnew =loadall_sanpham_home();
 $dmnew = loadall_danhmuc_home();
 if ((isset($_GET['act']))&&($_GET['act']!="")) {
@@ -48,8 +45,9 @@ if ((isset($_GET['act']))&&($_GET['act']!="")) {
            $checkuser = checkuser($ten_dang_nhap,$mat_khau);
            if (is_array($checkuser)) {
             $_SESSION['ten_dang_nhap']= $checkuser ;
-            
-           include "view/home.php";
+
+            // header('location:index.php');
+            include "view/home.php";
 
            }else{
             $thong_bao="Tài khoản không tồn tại.Vui lòng kiểm tra!";
@@ -63,7 +61,9 @@ if ((isset($_GET['act']))&&($_GET['act']!="")) {
         break;
     case 'doimk':
         include "login/doimk.php";
-
+    case 'thoat':
+        session_unset();
+        include "view/home.php";
         break;
     default:
         # code...
