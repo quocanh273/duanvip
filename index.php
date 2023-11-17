@@ -47,7 +47,10 @@ if ((isset($_GET['act']))&&($_GET['act']!="")) {
             $_SESSION['ten_dang_nhap']= $checkuser ;
 
             // header('location:index.php');
-            include "view/home.php";
+            echo '<script>
+            window.location.href = "index.php";
+            </script>';
+          
 
            }else{
             $thong_bao="Tài khoản không tồn tại.Vui lòng kiểm tra!";
@@ -63,7 +66,9 @@ if ((isset($_GET['act']))&&($_GET['act']!="")) {
         include "login/doimk.php";
     case 'thoat':
         session_unset();
-        include "view/home.php";
+        echo '<script>
+        window.location.href = "index.php";
+        </script>';
         break;
     default:
         # code...
