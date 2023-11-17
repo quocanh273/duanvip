@@ -1,8 +1,9 @@
-<?php 
+<!-- <?php 
 if(is_array($nguoi_dung)){
     extract($nguoi_dung);
+  
 }
-?>
+?> -->
 <main>
     <div class="head-title">
         <div class="left">
@@ -32,21 +33,21 @@ if(is_array($nguoi_dung)){
             </div>
             <form action="index.php?act=updatekh" class="form-input" method="post" enctype="multipart/form-data">
                 <div class="form-group pb-4">
-                
+                <input type="hidden" name="id" id="" value="<?= $id ?>" >
                     <label for="" class="label pt-2">
                         Tên Khách: 
                     </label><br />
-                    <input type="text" name="tenkh" id="" value="<?=$ten_nguoi_dung?>" 
+                    <input type="text" name="tenkh" id="" value="<?= $ten_nguoi_dung ?>" 
                         class="input w-75 rounded-2"><br />
                         <label for="" class="label pt-2">
                         Tên Đăng Nhập: 
                     </label><br />
-                    <input type="text" name="tendn" id="" value="<?=$ten_dang_nhap?>" 
+                    <input type="text" name="tendn" id="" value="<?= $ten_dang_nhap ?>" 
                         class="input w-75 rounded-2"><br />
                         <label for="" class="label pt-2">
                         Mật Khẩu: 
                     </label><br />
-                    <input type="text" name="pass" id="" value="<?=$mat_khau?>" 
+                    <input type="text" name="pass" id="" value="<?= $mat_khau ?>" 
                         class="input w-75 rounded-2"><br />
                     
                         <label for="" class="label pt-2">
@@ -73,13 +74,13 @@ if(is_array($nguoi_dung)){
                     <label for="" class="label pt-2">
                         Ảnh
                     </label><br />
-                    <input type="file" name="image" id="" value="" width="150px" class="input w-75 rounded-2"><br />
+                    <input type="file" name="image"  width="150px" class="input w-75 rounded-2"><br />
                 </div>
 
 
-                <a href="index.php?act=updatekh">
-                    <input type="submit" name="suakh" id="" value="Sửa"
-                        class="btn btn-insert  status completed "> </a>
+               
+                    <input type="submit" value="Sửa" name="update"
+                        class="btn btn-insert  status completed ">
                 <input type="reset" name="reset" id="" value="Nhập Lại" class=" btn btn-reset ">
                 
                 <?php

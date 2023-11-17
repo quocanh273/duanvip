@@ -38,23 +38,21 @@
                 <a href="index.html"><i class="fa-duotone fa-house-chimney"></i></a>
             </div>
             <div class="bottom">
-                <form>
-                    <div class="input-group mb-25">
-                        <input type="text" class="form-control" placeholder="Username">
+                <form action="index.php?act=dangky" method="POST">
+               <div class="input-group mb-25">
+                        <input type="mail" class="form-control" placeholder="Email:" name="email">
                         <span class="input-group-text"><i class="fa-regular fa-user"></i></span>
                     </div>
                     <div class="input-group mb-25">
-                        <input type="email" class="form-control" placeholder="Email">
-                        <span class="input-group-text"><i class="fa-regular fa-envelope"></i></span>
+                        <input type="text" class="form-control" placeholder="Tên đăng nhập" name="tendn">
+                        <span class="input-group-text"><i class="fa-regular fa-user"></i></span>
                     </div>
+                    
                     <div class="input-group mb-25">
-                        <input type="password" class="form-control" placeholder="Password">
+                        <input type="password" class="form-control" placeholder="Mật khẩu" name="pass">
                         <span class="input-group-text"><i class="fa-regular fa-lock"></i></span>
                     </div>
-                    <div class="input-group mb-20">
-                        <input type="password" class="form-control" placeholder="Confirm Password">
-                        <span class="input-group-text"><i class="fa-regular fa-lock"></i></span>
-                    </div>
+                   
                     <div class="d-flex justify-content-end mb-25">
                         <div class="form-check">
                             <input class="form-check-input" type="checkbox" value="" id="loginCheckbox">
@@ -63,18 +61,16 @@
                             </label>
                         </div>
                     </div>
-                    <button class="btn btn-primary w-100 login-btn">Sign Up</button>
+                   <input type="submit "class="btn btn-primary w-100 login-btn" value ="Đăng Ký" name="dangky">
                 </form>
                 <div class="other-option">
-                    <p class="mb-0">Already have an account? <a href="login-2.html" class="text-white text-decoration-underline">Login</a></p>
+                    <p class="mb-0">Already have an account? <a href="index.php?act=dangnhap" class="text-white text-decoration-underline">Login</a></p>
                 </div>
             </div>
         </div>
 
         <!-- footer start -->
-        <div class="footer">
-            <p>Copyright© <script>document.write(new Date().getFullYear())</script> All Rights Reserved By <span class="text-primary">Digiboard</span></p>
-        </div>
+        
         <!-- footer end -->
     </div>
     <!-- main content end -->

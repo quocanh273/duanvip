@@ -26,30 +26,22 @@ function loadone_kh($id){
     $nguoi_dung =pdo_query_one($sql);
     return  $nguoi_dung;
 }
-function  suakh($id,$tenkh,$tendn,$pass,$mail,$ngaysinh,$diachi,$sodienthoai,$image){
-    if ($hinh!="") 
-        $sql = "update sanpham set 
-        ten_nguoi_dung='".$tenkh."',
-        ten_dang_nhap='".$tendn."',
-        mat_khau='".$pass."',
-        email='".$mail."',
-        ngay_sinh='".$ngaysinh."',
-        dia_chi='".$diachi."',
-        so_dien_thoai='".$sodienthoai."',
-      img='".$hinh."'
-      where id=".$id;
-    else
-    $sql = "update sanpham set 
-    ten_nguoi_dung='".$tenkh."',
-    ten_dang_nhap='".$tendn."',
-    mat_khau='".$pass."',
-    email='".$mail."',
-    ngay_sinh='".$ngaysinh."',
-    dia_chi='".$diachi."',
-    so_dien_thoai='".$sodienthoai."',
-    img='".$hinh."'
-  where id=".$id;
+function suakh($id, $tenkh, $tendn, $pass, $mail, $ngaysinh, $diachi, $sodienthoai, $image) {
+    
+    try {
+        if($image != "")
+        $sql ="UPDATE `nguoi_dung` SET `ten_nguoi_dung`='$tenkh',`ten_dang_nhap`='$tendn',`img`='$image',`mat_khau`='$pass',`email`='$mail',`ngay_sinh`='$ngaysinh',`dia_chi`='$diachi',`so_dien_thoai`='$sodienthoai' WHERE id=".$id;
+        else
+        $sql ="UPDATE `nguoi_dung` SET `ten_nguoi_dung`='$tenkh',`ten_dang_nhap`='$tendn',`mat_khau`='$pass',`email`='$mail',`ngay_sinh`='$ngaysinh',`dia_chi`='$diachi',`so_dien_thoai`='$sodienthoai' WHERE `id`=".$id;
+    
+        // Execute the SQL query here (not included in your provided code)
+        pdo_execute($sql);
+    } catch (PDOException $e) {
+        echo "Error: " . $e->getMessage();
+    }
+    
 }
+
 function delete_kh($id){
     $sql="delete from nguoi_dung where id=".$id;
     pdo_execute($sql);
@@ -60,4 +52,5 @@ function checkuser($tendn,$pass){
     $nguoi_dung =pdo_query_one($sql);
     return  $nguoi_dung;
 }
+
 ?>
