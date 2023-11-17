@@ -92,6 +92,7 @@ if (isset($_GET['act'])) {
         // update dm 
         case 'updatedm':
             if (isset($_POST['capnhat'])&&($_POST['capnhat'])) {
+            
                 $ma_loai = $_POST['ma_loai'];
                 $ten_loai = $_POST['ten_loai'];
                 $hinh = $_FILES['img']['name'];
