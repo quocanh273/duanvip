@@ -104,6 +104,7 @@
         <?php 
              foreach ($dmnew as $dm){
              extract($dm);
+             $iddm = "index.php?act=sanphamdm&ma_loai=".$ma_loai;
         $hinhpath = "upload/".$img;
         if (is_file($hinhpath)) {
             $img="<img src='".$hinhpath."' width= '100%' height='200'>" ;
@@ -114,7 +115,7 @@
 
         echo '
         <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
-            <a class="text-decoration-none" href="">
+            <a class="text-decoration-none" href="'.$iddm.'">
                 <div class="cat-item d-flex align-items-center mb-4">
                     <div class="overflow-hidden" style="width: 100%; height: 200px;">
                   '.$img.'
@@ -301,6 +302,7 @@
     foreach ($spnew as $sp) {
         extract($sp);
         $hinhpath = "upload/".$img;
+        $spct= "index.php?act=ctsanpham&id=".$id;
         if (is_file($hinhpath)) {
             $imgTag = "<img class='img-fluid' style='width:100%; height:200px;' src='".$hinhpath."' alt='Product Image'>";
         } else {
@@ -312,7 +314,7 @@
                 <div class="product-img position-relative overflow-hidden">
                     ' . $imgTag . '
                     <div class="product-action">
-                        <a class="btn btn-outline-dark btn-square" href="index.php?act=ctsanpham"><i class="fa fa-shopping-cart"></i></a>
+                        <a class="btn btn-outline-dark btn-square" href="'.$spct.'"><i class="fa fa-shopping-cart"></i></a>
                         <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
                         <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-sync-alt"></i></a>
                         <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-search"></i></a>

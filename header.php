@@ -28,10 +28,10 @@
         <div class="row bg-secondary py-1 px-xl-5">
             <div class="col-lg-6 d-none d-lg-block">
                 <div class="d-inline-flex align-items-center h-100">
-                    <a class="text-body mr-3" href="">About</a>
-                    <a class="text-body mr-3" href="">Contact</a>
-                    <a class="text-body mr-3" href="">Help</a>
-                    <a class="text-body mr-3" href="">FAQs</a>
+                    <!-- <a class="text-body mr-3" href="">About</a> -->
+                    <a class="text-body mr-3" href="">Liên hệ</a>
+                    <a class="text-body mr-3" href="">Giúp đỡ</a>
+                    <a class="text-body mr-3" href="">Câu hỏi thường gặp</a>
                 </div>
             </div>
             <div class="col-lg-6 text-center text-lg-right">
@@ -112,8 +112,19 @@
                 </form>
             </div>
             <div class="col-lg-4 col-6 text-right">
-                <p class="m-0">Nguyễn Quang Phúc</p>
-                <h5 class="m-0">+012 345 6789</h5>
+              <?php 
+               if(isset($_SESSION['ten_dang_nhap'])){
+                extract($_SESSION['ten_dang_nhap']);
+              ?>
+               <h5 class="m-0">Xin Chào</h5>
+                <p class="m-0"><?=$ten_dang_nhap?></p>
+               
+              <?php 
+              }else{
+              ?>
+                <p class="m-0"></p>
+                <h5 class="m-0"></h5>
+                <?php }?>
             </div>
         </div>
     </div>
@@ -131,6 +142,7 @@
                 </a>
                 <nav class="collapse position-absolute navbar navbar-vertical navbar-light align-items-start p-0 bg-light" id="navbar-vertical" style="width: calc(100% - 30px); z-index: 999;">
                     <div class="navbar-nav w-100">
+
                     <?php 
         foreach ($dmnew as $dm){
             extract($dm);

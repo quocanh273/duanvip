@@ -3,9 +3,9 @@
         <div class="row px-xl-5">
             <div class="col-12">
                 <nav class="breadcrumb bg-light mb-30">
-                    <a class="breadcrumb-item text-dark" href="index.php">Home</a>
-                    <a class="breadcrumb-item text-dark" href="#">Shop</a>
-                    <span class="breadcrumb-item active">Shop Detail</span>
+                    <a class="breadcrumb-item text-dark" href="index.php">Trang chủ</a>
+                    <a class="breadcrumb-item text-dark" href="#">Sản phẩm</a>
+                    <span class="breadcrumb-item active">Sản phẩm chi tiết</span>
                 </nav>
             </div>
         </div>
@@ -172,7 +172,7 @@
 
     <!-- Products Start -->
     <div class="container-fluid py-5">
-        <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4"><span class="bg-secondary pr-3">You May Also Like</span></h2>
+        <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4"><span class="bg-secondary pr-3">Sản Phẩm cùng Loại</span></h2>
         <div class="row px-xl-5">
             <div class="col">
                 <div class="owl-carousel related-carousel">

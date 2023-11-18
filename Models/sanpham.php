@@ -51,8 +51,30 @@ function  update_sanpham($id,$tensp,$giasp,$quantity,$description,$product_size
       pdo_execute($sql);
 }
 
+
+
 function loadall_sanpham_home() {
     $sql = "SELECT * FROM sanpham WHERE 1 ORDER BY id desc limit 0,12";
+    $listsanpham = pdo_query($sql);
+    return $listsanpham;
+}
+
+function hang_hoa_select_keyword($keyword){
+    $sql = "SELECT * FROM hang_hoa hh "
+            . " JOIN loai lo ON lo.ma_loai=hh.ma_loai "
+            . " WHERE ten_hh LIKE ? OR ten_loai LIKE ?";
+    return pdo_query($sql, '%'.$keyword.'%', '%'.$keyword.'%');
+}
+
+function loadall_sanpham_ok($kyw="",$ma_loai=0){
+    $sql = "select * from sanpham where 1";
+    if($kyw!=""){
+        $sql.=" and name like '%".$kyw."%'";
+    }
+    if($ma_loai>0){
+        $sql.=" and ma_loai= '".$ma_loai."'";
+    }
+    $sql.=" order by id desc";
     $listsanpham = pdo_query($sql);
     return $listsanpham;
 }
