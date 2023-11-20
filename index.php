@@ -8,7 +8,8 @@ include "Models/sanpham.php";
 include "Models/danhmuc.php";
 include "Models/khachhang.php";
 
-if(!isset($_SESSION['giohang'])) $_SESSION=[];
+
+if(!isset($_SESSION['giohang'])) $_SESSION['giohang'] = [];;
 $spnew =loadall_sanpham_home();
 $dmnew = loadall_danhmuc_home();
 
@@ -45,9 +46,7 @@ if ((isset($_GET['act']))&&($_GET['act']!="")) {
 
    
     case 'giohang':
-
-
-        if (isset($_POST['giohang']) && ($_POST['giohang'] > 0)) {
+        if (isset($_POST['giohang'])) {
         $id = $_POST['id'];   
         $ten_san_pham = $_POST['ten_san_pham'];
         $img = $_POST['img'];      
@@ -58,8 +57,9 @@ if ((isset($_GET['act']))&&($_GET['act']!="")) {
         $spadd = [$id, $ten_san_pham, $img, $gia, $soluong, $thanhtien];
         
         
-        array_push($_SESSION['giohang'], $spadd); }
-                include "view/giohang.php";    
+        array_push($_SESSION['giohang'], $spadd); 
+    }
+        include "view/giohang.php";    
         break;
 
     case 'thanhtoan':
