@@ -58,12 +58,8 @@ if ((isset($_GET['act']))&&($_GET['act']!="")) {
         $spadd = [$id, $ten_san_pham, $img, $gia, $soluong, $thanhtien];
         
         
-        array_push($_SESSION['giohang'], $spadd);
-            }
-            
-                include "view/giohang.php";
-            
-            
+        array_push($_SESSION['giohang'], $spadd); }
+                include "view/giohang.php";    
         break;
 
     case 'thanhtoan':
