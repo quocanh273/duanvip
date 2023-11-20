@@ -66,12 +66,12 @@
 					<span class="text">Khách Hàng</span>
 				</a>
 			</li>
-			<li class="<?php echo (!isset($_GET['act']) || $_GET['act'] === 'listbinhluan') ? 'active' : ''; ?>">
+			<!-- <li class="<?php echo (!isset($_GET['act']) || $_GET['act'] === 'listbinhluan') ? 'active' : ''; ?>">
 				<a href="index.php?act=listbinhluan">
 					<i class='bx bxs-message-dots' ></i>
 					<span class="text">Bình Luận</span>
 				</a>
-			</li>
+			</li> -->
 			<li class="<?php echo (!isset($_GET['act']) || $_GET['act'] === 'listdonhang') ? 'active' : ''; ?>">
 				<a href="index.php?act=listdonhang">
 					<i class='bx bxs-shopping-bag-alt' ></i>

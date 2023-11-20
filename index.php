@@ -8,15 +8,25 @@ include "Models/sanpham.php";
 include "Models/danhmuc.php";
 include "Models/khachhang.php";
 
-
+if(!isset($_SESSION['giohang'])) $_SESSION=[];
 $spnew =loadall_sanpham_home();
 $dmnew = loadall_danhmuc_home();
+
 if ((isset($_GET['act']))&&($_GET['act']!="")) {
   $act = $_GET['act'];
   switch ($act) {
+   
     case 'ctsanpham':
+        if($_GET['id'] && $_GET['id']>0){
+            $id=$_GET['id'];
+            $onesp=loadone_sanpham($id);
             include "view/chitiet.php";
-        break;
+        }
+        else{
+            include "home.php";
+        }
+        
+    break;
       
     case 'sanphamdm':
         if (isset($_GET['ma_loai'])&&($_GET['ma_loai']>0)) {
@@ -33,8 +43,27 @@ if ((isset($_GET['act']))&&($_GET['act']!="")) {
             include "view/sanpham.php";
         break;
 
+   
     case 'giohang':
-        include "view/giohang.php";
+
+
+        if (isset($_POST['giohang']) && ($_POST['giohang'] > 0)) {
+        $id = $_POST['id'];   
+        $ten_san_pham = $_POST['ten_san_pham'];
+        $img = $_POST['img'];      
+        $gia = $_POST['gia'];
+    
+        $soluong = 1;
+        $thanhtien = $gia * $soluong; // Add a semicolon here
+        $spadd = [$id, $ten_san_pham, $img, $gia, $soluong, $thanhtien];
+        
+        
+        array_push($_SESSION['giohang'], $spadd);
+            }
+            
+                include "view/giohang.php";
+            
+            
         break;
 
     case 'thanhtoan':

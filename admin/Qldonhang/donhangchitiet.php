@@ -1,76 +1,82 @@
-<main>
-<div class="head-title">
-    <div class="left">
-        <h1>Quản Lý Đơn Hàng</h1>
-        <ul class="breadcrumb">
-            <li>
-                <a href="#">Trang Chủ</a>
-            </li>
-            <li><i class='bx bx-chevron-right'></i></li>
-            <li>
-                <a class="active" href="#">Chi Tiết Đơn Hàng </a>
-            </li>
-        </ul>
-    </div>
+  <!-- Shop Detail Start -->
+  <div class="container-fluid mt-5" >
+        <div class="row px-xl-5">
+            <div class="col-lg-5 mb-30">
+                <div id="product-carousel" class="carousel slide" data-ride="carousel" >
+                    <div class="carousel-inner bg-light">
+                    <?php 
+extract($dhchitiet);
 
-</div>
+?>
 
-<table id="example" class="table table-striped"  style="width:100%">
-        <thead>
-    <tr>
+                 
+
+            <div class="col-lg-7 h-auto mb-30">
+                <div class="h-100 bg-light p-30">
+                   
+                    <div class="d-flex mb-3">
+                        <strong class="text-dark mr-3">Tên người dùng : </strong>
+                        <form>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                
+                                <label class="custom-control-label" for="size-1"> <?php echo $ten_nguoi_dung?></label>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="d-flex mb-3">
+                        <strong class="text-dark mr-3">Giá Trị Đơn Hàng : </strong>
+                        <form>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                
+                                <label class="custom-control-label" for="size-1"> <?php echo $tong_gt_hd?></label>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="d-flex mb-3">
+                        <strong class="text-dark mr-3">Thông tin khuyến mãi: </strong>
+                        <form>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                
+                                <label class="custom-control-label" for="size-1"> <?php echo $thong_tin_km?></label>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="d-flex mb-3">
+                        <strong class="text-dark mr-3">Trạng Thái: </strong>
+                        <form>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                
+                                <label class="custom-control-label" for="size-1"> <?php echo $trang_thai?></label>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="d-flex mb-4">
+                        <strong class="text-dark mr-3">Địa chỉ :</strong>
+                        <form>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <label class="custom-control-label" for="color-1"> <?php echo $dia_chi?></label>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="d-flex mb-3">
+                        <strong class="text-dark mr-3">Ngày tạo hóa đơn : </strong>
+                        <form>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                
+                                <label class="custom-control-label" for="size-1"> <?php echo $ngay_thd?></label>
+                            </div>
+                        </form>
+                    </div>
+
+     </div>
+            </div>
+        </div>
         
-                    <th>ID HÓA ĐƠN</th>
-                    <th>TÊN NGƯỜI DÙNG</th>
-                    <th>SỐ LƯỢNG SẢN PHẨM</th>
-                    <th>TỔNG GIÁ TRỊ ĐƠN HÀNG</th>
-                    <th>TRẠNG THÁI</th>
-                    <th>ĐỊA CHỈ</th>
-                    <th>PHƯƠNG THỨC THANH TOÁN</th>
-                    <th>KHUYẾN MÃI </th>
-                    <th>NGÀY TẠO HÓA ĐƠN</th>
-    </tr>
-        </thead>
-        <tbody>
-        <?php 
-                        foreach ($dhchitiet  as $ct) {
-                            extract($ct);
-                          echo '  <tr>
-                          <td>'.$id.'</td>
-                          <td>'.$ten_nguoi_dung.'</td>
-                          <td>'.$sl_sp.'</td>
-                          <td>'.$tong_gt_hd.'</td>
-                          <td>'.$trang_thai.'</td>
-                          <td>'.$dia_chi.'</td>
-                          <td>'.$pt_tt.'</td>
-                          <td>'.$thong_tin_km.'</td>
-                          <td>'.$ngay_thd.'</td>
-                      </tr>';
-                        }
-                        
-                        ?>                    
-    
-        </tbody>
-        <tfoot>
-            <tr>
-                    <th>ID HÓA ĐƠN</th>
-                    <th>TÊN NGƯỜI DÙNG</th>
-                    <th>SỐ LƯỢNG SẢN PHẨM</th>
-                    <th>TỔNG GIÁ TRỊ ĐƠN HÀNG</th>
-                    <th>TRẠNG THÁI</th>
-                    <th>ĐỊA CHỈ</th>
-                    <th>PHƯƠNG THỨC THANH TOÁN</th>
-                    <th>KHUYẾN MÃI </th>
-                    <th>NGÀY TẠO HÓA ĐƠN</th>
-            </tr>
-        </tfoot>
-    </table>
-        <script>
-    function xoa(){
-        return confirm("ban co chac chan muon xoa k");
-    }
-</script>
-     
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-
-</div>
-</main>
+                   

@@ -1,25 +1,18 @@
 <?php
 require_once 'connect.php';
 
-// function loai_insert($ten_loai,$hinh){
-//     $sql = "INSERT INTO loai(ten_loai,img) VALUES(?)";
-//     pdo_execute($sql, $ten_loai);
-// }
+
 function loai_insert($ten_loai,$hinh){
     $sql= "INSERT INTO loai(ten_loai,img)
      values ('$ten_loai','$hinh')";
     pdo_execute($sql);
 }
-// function loai_update($ma_loai,$hinh,$ten_loai){
-//     $sql = "UPDATE loai SET ten_loai=? WHERE ma_loai=?";
-//     pdo_execute($sql, $ten_loai,$img, $ma_loai);
-// }
 
 
 function loai_update($ma_loai,$hinh,$ten_loai){
     // var_dump($hinh);
     // die;
-    // cậu lên để id chứ ko lên để mã loại
+    
     if ($hinh==""){
         $sql = "UPDATE `loai`
         SET `ten_loai`='{$ten_loai}'

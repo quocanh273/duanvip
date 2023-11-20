@@ -304,9 +304,15 @@ if (isset($_GET['act'])) {
             include "Qldonhang/list.php";
             break;
 
+       
         case 'donhangchitiet':
-            $dhchitiet =  hd_select_all();
-            include "Qldonhang/donhangchitiet.php";
+            if (isset($_GET['id'])&&($_GET['id']>0)) {
+                $dhchitiet = loadone_hoadon($_GET['id']);
+                include "Qldonhang/donhangchitiet.php";
+            }
+                else{
+                    include "Qldonhang/list.php";
+                }
             break;
 
         // dh chi tiết
