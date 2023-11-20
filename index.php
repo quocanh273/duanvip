@@ -9,6 +9,11 @@ include "Models/danhmuc.php";
 include "Models/khachhang.php";
 if (!isset($_SESSION['mycart'])) $_SESSION['mycart']=[];
 
+<<<<<<< HEAD
+=======
+
+if(!isset($_SESSION['giohang'])) $_SESSION['giohang'] = [];;
+>>>>>>> 506c9ddc97d64aebd25f03c10f9761bd45caf328
 $spnew =loadall_sanpham_home();
 $dmnew = loadall_danhmuc_home();
 
@@ -43,8 +48,14 @@ if ((isset($_GET['act']))&&($_GET['act']!="")) {
             include "view/sanpham.php";
         break;
 
+<<<<<<< HEAD
     case 'addtocart':
         if (isset($_POST['addtocart']) && ($_POST['addtocart'] > 0)) {
+=======
+   
+    case 'giohang':
+        if (isset($_POST['giohang'])) {
+>>>>>>> 506c9ddc97d64aebd25f03c10f9761bd45caf328
         $id = $_POST['id'];   
         $ten_san_pham = $_POST['ten_san_pham'];
         $img = $_POST['img'];      
@@ -52,9 +63,17 @@ if ((isset($_GET['act']))&&($_GET['act']!="")) {
         $soluong = 1;
         $thanhtien = $gia * $soluong; // Add a semicolon here
         $spadd = [$id, $ten_san_pham, $img, $gia, $soluong, $thanhtien];
+<<<<<<< HEAD
         array_push($_SESSION['mycart'],$spadd);
             }
                 include "view/giohang.php";
+=======
+        
+        
+        array_push($_SESSION['giohang'], $spadd); 
+    }
+        include "view/giohang.php";    
+>>>>>>> 506c9ddc97d64aebd25f03c10f9761bd45caf328
         break;
 
     case 'thanhtoan':
