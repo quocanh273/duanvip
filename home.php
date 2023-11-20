@@ -95,8 +95,7 @@
             </div>
         </div>
     </div>
-   
-
+ 
     <!-- Categories Start -->
     <div class="container-fluid pt-5">
         <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4"><span class="bg-secondary pr-3">DANH MỤC</span></h2>
@@ -117,12 +116,12 @@
         <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
             <a class="text-decoration-none" href="'.$iddm.'">
                 <div class="cat-item d-flex align-items-center mb-4">
-                    <div class="overflow-hidden" style="width: 100%; height: 200px;">
+                    <div class="overflow-hidden" style="width: 50%; height: 200px;">
                   '.$img.'
                     </div>
                     <div class="flex-fill pl-3">
                         <h6>'.$ten_loai.'</h6>
-                        <small class="text-body">100 Products</small>
+                        <small class="text-body">Chất lượng</small>
                     </div>
                 </div>
             </a>
@@ -309,15 +308,16 @@
             $imgTag = "<p>không có hình</p>";
         }
 
-        echo '<div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+        echo '
+        <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
             <div class="product-item bg-light mb-4">
                 <div class="product-img position-relative overflow-hidden">
                     ' . $imgTag . '
                     <div class="product-action">
-                        <a class="btn btn-outline-dark btn-square" href="'.$spct.'"><i class="fa fa-shopping-cart"></i></a>
+                        <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
                         <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
                         <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-sync-alt"></i></a>
-                        <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-search"></i></a>
+                        <a class="btn btn-outline-dark btn-square" href="'.$spct.'"><i class="fa fa-search"></i></a>
                     </div>
                 </div>
                 <div class="text-center py-4">
@@ -333,11 +333,20 @@
                         <small class="fa fa-star text-primary mr-1"></small>
                         <small>(99)</small>
                     </div>
+                    <form action="index.php?act=addtocart" method="post">
+                        <input type="hidden" name="id" value="'.$id.'">
+                        <input type="hidden" name="id" value="'.$ten_san_pham.'">
+                        <input type="hidden" name="id" value="'.$img.'">
+                        <input type="hidden" name="id" value="'.$gia.'">
+                        <input type="submit" name="addtocart "value="Thêm Giỏ Hàng">
+                    </form>
                 </div>
             </div>
-        </div>';
+        </div>
+        ';
     }
 ?>
+
         <!-- <div class="row px-xl-5">
             <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
                 <div class="product-item bg-light mb-4">

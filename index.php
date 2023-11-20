@@ -7,8 +7,8 @@ include "Models/connect.php";
 include "Models/sanpham.php";
 include "Models/danhmuc.php";
 include "Models/khachhang.php";
+if (!isset($_SESSION['mycart'])) $_SESSION['mycart']=[];
 
-if(!isset($_SESSION['giohang'])) $_SESSION=[];
 $spnew =loadall_sanpham_home();
 $dmnew = loadall_danhmuc_home();
 
@@ -43,27 +43,18 @@ if ((isset($_GET['act']))&&($_GET['act']!="")) {
             include "view/sanpham.php";
         break;
 
-   
-    case 'giohang':
-
-
-        if (isset($_POST['giohang']) && ($_POST['giohang'] > 0)) {
+    case 'addtocart':
+        if (isset($_POST['addtocart']) && ($_POST['addtocart'] > 0)) {
         $id = $_POST['id'];   
         $ten_san_pham = $_POST['ten_san_pham'];
         $img = $_POST['img'];      
         $gia = $_POST['gia'];
-    
         $soluong = 1;
         $thanhtien = $gia * $soluong; // Add a semicolon here
         $spadd = [$id, $ten_san_pham, $img, $gia, $soluong, $thanhtien];
-        
-        
-        array_push($_SESSION['giohang'], $spadd);
+        array_push($_SESSION['mycart'],$spadd);
             }
-            
                 include "view/giohang.php";
-            
-            
         break;
 
     case 'thanhtoan':
@@ -82,6 +73,9 @@ if ((isset($_GET['act']))&&($_GET['act']!="")) {
             $thong_bao="Đã đăng ký thành công ! Vui lòng đăng nhập";
         }
         include "login/dangky.php";
+        break;
+    case 'doimk':
+        include "login/doimk.php";
         break;
     case 'dangnhap':
         if (isset($_POST['dangnhap'])&&($_POST['dangnhap'])) {
@@ -108,9 +102,7 @@ if ((isset($_GET['act']))&&($_GET['act']!="")) {
     case 'quenmk':
         include "login/quenmk.php";
         break;
-    case 'doimk':
-        include "login/doimk.php";
-        break;
+   
 
     case 'thoat':
         session_unset();

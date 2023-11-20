@@ -123,8 +123,11 @@
         }
     }
 </script>
-                        <a href="index.php?act=giohang"><button class="btn btn-primary px-3"><i class="fa fa-shopping-cart mr-1"></i> Thêm Vào Giỏ Hàng</button></a>
+<form action="index.php?act=giohang" method="post">
+<a href="index.php?act=giohang"><button class="btn btn-primary px-3"><i class="fa fa-shopping-cart mr-1"></i> Thêm Vào Giỏ Hàng</button></a>
                            
+</form>
+                        
                         </input>
                         
                     </div>
