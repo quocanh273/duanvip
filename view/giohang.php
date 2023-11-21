@@ -35,6 +35,7 @@ if(isset($_SESSION['giohang']) && count($_SESSION['giohang']) != 0){
                      <?php
                      
                             $tong = 0;
+                            $i=0;
                             foreach($_SESSION['giohang'] as $card){
                                 $img = isset($card['2']) ? "upload/" . $card['2'] : "";
                                 $ttien = isset($card['3']) && isset($card['4']) ? $card['3'] * $card['4'] : 0;
@@ -64,11 +65,13 @@ if(isset($_SESSION['giohang']) && count($_SESSION['giohang']) != 0){
                              </div>
                          </td>
                          <td class="align-middle"><?= $ttien ?></td>
-                         <td class="align-middle"><button class="btn btn-sm btn-danger"><i
-                                     class="fa fa-times"></i></button></td>
+                         <td class="align-middle"><a href="index.php?act=delcard&idcard=<?= $i?>"><button class="btn btn-sm btn-danger"><i
+                                     class="fa fa-times"></i></button></a></td>
                      </tr>
                      <?php
+                       $i+=1;
                             }
+                          
                      ?>
 
 
@@ -107,7 +110,7 @@ if(isset($_SESSION['giohang']) && count($_SESSION['giohang']) != 0){
                          <h5>Total</h5>
                          <h5>Total: <?= $tong ?></h5>
                      </div>
-                     <button class="btn btn-block btn-primary font-weight-bold my-3 py-3">Proceed To Checkout</button>
+                     <a href="index.php?act=thanhtoan"><button class="btn btn-block btn-primary font-weight-bold my-3 py-3">Đặt Hàng</button></a>
                  </div>
              </div>
          </div>
