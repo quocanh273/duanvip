@@ -12,12 +12,11 @@
                         <input type="text" class="form-control" placeholder="Tên" name="ten_dang_nhap">
                         <span class="input-group-text"><i class="fa-regular fa-user"></i></span>
                     </div>
-                    <br>
                     <div class="input-group mb-25">
                         <input type="email" class="form-control" placeholder="Email" name="email">
                         <span class="input-group-text"><i class="fa-regular fa-envelope"></i></span>
                     </div>
-                    <br>
+                    
                     <div class="input-group mb-25">
                         <input type="password" class="form-control" placeholder="Mật Khẩu" name="mat_khau">
                         <span class="input-group-text"><i class="fa-regular fa-lock"></i></span>
@@ -37,7 +36,7 @@
                 <div class="other-option">
                     <p class="mb-0">Bạn có sẵn một tài khoản?<a href="index.php?act=dangnhap">Đăng Nhập</a></p>
                 </div>
-                <h4 class="thongbao">
+                <h2 class="thongbao">
                 <?php
               
                 if(isset($thong_bao)&&($thong_bao!="")){
@@ -45,7 +44,7 @@
                 }
                 
                 ?>
-                </h4>
+                </h2>
             </div>
         </div>
 
