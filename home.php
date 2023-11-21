@@ -49,7 +49,7 @@
                     <div class="offer-text">
                         <h6 class="text-white text-uppercase">Save 20%</h6>
                         <h3 class="text-white mb-3">Special Offer</h3>
-                        <a href="" class="btn btn-primary">Shop Now</a>
+                        <a href="index.php?act=sanpham" class="btn btn-primary">Xem ngay</a>
                     </div>
                 </div>
                 <div class="product-offer mb-30" style="height: 200px;">
@@ -57,7 +57,7 @@
                     <div class="offer-text">
                         <h6 class="text-white text-uppercase">Save 20%</h6>
                         <h3 class="text-white mb-3">Special Offer</h3>
-                        <a href="" class="btn btn-primary">Shop Now</a>
+                        <a href="index.php?act=sanpham" class="btn btn-primary">Xem ngay</a>
                     </div>
                 </div>
             </div>
@@ -117,7 +117,7 @@
         <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
             <a class="text-decoration-none" href="'.$iddm.'">
                 <div class="cat-item d-flex align-items-center mb-4">
-                    <div class="overflow-hidden" style="width: 100%; height: 200px;">
+                    <div class="overflow-hidden" style="width: 50%; height: 200px;">
                   '.$img.'
                     </div>
                     <div class="flex-fill pl-3">

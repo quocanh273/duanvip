@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<!-- Mirrored from html.digiboard.codebasket.xyz/reset-password.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 10 Nov 2023 12:51:58 GMT -->
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,8 +15,9 @@
     <link rel="stylesheet" id="primaryColor" href="assets/css/blue-color.css">
     <link rel="stylesheet" id="rtlStyle" href="#">
 </head>
+
 <body class="light-theme">
-    <!-- preloader start -->
+    <!-- Preloader Start -->
     <div class="preloader d-none">
         <div class="loader">
             <span></span>
@@ -25,51 +25,48 @@
             <span></span>
         </div>
     </div>
-    <!-- preloader end -->
+    <!-- Preloader End -->
 
-    <!-- main content start -->
+    <!-- Main Content Start -->
     <div class="main-content login-panel">
         <div class="login-body">
             <div class="top d-flex justify-content-between align-items-center">
-                <div class="logo">
-                    <img src="assets/images/logo-black.png" alt="Logo">
-                </div>
                 <a href="index.html"><i class="fa-duotone fa-house-chimney"></i></a>
             </div>
             <div class="bottom">
-                <h3 class="panel-title">Reset Password</h3>
-                <form>
-                    <div class="input-group mb-25">
+                <h3 class="panel-title">Quên Mật Khẩu</h3>
+                <form action="index.php?act=quenmk" method="post">
+                    <div class="input-group mb-3">
                         <span class="input-group-text"><i class="fa-regular fa-envelope"></i></span>
-                        <input type="text" class="form-control" placeholder="Username or email address">
+                        <input type="email" name="email" class="form-control" placeholder="Nhập email">
                     </div>
-                    <button class="btn btn-primary w-100 login-btn">Get Link</button>
+                    <input type="submit" name="guiemail"class="btn btn-primary w-100 login-btn" value="Gửi">
+                 <?php 
+                 if (isset($checkemail)&& $checkemail !='') {
+                 echo $checkemail;
+                 }
+                 ?>
                 </form>
                 <div class="other-option">
-                    <p class="mb-0">Remember the password? <a href="login.html">Login</a></p>
+                    <p class="mb-0">Nhớ mật khẩu? <a href="login.html">Đăng nhập</a></p>
                 </div>
             </div>
         </div>
-
-        <!-- footer start -->
-        
-        <!-- footer end -->
     </div>
-    <!-- main content end -->
+    <!-- Main Content End -->
     
     <script src="assets/vendor/js/jquery-3.6.0.min.js"></script>
     <script src="assets/vendor/js/jquery.overlayScrollbars.min.js"></script>
     <script src="assets/vendor/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/main.js"></script>
-    <!-- for demo purpose -->
+    <!-- For demo purpose -->
     <script>
         var rtlReady = $('html').attr('dir', 'ltr');
         if (rtlReady !== undefined) {
             localStorage.setItem('layoutDirection', 'ltr');
         }
     </script>
-    <!-- for demo purpose -->
+    <!-- For demo purpose -->
 </body>
 
-<!-- Mirrored from html.digiboard.codebasket.xyz/reset-password.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 10 Nov 2023 12:51:58 GMT -->
 </html>
