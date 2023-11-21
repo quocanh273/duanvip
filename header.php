@@ -43,7 +43,9 @@
                         ?>
                         <button type="button" class="btn btn-sm btn-light dropdown-toggle" data-toggle="dropdown"><?= $ten_dang_nhap?></button>
                         <div class="dropdown-menu dropdown-menu-right">
+                            <a href="index.php?act=quenmk"><button class="dropdown-item" type="button">Quên mật khẩu</button></a>
                             <a href="index.php?act=doimk"><button class="dropdown-item" type="button">Đổi mật khẩu</button></a>
+                            <a href="index.php?act="><button class="dropdown-item" type="button">Xem thông tin tài khoản</button></a>
                             <a href="index.php?act=thoat"><button class="dropdown-item" type="button">Đăng xuất</button></a>
                         <?php
                         }else{

@@ -7,9 +7,13 @@ include "Models/connect.php";
 include "Models/sanpham.php";
 include "Models/danhmuc.php";
 include "Models/khachhang.php";
+if (!isset($_SESSION['mycart'])) $_SESSION['mycart']=[];
 
+<<<<<<< HEAD
+=======
 
 if(!isset($_SESSION['giohang'])) $_SESSION['giohang'] = [];;
+>>>>>>> 506c9ddc97d64aebd25f03c10f9761bd45caf328
 $spnew =loadall_sanpham_home();
 $dmnew = loadall_danhmuc_home();
 
@@ -44,22 +48,32 @@ if ((isset($_GET['act']))&&($_GET['act']!="")) {
             include "view/sanpham.php";
         break;
 
+<<<<<<< HEAD
+    case 'addtocart':
+        if (isset($_POST['addtocart']) && ($_POST['addtocart'] > 0)) {
+=======
    
     case 'giohang':
         if (isset($_POST['giohang'])) {
+>>>>>>> 506c9ddc97d64aebd25f03c10f9761bd45caf328
         $id = $_POST['id'];   
         $ten_san_pham = $_POST['ten_san_pham'];
         $img = $_POST['img'];      
         $gia = $_POST['gia'];
-    
         $soluong = 1;
         $thanhtien = $gia * $soluong; // Add a semicolon here
         $spadd = [$id, $ten_san_pham, $img, $gia, $soluong, $thanhtien];
+<<<<<<< HEAD
+        array_push($_SESSION['mycart'],$spadd);
+            }
+                include "view/giohang.php";
+=======
         
         
         array_push($_SESSION['giohang'], $spadd); 
     }
         include "view/giohang.php";    
+>>>>>>> 506c9ddc97d64aebd25f03c10f9761bd45caf328
         break;
         
     case 'delcard':
@@ -92,6 +106,9 @@ if ((isset($_GET['act']))&&($_GET['act']!="")) {
         }
         include "login/dangky.php";
         break;
+    case 'doimk':
+        include "login/doimk.php";
+        break;
     case 'dangnhap':
         if (isset($_POST['dangnhap'])&&($_POST['dangnhap'])) {
             $ten_dang_nhap=$_POST['ten_dang_nhap'];
@@ -115,11 +132,13 @@ if ((isset($_GET['act']))&&($_GET['act']!="")) {
         break;
 
     case 'quenmk':
+        if (isset($_POST['guiemail'])&&($_POST['guiemail']) ) {           
+                        $email = $_POST['email'];
+                        $checkemail = checkemail($email);                            
+                        }
         include "login/quenmk.php";
         break;
-    case 'doimk':
-        include "login/doimk.php";
-        break;
+   
 
     case 'thoat':
         session_unset();
