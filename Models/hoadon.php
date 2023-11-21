@@ -8,4 +8,11 @@ function loadone_hoadon($id){
     $hoadon=pdo_query_one($sql);
     return  $hoadon;
 }
+
+function insert_hoadon() {
+
+
+}
+
+
 ?>
