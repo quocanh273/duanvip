@@ -23,6 +23,71 @@
 
                         extract($onesp);
 
+<<<<<<< HEAD
+<script>
+    // Get the quantity input element
+    var quantityInput = document.getElementById('quantityInput');
+
+    // Function to update quantity
+    function updateQuantity(change) {
+        // Ensure quantity doesn't go below 1
+        if (parseInt(quantityInput.value) + change >= 1) {
+            quantityInput.value = parseInt(quantityInput.value) + change;
+        }
+    }
+</script>
+<form action="index.php?act=giohang" method="post">
+<a href="index.php?act=giohang"><button class="btn btn-primary px-3"><i class="fa fa-shopping-cart mr-1"></i> Thêm Vào Giỏ Hàng</button></a>
+                           
+</form>
+                        
+                        </input>
+                        
+                    </div>
+                    <div class="d-flex pt-2">
+                        <strong class="text-dark mr-2">Share on:</strong>
+                        <div class="d-inline-flex">
+                            <a class="text-dark px-2" href="">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a class="text-dark px-2" href="">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a class="text-dark px-2" href="">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a class="text-dark px-2" href="">
+                                <i class="fab fa-pinterest"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row px-xl-5">
+            <div class="col">
+                <div class="bg-light p-30">
+                    <div class="nav nav-tabs mb-4">
+                        <a class="nav-item nav-link text-dark active" data-toggle="tab" href="#tab-pane-1">Description</a>
+                        <a class="nav-item nav-link text-dark" data-toggle="tab" href="#tab-pane-2">Information</a>
+                        <a class="nav-item nav-link text-dark" data-toggle="tab" href="#tab-pane-3">Reviews (0)</a>
+                    </div>
+                    <div class="tab-content">
+                        <div class="tab-pane fade show active" id="tab-pane-1">
+                            </div>
+                        <div class="tab-pane fade" id="tab-pane-2">
+                             </div>
+                        </div>
+                        <div class="tab-pane fade" id="tab-pane-3">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Shop Detail End -->
+=======
                         $hinhpath = "./upload/" . $img;
                         if (is_file($hinhpath)) {
                             $img = "<img src='" . $hinhpath . "' height='599px'> ";
@@ -30,6 +95,7 @@
                             $img = "";
                         }
                         echo $img;
+>>>>>>> 506c9ddc97d64aebd25f03c10f9761bd45caf328
 
 
                         ?>

@@ -1,3 +1,5 @@
+<<<<<<< HEAD
+=======
  <!-- Breadcrumb Start -->
  <div class="container-fluid">
      <div class="row px-xl-5">
@@ -123,3 +125,4 @@ if(isset($_SESSION['giohang']) && count($_SESSION['giohang']) != 0){
 }
     ?>
  </section>
+>>>>>>> 506c9ddc97d64aebd25f03c10f9761bd45caf328
