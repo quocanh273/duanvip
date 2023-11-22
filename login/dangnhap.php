@@ -12,6 +12,7 @@
                         <input type="text" class="form-control" placeholder="Tên" name="ten_dang_nhap">
                         <span class="input-group-text"><i class="fa-regular fa-user"></i></span>
                     </div>
+                    <br>
                     <div class="input-group mb-25">
                         <input type="password" class="form-control" placeholder="Mật Khẩu" name="mat_khau">
                         <span class="input-group-text"><i class="fa-regular fa-lock"></i></span>

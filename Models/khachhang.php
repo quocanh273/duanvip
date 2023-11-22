@@ -65,4 +65,50 @@ function insert_taikhoan($ten_dang_nhap,$email,$mat_khau){
      '$mat_khau')";
     pdo_execute($sql);
 }
+
+function checkemail($email){
+    $sql = "select * from nguoi_dung where email='".$email."'";
+    $taikhoan=pdo_query_one($sql);
+   if ($taikhoan != false) {
+    SendMailPass($email,$taikhoan['ten_dang_nhap'],$taikhoan['mat_khau']);
+    return "Gửi email thành công";
+   }else{
+        return "Email bạn nhập không có trong hệ thống";
+   }
+}
+function SendMailPass($email,$username,$mat_khau){
+    require 'PHPMailer/src/Exception.php';
+    require 'PHPMailer/src/PHPMailer.php';
+    require 'PHPMailer/src/SMTP.php';
+    $mail = new PHPMailer\PHPMailer\PHPMailer(true);
+
+        try {
+            //Server settings
+            $mail->SMTPDebug =  PHPMailer\PHPMailer\SMTP::DEBUG_OFF ;                      //Enable verbose debug output
+            $mail->isSMTP();                                            //Send using SMTP
+            $mail->Host       = 'sandbox.smtp.mailtrap.io';                     //Set the SMTP server to send through
+            $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
+            $mail->Username   = 'c04d1e77f73263';                     //SMTP username
+            $mail->Password   = '49a9b7124808e7';                               //SMTP password
+            $mail->SMTPSecure =  PHPMailer\PHPMailer\PHPMailer::ENCRYPTION_STARTTLS;            //Enable implicit TLS encryption
+            $mail->Port       = 587;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+
+            //Recipients
+            $mail->setFrom('duan1@example.com', 'duan1');
+            $mail->addAddress($email, $username);     //Add a recipient
+               
+
+            //Content
+            $mail->isHTML(true);                                  //Set email format to HTML
+            $mail->Subject = 'Nguoi dung quen mat khau';
+            $mail->Body    = 'Mat khau cua ban la :'.$mat_khau;
+      
+
+            $mail->send();
+            echo 'Message has been sent';
+        } catch (Exception $e) {
+            echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+        }
+}
+
 ?>
