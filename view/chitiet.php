@@ -25,7 +25,7 @@
 
                         $hinhpath = "./upload/" . $img;
                         if (is_file($hinhpath)) {
-                            $img = "<img src='" . $hinhpath . "' height='599px'> ";
+                            $img = "<img src='" . $hinhpath . "' height='599px' width='100%'> ";
                         } else {
                             $img = "";
                         }

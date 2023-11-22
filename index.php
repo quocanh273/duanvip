@@ -92,6 +92,7 @@ if ((isset($_GET['act']))&&($_GET['act']!="")) {
         }
         include "login/dangky.php";
         break;
+        
     case 'dangnhap':
         if (isset($_POST['dangnhap'])&&($_POST['dangnhap'])) {
             $ten_dang_nhap=$_POST['ten_dang_nhap'];
@@ -113,6 +114,38 @@ if ((isset($_GET['act']))&&($_GET['act']!="")) {
         }
         include "login/dangnhap.php";
         break;
+        
+        case 'updatetk':
+            if (isset($_POST['capnhat']) && ($_POST['capnhat'])) {
+                $id = $_POST['id'];
+                $tenkh = $_POST['tenkh'];
+                $tendn = $_POST['tendn'];
+                $pass = $_POST['pass'];
+                $mail = $_POST['mail'];
+                $ngaysinh = $_POST['ngaysinh'];
+                $diachi = $_POST['diachi'];
+                $sodienthoai = $_POST['sodienthoai'];
+                $image = $_FILES['image']['name'];
+                $target_dir = "upload/";
+                $target_file = $target_dir . basename($_FILES["image"]["name"]);
+        
+                if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
+                    // File upload success
+                } else {
+                    // File upload error
+                }
+                suakh($id, $tenkh, $tendn, $pass, $mail, $ngaysinh, $diachi, $sodienthoai, $image);
+                // $_SESSION['ten_dang_nhap']= checkuser($ten_dang_nhap,$mat_khau) ;
+                // header('location: index.php?act=updatetk');
+            }
+            include "login/chitiettk.php";
+            break;
+
+
+
+    case 'xemtk':
+        include "login/xemtk.php";
+            break;
 
     case 'quenmk':
         if (isset($_POST['guiemail'])&&($_POST['guiemail']) ) {           

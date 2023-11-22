@@ -6,16 +6,16 @@
             <div class="col-lg-5 mb-30">
                 <div id="product-carousel" class="carousel slide" data-ride="carousel">
                     <div class="carousel-inner bg-light">
-                    <?php 
-extract($sanpham);
-$hinhpath = "../upload/".$img;
-        if (is_file($hinhpath)) {
-            $img="<img   src='".$hinhpath."' height='599px'> " ;
-        }else{
-            $img = "không có hình";
-        }
-echo $img;
-?>
+                                    <?php 
+                extract($sanpham);
+                $hinhpath = "../upload/".$img;
+                        if (is_file($hinhpath)) {
+                            $img="<img   src='".$hinhpath."' height='599px'> " ;
+                        }else{
+                            $img = "không có hình";
+                        }
+                echo $img;
+                ?>
                     </div>
                     <a class="carousel-control-prev" href="#product-carousel" data-slide="prev">
                         <i class="fa fa-2x fa-angle-left text-dark"></i>

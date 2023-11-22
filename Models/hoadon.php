@@ -9,10 +9,5 @@ function loadone_hoadon($id){
     return  $hoadon;
 }
 
-function insert_hoadon() {
-
-
-}
-
 
 ?>

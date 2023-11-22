@@ -152,6 +152,7 @@ if (isset($_GET['act'])) {
             if (isset($_GET['id'])&&($_GET['id']>0)) {
                 $id = $_GET['id'];
                 $sanpham=loadone_sanpham($_GET['id']);
+                
                 include "Sanpham/chitiet.php";}
                 else{
                     include "Sanpham/list.php";
