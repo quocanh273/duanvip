@@ -61,9 +61,22 @@ if ((isset($_GET['act']))&&($_GET['act']!="")) {
     }
         include "view/giohang.php";    
         break;
+        
+    case 'delcard':
+        if(isset($_GET['idcard'])) {
+            array_splice($_SESSION['giohang'], $_GET['idcard'], 1);
+        }
+        else{
+            $_SESSION['giohang'] = [];
+        }
+        include "view/giohang.php";
+        break;
 
     case 'thanhtoan':
         include "view/thanhtoan.php";
+        break;
+    case 'dathang':
+        include "view/bill.php";
         break;
         
     case 'lienhe':
