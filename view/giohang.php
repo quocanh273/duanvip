@@ -44,9 +44,10 @@ if(isset($_SESSION['giohang']) && count($_SESSION['giohang']) != 0){
                                 $tong += $ttien;
 
                          ?>
-                       
+
                      <tr>
-                         <td class="align-middle"><img src="<?= $img ?>" alt="" style="width: 50px;"><?= $card['1'] ?></td>
+                         <td class="align-middle"><img src="<?= $img ?>" alt="" style="width: 50px;"><?= $card['1'] ?>
+                         </td>
                          <td class="align-middle"><?= $card['3'] ?></td>
                          <td class="align-middle">
                              <div class="input-group quantity mx-auto" style="width: 100px;">
@@ -65,8 +66,8 @@ if(isset($_SESSION['giohang']) && count($_SESSION['giohang']) != 0){
                              </div>
                          </td>
                          <td class="align-middle"><?= $ttien ?></td>
-                         <td class="align-middle"><a href="index.php?act=delcard&idcard=<?= $i?>"><button class="btn btn-sm btn-danger"><i
-                                     class="fa fa-times"></i></button></a></td>
+                         <td class="align-middle"><a href="index.php?act=delcard&idcard=<?= $i?>"><button
+                                     class="btn btn-sm btn-danger"><i class="fa fa-times"></i></button></a></td>
                      </tr>
                      <?php
                        $i+=1;
@@ -77,10 +78,10 @@ if(isset($_SESSION['giohang']) && count($_SESSION['giohang']) != 0){
 
                      <p>Total: <?= $tong ?></p>
 
-                  
+
 
                  </tbody>
-                
+
              </table>
          </div>
          <div class="col-lg-4">
@@ -110,13 +111,16 @@ if(isset($_SESSION['giohang']) && count($_SESSION['giohang']) != 0){
                          <h5>Total</h5>
                          <h5>Total: <?= $tong ?></h5>
                      </div>
-                     <a href="index.php?act=thanhtoan"><button class="btn btn-block btn-primary font-weight-bold my-3 py-3">Đặt Hàng</button></a>
+
+
+                     <a href="index.php?act=thanhtoan"><button
+                             class="btn btn-block btn-primary font-weight-bold my-3 py-3">Đặt Hàng</button></a>
                  </div>
              </div>
          </div>
      </div>
- </div> 
- 
+ </div>
+
  <!-- Cart End -->
  <?php
 } else {
