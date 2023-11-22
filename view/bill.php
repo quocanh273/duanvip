@@ -77,19 +77,22 @@
                         </div>
                     </div>
                 </div>
-<?php
+                <?php
+$pt_tt = ''; // Initialize $pt_tt with an empty string
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    
-   
     // Form was submitted, process the data
-        if (isset($_POST['payment'])) {
-            $pt_tt = $_POST['payment'];
-        } else {
-            // Handle the case where the payment method is not selected
-            $pt_tt = 'Not selected';
-        }
+    if (isset($_POST['payment'])) {
+        $pt_tt = $_POST['payment'];
+    } else {
+        
+     
+// Handle the case where the payment method is not selected
+        $pt_tt = 'Not selected';
     }
+}
+
+   
 ?>
                 <div class="mb-5">
     <h5 class="section-title position-relative text-uppercase"><span class="bg-secondary pr-3">Phương Thức Thanh Toán</span></h5>
@@ -99,7 +102,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <!-- Add other payment details if needed -->
     </div>
 </div>
-                <button class="btn btn-block btn-primary font-weight-bold py-3">Đặt Hàng</button>
+               
             </div>
         </div>
     </div>
