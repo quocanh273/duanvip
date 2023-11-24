@@ -128,7 +128,7 @@ if (isset($_GET['act'])) {
                 $quantity =$_POST['quantity']; // so luong
                 $description =$_POST['description'];
                 $product_size =$_POST['product_size'];
-                $mausac =$_POST['mausac'];
+                // $mausac =$_POST['mausac'];
                 $trangthai =$_POST['trangthai'];
                 $khuyenmai =$_POST['khuyenmai'];
                 
@@ -142,7 +142,7 @@ if (isset($_GET['act'])) {
                 }
                 
                 insert_sanpham($ma_loai,$tensp,$giasp,$quantity,$description,$product_size
-                ,$mausac,$trangthai,$khuyenmai,$hinh);
+               ,$trangthai,$khuyenmai,$hinh);
                 $thongbao ="Thêm thành công";
                 }
                 $listdanhmuc = loai_select_all();

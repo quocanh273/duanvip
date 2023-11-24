@@ -15,8 +15,8 @@
 
  <!-- Cart Start -->
  <?php
-if(isset($_SESSION['giohang']) && count($_SESSION['giohang']) != 0){
-?>
+    if (isset($_SESSION['giohang']) && count($_SESSION['giohang']) != 0) {
+    ?>
  <div class="container-fluid">
      <div class="row px-xl-5">
          <div class="col-lg-8 table-responsive mb-5">
@@ -33,17 +33,17 @@ if(isset($_SESSION['giohang']) && count($_SESSION['giohang']) != 0){
                  <tbody class="align-middle">
 
                      <?php
-                     
+//   var_dump($_SESSION['giohang']);
                             $tong = 0;
-                            $i=0;
-                            foreach($_SESSION['giohang'] as $card){
+                            $i = 0;
+                            foreach ($_SESSION['giohang'] as $card) {
                                 $img = isset($card['2']) ? "upload/" . $card['2'] : "";
                                 $ttien = isset($card['3']) && isset($card['4']) ? $card['3'] * $card['4'] : 0;
-                            
+
                                 // Accumulate the total
                                 $tong += $ttien;
 
-                         ?>
+                            ?>
 
                      <tr>
                          <td class="align-middle"><img src="<?= $img ?>" alt="" style="width: 50px;"><?= $card['1'] ?>
@@ -66,16 +66,13 @@ if(isset($_SESSION['giohang']) && count($_SESSION['giohang']) != 0){
                              </div>
                          </td>
                          <td class="align-middle"><?= $ttien ?></td>
-                         <td class="align-middle"><a href="index.php?act=delcard&idcard=<?= $i?>"><button
+                         <td class="align-middle"><a href="index.php?act=delcard&idcard=<?= $i ?>"><button
                                      class="btn btn-sm btn-danger"><i class="fa fa-times"></i></button></a></td>
                      </tr>
                      <?php
-                       $i+=1;
+                                $i += 1;
                             }
-                          
-                     ?>
-
-
+                            ?>
                      <p>Total: <?= $tong ?></p>
 
 
@@ -99,22 +96,32 @@ if(isset($_SESSION['giohang']) && count($_SESSION['giohang']) != 0){
                  <div class="border-bottom pb-2">
                      <div class="d-flex justify-content-between mb-3">
                          <h6>Subtotal</h6>
-                         <h6>$150</h6>
+                         <h6>$<?= $tong ?></h6>
                      </div>
                      <div class="d-flex justify-content-between">
                          <h6 class="font-weight-medium">Shipping</h6>
-                         <h6 class="font-weight-medium">$10</h6>
+                         <h6 class="font-weight-medium">Free</h6>
                      </div>
                  </div>
                  <div class="pt-2">
                      <div class="d-flex justify-content-between mt-2">
                          <h5>Total</h5>
-                         <h5>Total: <?= $tong ?></h5>
+                         <h5>Total: $ <?= $tong ?></h5>
                      </div>
 
 
-                     <a href="index.php?act=thanhtoan"><button
-                             class="btn btn-block btn-primary font-weight-bold my-3 py-3">Đặt Hàng</button></a>
+                     <?php
+                            ob_start();
+                            // Kiểm tra xem người dùng đã đăng nhập chưa
+                            if (isset($_SESSION['ten_dang_nhap'])) {
+                                // Nếu đã đăng nhập, hiển thị nút Đặt Hàng
+                                echo '<a href="index.php?act=thanhtoan"><button class="btn btn-block btn-primary font-weight-bold my-3 py-3">Đặt Hàng</button></a>';
+                            } else {
+                                // Nếu chưa đăng nhập, chuyển họ về trang đăng nhập
+                                echo '<a href="index.php?act=dangnhap"><button class="btn btn-block btn-primary font-weight-bold my-3 py-3">Đặt Hàng</button></a>';
+                                exit(); // Kết thúc script để đảm bảo không có mã HTML hoặc mã PHP khác được thực thi
+                            }
+                            ?>
                  </div>
              </div>
          </div>
@@ -123,10 +130,10 @@ if(isset($_SESSION['giohang']) && count($_SESSION['giohang']) != 0){
 
  <!-- Cart End -->
  <?php
-} else {
+    } else {
     ?>
  <h2 class="text-center">no products</h2>
  <?php
-}
+    }
     ?>
  </section>

@@ -34,7 +34,7 @@
           </form>
       </div>
       
-      <table id="example" class="table table-striped"  style="width:100%">
+      <table id="example" class=""  style="width:100%">
         <thead>
     <tr>
         
@@ -43,7 +43,6 @@
         <th>ẢNH</th>
         <th>GIÁ SẢN PHẨM</th>
         <th>SIZE</th>
-        <th>MÀU SẮC</th>
         <th>TRẠNG THÁI</th>
         <th>SỐ LƯỢNG</th>
         <th>KHUYỄN MÃI</th>
@@ -70,7 +69,7 @@
                           <td>'.$img.'</td>
                           <td>'.$gia.'</td>
                           <td>'.$loai_sp.'</td>
-                          <td>'.$mau_sac.'</td>
+                         
                           <td>'.$trangthai.'</td>
                           <td>'.$so_luong.'</td>
                           <td>'.$thong_tin_km.'</td>
@@ -111,7 +110,7 @@
         <th>ẢNH</th>
         <th>GIÁ SẢN PHẨM</th>
         <th>SIZE</th>
-        <th>MÀU SẮC</th>
+       
         <th>TRẠNG THÁI</th>
         <th>SỐ LƯỢNG</th>
         <th>KHUYỄN MÃI</th>

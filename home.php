@@ -181,7 +181,7 @@
                             <input type="hidden" name="ten_san_pham" value="' . $ten_san_pham . '">
                             <input type="hidden" name="gia" value="' . $gia . '">
                             <input type="hidden" name="img" value="' . $img . '">
-                            <input type="submit" name="giohang" value="Thêm vào giỏ hàng" class="btn btn-dark btn-sm">
+                           
                         </form>
                     </div>
                 </div>

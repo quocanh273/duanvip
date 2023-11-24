@@ -33,7 +33,6 @@ function suakh($id, $tenkh, $tendn, $pass, $mail, $ngaysinh, $diachi, $sodientho
         else
         $sql ="UPDATE `nguoi_dung` SET `ten_nguoi_dung`='$tenkh',`ten_dang_nhap`='$tendn',`mat_khau`='$pass',`email`='$mail',`ngay_sinh`='$ngaysinh',`dia_chi`='$diachi',`so_dien_thoai`='$sodienthoai' WHERE `id`=".$id;
     
-        // Execute the SQL query here (not included in your provided code)
         pdo_execute($sql);
     } catch (PDOException $e) {
         echo "Error: " . $e->getMessage();

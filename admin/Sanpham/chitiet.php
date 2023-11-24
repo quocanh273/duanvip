@@ -50,14 +50,14 @@
                             </div>
                         </form>
                     </div>
-                    <div class="d-flex mb-4">
+                    <!-- <div class="d-flex mb-4">
                         <strong class="text-dark mr-3">MÀU :</strong>
                         <form>
                             <div class="custom-control custom-radio custom-control-inline">
                                 <label class="custom-control-label" for="color-1"> <?php echo $mau_sac?></label>
                             </div>
                         </form>
-                    </div>
+                    </div> -->
 
 <!-- Bình luận Start -->
 <div class="comments-section">

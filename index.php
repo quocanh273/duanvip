@@ -2,7 +2,7 @@
 
 session_start();
 
-include "header.php";
+
 include "Models/connect.php";
 include "Models/sanpham.php";
 include "Models/danhmuc.php";
@@ -13,6 +13,7 @@ include "Models/cart.php";
 if (!isset($_SESSION['giohang'])) $_SESSION['giohang'] = [];;
 $spnew = loadall_sanpham_home();
 $dmnew = loadall_danhmuc_home();
+include "header.php";
 
 if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
     $act = $_GET['act'];
@@ -27,6 +28,11 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                 include "home.php";
             }
 
+            break;
+
+        case 'gioithieu':
+           
+            include "view/gioithieu.php";
             break;
 
         case 'sanphamdm':
@@ -51,11 +57,11 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                 $ten_san_pham = $_POST['ten_san_pham'];
                 $img = $_POST['img'];
                 $gia = $_POST['gia'];
-
                 $soluong = 1;
+                // $color = $_POST['color'];
+                $size = $_POST['size'];
                 $thanhtien = $gia * $soluong; // Add a semicolon here
-                $spadd = [$id, $ten_san_pham, $img, $gia, $soluong, $thanhtien];
-
+                $spadd = [$id, $ten_san_pham, $img, $gia, $soluong, $thanhtien, $size];
 
                 array_push($_SESSION['giohang'], $spadd);
             }
@@ -87,7 +93,12 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                 $ngay_thd = date('Y/m/d');
 
 
-                 insert_bill(  $ten_nguoi_dung, $email, $so_dien_thoai, $tong_gt_hd, $trang_thai, $dia_chi, $pt_tt, $thong_tin_km, $ngay_thd);
+                $id_bill = insert_bill($ten_nguoi_dung, $email, $so_dien_thoai, $tong_gt_hd, $trang_thai, $dia_chi, $pt_tt, $thong_tin_km, $ngay_thd);
+
+                foreach ($_SESSION['giohang'] as $cart) {
+                    // insert_cart($name_product, $image, $price, $size, $color, $quantity, $id_bill, $id_user);
+                    insert_cart($cart['1'],  $cart['3'], $cart['7'], $cart['6'], 1, $id_bill, $_SESSION['ten_dang_nhap']['id'],);
+                }
             }
 
             include "view/bill.php";
@@ -127,7 +138,7 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
             break;
 
         case 'updatetk':
-            if (isset($_POST['capnhat']) && ($_POST['capnhat'])) {
+            if (isset($_POST['capnhat'])) {
                 $id = $_POST['id'];
                 $tenkh = $_POST['tenkh'];
                 $tendn = $_POST['tendn'];
@@ -146,8 +157,10 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                     // File upload error
                 }
                 suakh($id, $tenkh, $tendn, $pass, $mail, $ngaysinh, $diachi, $sodienthoai, $image);
-                // $_SESSION['ten_dang_nhap']= checkuser($ten_dang_nhap,$mat_khau) ;
-                // header('location: index.php?act=updatetk');
+                $checkuser = checkuser($tendn, $pass);
+                if (is_array($checkuser)) {
+                    $_SESSION['ten_dang_nhap'] = $checkuser;
+                }
             }
             include "login/chitiettk.php";
             break;
@@ -180,6 +193,7 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
             break;
     }
 } else {
+
     include "home.php";
 }
 

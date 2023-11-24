@@ -53,18 +53,22 @@
                     <h6 class="mb-3">Các Sản Phẩm</h6>
                     <!-- Display ordered products -->
                     <?php
+                    //  var_dump($_SESSION['giohang']);
                     $tong = 0;
+                    $i = 0;
                     foreach ($_SESSION['giohang'] as $card) {
+                        $img = isset($card['2']) ? "upload/" . $card['2'] : "";
                         $ttien = isset($card['3']) && isset($card['4']) ? $card['3'] * $card['4'] : 0;
 
                         // Accumulate the total
                         $tong += $ttien;
-                        echo '<div class="d-flex justify-content-between">';
-                        echo '<p>' . $card['1'] . '</p>';
-                        echo '<p>' . $card['3'] . '</p>';
-                        echo '</div>';
-                    }
+
                     ?>
+                        <div class="d-flex justify-content-between">
+                            <p><?= $card['1'] ?></p>
+                            <p><?= $card['3'] ?></p>
+                        </div>
+                    <?php } ?>
                     <div class="pt-2">
                         <div class="d-flex justify-content-between mt-2">
                             <h5>Tổng Giá</h5>
@@ -74,23 +78,7 @@
                     </div>
                 </div>
             </div>
-            <?php
-            $pt_tt = ''; // Initialize $pt_tt with an empty string
 
-            if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-                // Form was submitted, process the data
-                if (isset($_POST['payment'])) {
-                    $pt_tt = $_POST['payment'];
-                } else {
-
-
-                    // Handle the case where the payment method is not selected
-                    $pt_tt = 'Not selected';
-                }
-            }
-
-
-            ?>
             <div class="mb-5">
                 <h5 class="section-title position-relative text-uppercase"><span class="bg-secondary pr-3">Phương Thức
                         Thanh Toán</span></h5>

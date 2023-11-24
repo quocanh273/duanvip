@@ -20,16 +20,15 @@
              <div id="product-carousel" class="carousel slide" data-ride="carousel">
                  <div class="carousel-inner bg-light">
                      <?php
-
                         extract($onesp);
 
                         $hinhpath = "./upload/" . $img;
                         if (is_file($hinhpath)) {
-                            $img = "<img src='" . $hinhpath . "' height='599px' width='100%'> ";
+                            $imgTag = "<img src='" . $hinhpath . "' height='599px' width='100%'> ";
                         } else {
-                            $img = "";
+                            $imgTag = "<p>không có hình</p>";
                         }
-                        echo $img;
+                        echo $imgTag;
 
 
                         ?>
@@ -49,73 +48,73 @@
 
                  <h3 class="font-weight-semi-bold mb-4"><?= $gia ?>$</h3>
                  <p class="mb-4"><?= $mo_ta ?></p>
-                 <div class="d-flex mb-3">
-                     <strong class="text-dark mr-3">Sizes:</strong>
-                     <form>
+                 <form action="index.php?act=giohang" method="post" onsubmit="return validateForm()">
+                     <div class="d-flex mb-3">
+                         <strong class="text-dark mr-3">Sizes:</strong>
                          <div class="custom-control custom-radio custom-control-inline">
-                             <input type="radio" class="custom-control-input" id="size-1" name="size">
+                             <input type="radio" class="custom-control-input" id="size-1" name="size" value="XS">
                              <label class="custom-control-label" for="size-1">XS</label>
                          </div>
                          <div class="custom-control custom-radio custom-control-inline">
-                             <input type="radio" class="custom-control-input" id="size-2" name="size">
+                             <input type="radio" class="custom-control-input" id="size-2" name="size" value="S">
                              <label class="custom-control-label" for="size-2">S</label>
                          </div>
                          <div class="custom-control custom-radio custom-control-inline">
-                             <input type="radio" class="custom-control-input" id="size-3" name="size">
+                             <input type="radio" class="custom-control-input" id="size-3" name="size" value="M">
                              <label class="custom-control-label" for="size-3">M</label>
                          </div>
                          <div class="custom-control custom-radio custom-control-inline">
-                             <input type="radio" class="custom-control-input" id="size-4" name="size">
+                             <input type="radio" class="custom-control-input" id="size-4" name="size" value="L">
                              <label class="custom-control-label" for="size-4">L</label>
                          </div>
                          <div class="custom-control custom-radio custom-control-inline">
-                             <input type="radio" class="custom-control-input" id="size-5" name="size">
+                             <input type="radio" class="custom-control-input" id="size-5" name="size" value="XL">
                              <label class="custom-control-label" for="size-5">XL</label>
                          </div>
-                     </form>
-                 </div>
-                 <div class="d-flex mb-4">
-                     <strong class="text-dark mr-3">Colors:</strong>
-                     <form>
+                     </div>
+                     <!-- <div class="d-flex mb-4">
+                         <strong class="text-dark mr-3">Colors:</strong>
+
                          <div class="custom-control custom-radio custom-control-inline">
-                             <input type="radio" class="custom-control-input" id="color-1" name="color">
+                             <input type="radio" class="custom-control-input" id="color-1" name="color" value="black">
                              <label class="custom-control-label" for="color-1">Black</label>
                          </div>
                          <div class="custom-control custom-radio custom-control-inline">
-                             <input type="radio" class="custom-control-input" id="color-2" name="color">
+                             <input type="radio" class="custom-control-input" id="color-2" name="color" value="white">
                              <label class="custom-control-label" for="color-2">White</label>
                          </div>
                          <div class="custom-control custom-radio custom-control-inline">
-                             <input type="radio" class="custom-control-input" id="color-3" name="color">
+                             <input type="radio" class="custom-control-input" id="color-3" name="color" value="red">
                              <label class="custom-control-label" for="color-3">Red</label>
                          </div>
                          <div class="custom-control custom-radio custom-control-inline">
-                             <input type="radio" class="custom-control-input" id="color-4" name="color">
+                             <input type="radio" class="custom-control-input" id="color-4" name="color" value="blue">
                              <label class="custom-control-label" for="color-4">Blue</label>
                          </div>
                          <div class="custom-control custom-radio custom-control-inline">
-                             <input type="radio" class="custom-control-input" id="color-5" name="color">
+                             <input type="radio" class="custom-control-input" id="color-5" name="color" value="green">
                              <label class="custom-control-label" for="color-5">Green</label>
                          </div>
-                     </form>
-                 </div>
-                 <div class="d-flex align-items-center mb-4 pt-2">
-                     <div class="input-group quantity mr-3" style="width: 130px;">
-                         <div class="input-group-btn">
-                             <button class="btn btn-primary btn-minus" onclick="updateQuantity(-1)">
-                                 <i class="fa fa-minus"></i>
-                             </button>
-                         </div>
-                         <input type="text" class="form-control bg-secondary border-0 text-center" value="1" id="quantityInput">
-                         <div class="input-group-btn">
-                             <button class="btn btn-primary btn-plus" onclick="updateQuantity(1)">
-                                 <i class="fa fa-plus"></i>
-                             </button>
+
+                     </div> -->
+                     <div class="d-flex align-items-center mb-4 pt-2">
+                         <div class="input-group quantity mr-3" style="width: 130px;">
+                             <div class="input-group-btn">
+                                 <button class="btn btn-primary btn-minus" onclick="updateQuantity(-1)">
+                                     <i class="fa fa-minus"></i>
+                                 </button>
+                             </div>
+                             <input type="text" class="form-control bg-secondary border-0 text-center" value="1"
+                                 id="quantityInput">
+                             <div class="input-group-btn">
+                                 <button class="btn btn-primary btn-plus" onclick="updateQuantity(1)">
+                                     <i class="fa fa-plus"></i>
+                                 </button>
+                             </div>
                          </div>
                      </div>
-                 </div>
 
-                 <script>
+                     <script>
                      // Get the quantity input element
                      var quantityInput = document.getElementById('quantityInput');
 
@@ -126,17 +125,17 @@
                              quantityInput.value = parseInt(quantityInput.value) + change;
                          }
                      }
-                 </script>
-                  <form action="index.php?act=giohang" method="post">
-                  <input type="hidden" name="id" value="<?= $id ?>">
-                        <input type="hidden" name="ten_san_pham" value="<?= $ten_san_pham ?>">
-                        <input type="hidden" name="img" value="<?=  $img ?>">
-                        <input type="hidden" name="gia" value="<?= $gia ?>">
-                        <button type="submit" name="giohang" class="btn btn-primary px-3"><i class="fa fa-shopping-cart mr-1"></i> Thêm Vào Giỏ Hàng</button>
-                  </form>
+                     </script>
+
+                     <input type="hidden" name="id" value="<?= $id ?>">
+                     <input type="hidden" name="ten_san_pham" value="<?= $ten_san_pham ?>">
+                     <input type="hidden" name="img" value="<?= $img ?>">
+                     <input type="hidden" name="gia" value="<?= $gia ?>">
+                     <button type="submit" name="giohang" class="btn btn-primary px-3"><i class="fa fa-shopping-cart mr-1"></i> Thêm Vào Giỏ Hàng</button>
+                 </form>
 
 
-               
+
 
              </div>
              <div class="d-flex pt-2">
@@ -161,14 +160,28 @@
  </div>
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"> </script>
  <script>
-        $(document).ready(function(){
-                $("#binhluan").load("view/binhluan/binhluan.php", {idpro: <?=$id?>}); 
-        });
+$(document).ready(function() {
+    $("#binhluan").load("view/binhluan/binhluan.php", {
+        idpro: <?= $id ?>
+    });
+});
+ </script>
+ <script>
+function validateForm() {
+    // Check if a size is selected
+    var sizeSelected = document.querySelector('input[name="size"]:checked');
+    // If both size and color are not selected, show an alert and prevent form submission
+    if (!sizeSelected) {
+        alert("Vui lòng chọn size ");
+        return false; // Prevent form submission
+    }
+    return true;
+}
 </script>
-<div class="row px-xl-5" id="binhluan">
+ <div class="row px-xl-5" id="binhluan">
 
-</div>
-</div>
+ </div>
+ </div>
 
  </div>
  </div>
@@ -178,7 +191,8 @@
 
  <!-- Products Start -->
  <div class="container-fluid py-5">
-     <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4"><span class="bg-secondary pr-3">Sản Phẩm cùng Loại</span></h2>
+     <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4"><span class="bg-secondary pr-3">Sản Phẩm
+             cùng Loại</span></h2>
      <div class="row px-xl-5">
          <div class="col">
              <div class="owl-carousel related-carousel">

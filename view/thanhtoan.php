@@ -12,7 +12,6 @@
  </div>
  <!-- Breadcrumb End -->
  <?php 
- var_dump($_SESSION['ten_dang_nhap']);
  if (isset($_SESSION['ten_dang_nhap'])){
     $ten_nguoi_dung = $_SESSION['ten_dang_nhap']['ten_nguoi_dung'];
     $so_dien_thoai = $_SESSION['ten_dang_nhap']['so_dien_thoai'];
@@ -71,7 +70,7 @@
 
                          <h6 class="mb-3">Các Sản Phẩm</h6>
                          <?php
-                     
+                    //  var_dump($_SESSION['giohang']);
                      $tong = 0;
                      $i=0;
                      foreach($_SESSION['giohang'] as $card){
@@ -129,6 +128,7 @@
                          <button type="submit" name="dat_hang"
                              class="btn btn-block btn-primary font-weight-bold py-3">Đặt
                              Hàng</button>
+
                      </div>
                  </div>
              </div>

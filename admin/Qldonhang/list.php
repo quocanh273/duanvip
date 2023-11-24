@@ -32,16 +32,16 @@
         <?php 
                         foreach ($dhchitiet  as $ct) {
                             extract($ct);
-                            $suadh = "index.php?act=editdh&ma_loai=".$id;
-                            $xoadh = "index.php?act=xoadh&ma_loai=".$id; // đường liên kết 
+                            // $suadh = "index.php?act=editdh&ma_loai=".$id;
+                            // $xoadh = "index.php?act=xoadh&ma_loai=".$id; // đường liên kết 
                             $xemchitiet = "index.php?act=donhangchitiet&id=".$id;
                           echo '  <tr>
                           <td>'.$id.'</td>
                           <td>'.$ten_nguoi_dung.'</td>
                           <td>'.$sl_sp.'</td>
                           <td>'.$trang_thai.'</td>
-                          <td>   <a href="'.$suadh.'"><input type="button" value="Sửa"></a> 
-                                 <a href="'.$xoadh.'"><input type="button" value="Xóa"></a>
+                          <td> 
+                                
                                  <a href="'.$xemchitiet.'"><input type="button" value="Xem chi tiết"></a> 
                                  </td>
                       </tr>';
