@@ -1,3 +1,38 @@
+ <style>
+    #product-carousel img {
+    height: 400px; /* Điều chỉnh chiều cao tùy theo thiết kế của bạn */
+}
+
+/* Nút chuyển đổi trong carousel */
+.carousel-control-prev, .carousel-control-next {
+    font-size: 30px;
+    color: #333;
+}
+
+/* Giao diện chọn size và số lượng */
+.custom-control-label {
+    font-size: 16px;
+}
+
+.input-group-btn button {
+    font-size: 18px;
+}
+
+/* Bình luận sản phẩm */
+#binhluan {
+    margin-top: 30px;
+}
+
+/* Sản phẩm cùng loại */
+.related-carousel .product-item {
+    margin-right: 15px;
+    margin-bottom: 20px;
+}
+
+.related-carousel .product-item img {
+    height: 200px;
+}
+ </style>
  <!-- Breadcrumb Start -->
  <div class="container-fluid">
      <div class="row px-xl-5">
@@ -33,12 +68,7 @@
 
                         ?>
                  </div>
-                 <a class="carousel-control-prev" href="#product-carousel" data-slide="prev">
-                     <i class="fa fa-2x fa-angle-left text-dark"></i>
-                 </a>
-                 <a class="carousel-control-next" href="#product-carousel" data-slide="next">
-                     <i class="fa fa-2x fa-angle-right text-dark"></i>
-                 </a>
+              
              </div>
          </div>
 
