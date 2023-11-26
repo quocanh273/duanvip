@@ -66,9 +66,6 @@
                     <input type="number" name="quantity" id="" value="" placeholder="Nhập số lượng "
                         class="input w-75 rounded-2 "><br />
 
-                        <label for="product_color" class="label pt-2">Màu sắc:</label><br />
-                    <input type="text" name="mausac" id="" value="" placeholder="Nhập màu sắc sản phẩm "
-                        class="input w-75 rounded-2"><br />
                         Mô Tả
                     </label><br />
                     <textarea name="description" id="" cols="30" rows="10"></textarea><br />

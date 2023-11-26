@@ -20,8 +20,10 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
     switch ($act) {
 
         case 'ctsanpham':
+   
             if ($_GET['id'] && $_GET['id'] > 0) {
                 $id = $_GET['id'];
+                $sp_cung_loai=load_sanpham_cungloai($id);
                 $onesp = loadone_sanpham($id);
                 include "view/chitiet.php";
             } else {

@@ -71,10 +71,6 @@ if(is_array($sanpham)){
                     </label><br />
                     <input type="number" name="quantity" id="" value="<?= $so_luong?>" placeholder="Nhập số lượng "
                         class="input w-75 rounded-2 "><br />
-
-                        <label for="product_color" class="label pt-2">Màu sắc:</label><br />
-                    <input type="text" name="mausac" id="" value="<?= $mau_sac?>" 
-                        class="input w-75 rounded-2"><br />
                         Mô Tả
                     </label><br />
                     <textarea name="description" id="" cols="30" rows="10" value=""><?= $mo_ta?></textarea><br />

@@ -5,11 +5,10 @@ require_once 'connect.php';
     $listsanpham = pdo_query($sql);
     return $listsanpham;
 }
-function insert_sanpham($ma_loai,$tensp,$giasp,$quantity,$description,$product_size
-,$mausac,$trangthai,$khuyenmai,$hinh){
-    $sql= "INSERT INTO sanpham(ma_loai,ten_san_pham,gia,so_luong,mo_ta,loai_sp,mau_sac,trangthai,thong_tin_km,img)
+function insert_sanpham($ma_loai,$tensp,$giasp,$quantity,$description,$product_size,$trangthai,$khuyenmai,$hinh){
+    $sql= "INSERT INTO sanpham(ma_loai,ten_san_pham,gia,so_luong,mo_ta,loai_sp,trangthai,thong_tin_km,img)
      values ('$ma_loai','$tensp','$giasp','$quantity','$description','$product_size'
-,'$mausac','$trangthai','$khuyenmai','$hinh')";
+,'$trangthai','$khuyenmai','$hinh')";
     pdo_execute($sql);
 }
 function delete_sanpham($id){
@@ -22,8 +21,14 @@ function loadone_sanpham($id){
     $sanpham=pdo_query_one($sql);
     return  $sanpham;
 }
+function load_sanpham_cungloai($id){
+    $sql = "select * from sanpham where id <> ".$id;
+    $listsanpham = pdo_query($sql);
+    return $listsanpham;
+}
+
 function  update_sanpham($id,$tensp,$giasp,$quantity,$description,$product_size
-,$mausac,$trangthai,$khuyenmai,$hinh,$ma_loai){
+,$trangthai,$khuyenmai,$hinh,$ma_loai){
     if ($hinh!="") 
         $sql = "update sanpham set ma_loai='".$ma_loai."',
      ten_san_pham='".$tensp."',
@@ -31,7 +36,7 @@ function  update_sanpham($id,$tensp,$giasp,$quantity,$description,$product_size
       so_luong='".$quantity."',
       mo_ta='".$description."',
       loai_sp='".$product_size."',
-      mau_sac='".$mausac."',
+    
       trangthai='".$trangthai."',
       thong_tin_km='".$khuyenmai."',
       img='".$hinh."'
@@ -43,7 +48,7 @@ function  update_sanpham($id,$tensp,$giasp,$quantity,$description,$product_size
      so_luong='".$quantity."',
      mo_ta='".$description."',
      loai_sp='".$product_size."',
-     mau_sac='".$mausac."',
+    
      trangthai='".$trangthai."',
      thong_tin_km='".$khuyenmai."'
      
