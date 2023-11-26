@@ -1,139 +1,131 @@
- <!-- Breadcrumb Start -->
- <div class="container-fluid">
-     <div class="row px-xl-5">
-         <div class="col-12">
-             <nav class="breadcrumb bg-light mb-30">
-                 <a class="breadcrumb-item text-dark" href="index.php">Home</a>
-                 <a class="breadcrumb-item text-dark" href="#">Shop</a>
-                 <span class="breadcrumb-item active">Shopping Cart</span>
-             </nav>
-         </div>
-     </div>
- </div>
- <!-- Breadcrumb End -->
 
+<div class="container-fluid">
+    <div class="row px-xl-5">
+        <div class="col-12">
+            <nav class="breadcrumb bg-light mb-30">
+                <a class="breadcrumb-item text-dark" href="index.php">Trang chủ</a>
+                <a class="breadcrumb-item text-dark" href="#">Cửa hàng</a>
+                <span class="breadcrumb-item active">Giỏ hàng</span>
+            </nav>
+        </div>
+    </div>
+</div>
+<!-- Breadcrumb End -->
 
- <!-- Cart Start -->
- <?php
-    if (isset($_SESSION['giohang']) && count($_SESSION['giohang']) != 0) {
-    ?>
- <div class="container-fluid">
-     <div class="row px-xl-5">
-         <div class="col-lg-8 table-responsive mb-5">
-             <table class="table table-light table-borderless table-hover text-center mb-0">
-                 <thead class="thead-dark">
-                     <tr>
-                         <th>Các sản phẩm</th>
-                         <th>Giá</th>
-                         <th>Số lượng</th>
-                         <th>Tổng cộng</th>
-                         <th>Xóa</th>
-                     </tr>
-                 </thead>
-                 <tbody class="align-middle">
+<!-- Giỏ hàng Start -->
+<?php
+if (isset($_SESSION['giohang']) && count($_SESSION['giohang']) != 0) {
+?>
+    <div class="container-fluid">
+        <div class="row px-xl-5">
+            <div class="col-lg-8 table-responsive mb-5">
+                <table class="table table-bordered table-hover text-center">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>Sản phẩm</th>
+                            <th>Giá</th>
+                            <th>Số lượng</th>
+                            <th>Tổng cộng</th>
+                            <th>Xóa</th>
+                        </tr>
+                    </thead>
+                    <tbody>
 
-                     <?php
-//   var_dump($_SESSION['giohang']);
-                            $tong = 0;
-                            $i = 0;
-                            foreach ($_SESSION['giohang'] as $card) {
-                                $img = isset($card['2']) ? "upload/" . $card['2'] : "";
-                                $ttien = isset($card['3']) && isset($card['4']) ? $card['3'] * $card['4'] : 0;
+                        <?php
+                        $tong = 0;
+                        $i = 0;
+                        foreach ($_SESSION['giohang'] as $card) {
+                            $img = isset($card['2']) ? "upload/" . $card['2'] : "";
+                            $ttien = isset($card['3']) && isset($card['4']) ? $card['3'] * $card['4'] : 0;
 
-                                // Accumulate the total
-                                $tong += $ttien;
+                            // Tính tổng cộng
+                            $tong += $ttien;
+                        ?>
 
-                            ?>
+                            <tr>
+                                <td>
+                                    <div class="media">
+                                        <img src="<?= $img ?>" class="mr-3" alt="Hình ảnh sản phẩm" style="width: 50px;">
+                                        <div class="media-body align-self-center">
+                                            <?= $card['1'] ?>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td><?= $card['3'] ?>$</td>
+                                <td>
+                                    <div class="input-group quantity" style="width: 100px;">
+                                        <div class="input-group-prepend">
+                                            <button class="btn btn-outline-primary btn-minus" type="button">
+                                                <i class="fa fa-minus"></i>
+                                            </button>
+                                        </div>
+                                        <input type="text" class="form-control bg-secondary border-0 text-center" value="1">
+                                        <div class="input-group-append">
+                                            <button class="btn btn-outline-primary btn-plus" type="button">
+                                                <i class="fa fa-plus"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td><?= $ttien ?>$</td>
+                                <td>
+                                    <a href="index.php?act=delcard&idcard=<?= $i ?>" class="btn btn-sm btn-danger">
+                                        <i class="fa fa-times"></i> Xóa
+                                    </a>
+                                </td>
+                            </tr>
+                        <?php
+                            $i += 1;
+                        }
+                        ?>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-lg-4">
+                <form class="mb-3" action="">
+                    <div class="input-group">
+                        <input type="text" class="form-control border-0 p-3" placeholder="Mã giảm giá">
+                        <div class="input-group-append">
+                            <button class="btn btn-primary">Áp dụng mã giảm giá</button>
+                        </div>
+                    </div>
+                </form>
+                <div class="bg-light p-4 mb-4">
+                    <div class="d-flex justify-content-between mb-3">
+                        <span>Tổng cộng</span>
+                        <span><?= $tong ?>$</span>
+                    </div>
+                    <div class="d-flex justify-content-between">
+                        <span>Vận chuyển</span>
+                        <span>Miễn phí</span>
+                    </div>
+                </div>
+                <div class="bg-light p-4">
+                    <div class="d-flex justify-content-between">
+                        <h5>Tổng</h5>
+                        <h5><?= $tong ?>$</h5>
+                    </div>
 
-                     <tr>
-                         <td class="align-middle"><img src="<?= $img ?>" alt="" style="width: 50px;"><?= $card['1'] ?>
-                         </td>
-                         <td class="align-middle"><?= $card['3'] ?></td>
-                         <td class="align-middle">
-                             <div class="input-group quantity mx-auto" style="width: 100px;">
-                                 <div class="input-group-btn">
-                                     <button class="btn btn-sm btn-primary btn-minus">
-                                         <i class="fa fa-minus"></i>
-                                     </button>
-                                 </div>
-                                 <input type="text"
-                                     class="form-control form-control-sm bg-secondary border-0 text-center" value="1">
-                                 <div class="input-group-btn">
-                                     <button class="btn btn-sm btn-primary btn-plus">
-                                         <i class="fa fa-plus"></i>
-                                     </button>
-                                 </div>
-                             </div>
-                         </td>
-                         <td class="align-middle"><?= $ttien ?></td>
-                         <td class="align-middle"><a href="index.php?act=delcard&idcard=<?= $i ?>"><button
-                                     class="btn btn-sm btn-danger"><i class="fa fa-times"></i></button></a></td>
-                     </tr>
-                     <?php
-                                $i += 1;
-                            }
-                            ?>
-                     <p>Total: <?= $tong ?></p>
-
-
-
-                 </tbody>
-
-             </table>
-         </div>
-         <div class="col-lg-4">
-             <form class="mb-30" action="">
-                 <div class="input-group">
-                     <input type="text" class="form-control border-0 p-4" placeholder="Coupon Code">
-                     <div class="input-group-append">
-                         <button class="btn btn-primary">Apply Coupon</button>
-                     </div>
-                 </div>
-             </form>
-             <h5 class="section-title position-relative text-uppercase mb-3"><span class="bg-secondary pr-3">Cart
-                     Summary</span></h5>
-             <div class="bg-light p-30 mb-5">
-                 <div class="border-bottom pb-2">
-                     <div class="d-flex justify-content-between mb-3">
-                         <h6>Subtotal</h6>
-                         <h6>$<?= $tong ?></h6>
-                     </div>
-                     <div class="d-flex justify-content-between">
-                         <h6 class="font-weight-medium">Shipping</h6>
-                         <h6 class="font-weight-medium">Free</h6>
-                     </div>
-                 </div>
-                 <div class="pt-2">
-                     <div class="d-flex justify-content-between mt-2">
-                         <h5>Total</h5>
-                         <h5>Total: $ <?= $tong ?></h5>
-                     </div>
-
-
-                     <?php
-                            ob_start();
-                            // Kiểm tra xem người dùng đã đăng nhập chưa
-                            if (isset($_SESSION['ten_dang_nhap'])) {
-                                // Nếu đã đăng nhập, hiển thị nút Đặt Hàng
-                                echo '<a href="index.php?act=thanhtoan"><button class="btn btn-block btn-primary font-weight-bold my-3 py-3">Đặt Hàng</button></a>';
-                            } else {
-                                // Nếu chưa đăng nhập, chuyển họ về trang đăng nhập
-                                echo '<a href="index.php?act=dangnhap"><button class="btn btn-block btn-primary font-weight-bold my-3 py-3">Đặt Hàng</button></a>';
-                                exit(); // Kết thúc script để đảm bảo không có mã HTML hoặc mã PHP khác được thực thi
-                            }
-                            ?>
-                 </div>
-             </div>
-         </div>
-     </div>
- </div>
-
- <!-- Cart End -->
- <?php
-    } else {
-    ?>
- <h2 class="text-center">no products</h2>
- <?php
-    }
-    ?>
- </section>
+                    <?php
+                    ob_start();
+                    if (isset($_SESSION['ten_dang_nhap'])) {
+                        echo '<a href="index.php?act=thanhtoan" class="btn btn-block btn-primary font-weight-bold my-3 py-3">Tiến hành thanh toán</a>';
+                    } else {
+                        echo '<a href="index.php?act=dangnhap" class="btn btn-block btn-primary font-weight-bold my-3 py-3">Đăng nhập để thanh toán</a>';
+                        exit();
+                    }
+                    ?>
+                </div>
+            </div>
+        </div>
+    </div>
+<?php
+} else {
+?>
+    <div class="container text-center">
+        <h2>Không có sản phẩm trong giỏ hàng</h2>
+    </div>
+<?php
+}
+?>
+<!-- Giỏ hàng End -->
