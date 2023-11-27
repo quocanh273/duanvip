@@ -54,17 +54,17 @@ if (isset($_SESSION['giohang']) && count($_SESSION['giohang']) != 0) {
                                 <td><?= $card['3'] ?>$</td>
                                 <td>
                                     <div class="input-group quantity" style="width: 100px;">
-                                        <div class="input-group-prepend">
+                                        <!-- <div class="input-group-prepend">
                                             <button class="btn btn-outline-primary btn-minus" type="button">
                                                 <i class="fa fa-minus"></i>
                                             </button>
-                                        </div>
-                                        <input type="text" class="form-control bg-secondary border-0 text-center" value="1">
-                                        <div class="input-group-append">
+                                        </div> -->
+                                        <input type="number" class="form-control bg-secondary border-0 text-center" value="1">
+                                        <!-- <div class="input-group-append">
                                             <button class="btn btn-outline-primary btn-plus" type="button">
                                                 <i class="fa fa-plus"></i>
                                             </button>
-                                        </div>
+                                        </div> -->
                                     </div>
                                 </td>
                                 <td><?= $ttien ?>$</td>
