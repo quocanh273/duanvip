@@ -1,4 +1,5 @@
 <?php
+date_default_timezone_set('Asia/Ho_Chi_Minh');
 
 session_start();
 
@@ -8,6 +9,8 @@ include "Models/sanpham.php";
 include "Models/danhmuc.php";
 include "Models/khachhang.php";
 include "Models/cart.php";
+include "Models/hoadon.php";
+
 
 
 if (!isset($_SESSION['giohang'])) $_SESSION['giohang'] = [];;
@@ -60,24 +63,41 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
             $dssp = loadpaginate_sanpham($page);
             include "view/sanpham.php";
             break;
-
-
-        case 'giohang':
-            if (isset($_POST['giohang'])) {
-                $id = $_POST['id'];
-                $ten_san_pham = $_POST['ten_san_pham'];
-                $img = $_POST['img'];
-                $gia = $_POST['gia'];
-                $soluong = 1;
-                // $color = $_POST['color'];
-                $size = $_POST['size'];
-                $thanhtien = $gia * $soluong; // Add a semicolon here
-                $spadd = [$id, $ten_san_pham, $img, $gia, $soluong, $thanhtien, $size];
-
-                array_push($_SESSION['giohang'], $spadd);
-            }
-            include "view/giohang.php";
-            break;
+            case 'giohang':
+                if (isset($_POST['giohang'])) {
+                    $id = $_POST['id'];
+                    $ten_san_pham = $_POST['ten_san_pham'];
+                    $img = $_POST['img'];
+                    $gia = $_POST['gia'];
+                    $soluong = $_POST['soluong'];
+                    $size = $_POST['size'];
+                    $thanhtien = $gia * $soluong;
+            
+                    // Check if the product is already in the shopping cart
+                    $productExists = false;
+                    foreach ($_SESSION['giohang'] as &$sp) {
+                        if ($sp[0] == $id && $sp[6] == $size) {
+                            // If the product already exists, update the quantity
+                            $sp[4] += $soluong;
+                            $sp[5] = $sp[3] * $sp[4]; // Update the total price
+                            $productExists = true;
+                            break;
+                        }
+                    }
+            
+                    // If the product is not in the shopping cart, add it
+                    if (!$productExists) {
+                        $spadd = [$id, $ten_san_pham, $img, $gia, $soluong, $thanhtien, $size];
+                        array_push($_SESSION['giohang'], $spadd);
+                    }
+                }
+                // Use parentheses for var_dump
+               
+            
+                include "view/giohang.php";
+                break;
+            
+            
 
         case 'delcard':
             if (isset($_GET['idcard'])) {
@@ -93,6 +113,7 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
             break;
         case 'dathang':
             if (isset($_POST['dat_hang'])) {
+                
                 $ten_nguoi_dung = $_POST['ten_nguoi_dung'];
                 $email = $_POST['email'];
                 $so_dien_thoai = $_POST['so_dien_thoai'];
@@ -100,19 +121,34 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                 $trang_thai = $_POST['trang_thai'];
                 $dia_chi = $_POST['dia_chi'];
                 $pt_tt = $_POST['pt_tt'];
-                $ngay_thd = date('Y/m/d');
+                $ngay_thd = date('Y-m-d');
+                $formatted_date = date('Y-m-d', strtotime($ngay_thd));
 
+<<<<<<< HEAD
                 $id_bill = insert_bill($ten_nguoi_dung, $email, $so_dien_thoai, $tong_gt_hd, $trang_thai, $dia_chi, $pt_tt, $ngay_thd);
+=======
+
+                $id_bill = insert_bill($_SESSION['ten_dang_nhap']['id'],$ten_nguoi_dung, $email, $so_dien_thoai, $tong_gt_hd, $trang_thai, $dia_chi, $pt_tt, $formatted_date);
+                // var_dump($_SESSION['giohang']);
+                // die;
+>>>>>>> 105a70e11b98cf849a4b6d7815fce3b414760b07
 
                 foreach ($_SESSION['giohang'] as $cart) {
+                    // ($name_product,$price, $size, $quantity, $id_bill, $id_user)
                     // insert_cart($name_product, $image, $price, $size, $color, $quantity, $id_bill, $id_user);
-                    insert_cart($cart['1'],  $cart['3'], $cart['7'], $cart['6'], 1, $id_bill, $_SESSION['ten_dang_nhap']['id'],);
+                    insert_cart($cart['1'],  $cart['3'], $cart['6'], 1, $id_bill, $_SESSION['ten_dang_nhap']['id']);
                 }
+                
             }
 
             include "view/bill.php";
             break;
-
+            case 'listbill':
+                $listbill=loadone_hoadon_ls($_SESSION['ten_dang_nhap']['id']);
+                
+                include "view/listbill.php";
+                
+                break;
         case 'lienhe':
             include "view/lienhe.php";
             break;
