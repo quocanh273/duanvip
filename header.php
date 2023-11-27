@@ -165,7 +165,7 @@
                             <?php
                             foreach ($dmnew as $dm){
                                 extract($dm);
-                                $iddm= "index.php?act=sanpham&iddm" .$ma_loai;
+                                $iddm = "index.php?act=sanphamdm&ma_loai=".$ma_loai;
                                 echo ' <a href="' .$iddm. '" class="nav-item nav-link">' .$ten_loai. '</a>';
                             }
                             ?>

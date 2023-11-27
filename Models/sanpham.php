@@ -41,8 +41,8 @@ function loadone_sanpham($id){
     $sanpham=pdo_query_one($sql);
     return  $sanpham;
 }
-function load_sanpham_cungloai($id){
-    $sql = "select * from sanpham where id <> ".$id;
+function load_sanpham_cungloai($id,$ma_loai){
+    $sql = "select * from sanpham where ma_loai=".$ma_loai." AND id <> ".$id;
     $listsanpham = pdo_query($sql);
     return $listsanpham;
 }
