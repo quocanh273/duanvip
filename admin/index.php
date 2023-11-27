@@ -141,8 +141,7 @@ if (isset($_GET['act'])) {
                     // echo "Sorry, there was an error uploading your file.";
                 }
                 
-                insert_sanpham($ma_loai,$tensp,$giasp,$quantity,$description,$product_size
-               ,$trangthai,$khuyenmai,$hinh);
+                insert_sanpham($ma_loai,$tensp,$giasp,$quantity,$description,$product_size,$trangthai,$khuyenmai,$hinh);
                 $thongbao ="Thêm thành công";
                 }
                 $listdanhmuc = loai_select_all();
@@ -320,10 +319,6 @@ if (isset($_GET['act'])) {
         case 'order_detail':
             include "Qldonhang/donhangchitiet.php";
             break;
-
-       
-
-
         // Thống Kê
         case 'listthongke':
             $listthongke = loadall_thongke();

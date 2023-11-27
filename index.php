@@ -33,7 +33,7 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
             break;
 
         case 'gioithieu':
-           
+
             include "view/gioithieu.php";
             break;
 
@@ -49,6 +49,13 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
 
         case 'sanpham':
             $dssp = loadall_sanpham();
+            if (isset($_GET['page'])) {
+                $page = $_GET['page'];
+            } else {
+                $page = 0;
+            }
+            $list_page = total_page();
+            $dssp = loadpaginate_sanpham($page);
             include "view/sanpham.php";
             break;
 
@@ -91,11 +98,10 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                 $trang_thai = $_POST['trang_thai'];
                 $dia_chi = $_POST['dia_chi'];
                 $pt_tt = $_POST['pt_tt'];
-                $thong_tin_km = '50%';
                 $ngay_thd = date('Y/m/d');
 
 
-                $id_bill = insert_bill($ten_nguoi_dung, $email, $so_dien_thoai, $tong_gt_hd, $trang_thai, $dia_chi, $pt_tt, $thong_tin_km, $ngay_thd);
+                $id_bill = insert_bill($ten_nguoi_dung, $email, $so_dien_thoai, $tong_gt_hd, $trang_thai, $dia_chi, $pt_tt, $ngay_thd);
 
                 foreach ($_SESSION['giohang'] as $cart) {
                     // insert_cart($name_product, $image, $price, $size, $color, $quantity, $id_bill, $id_user);

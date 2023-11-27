@@ -142,7 +142,11 @@
     <div class="row px-xl-5">
         <?php 
     foreach ($spnew as $sp) {
+       
+
+
         extract($sp);
+        $limitedDescription = implode(' ', array_slice(str_word_count($mo_ta, 2), 0, 3));
         $hinhpath = "upload/".$img;
         $spct= "index.php?act=ctsanpham&id=".$id;
         if (is_file($hinhpath)) {
@@ -169,11 +173,7 @@
                         <h5>' . $gia . '</h5>
                     </div>
                     <div class="d-flex align-items-center justify-content-center mb-1">
-                        <small class="fa fa-star text-primary mr-1"></small>
-                        <small class="fa fa-star text-primary mr-1"></small>
-                        <small class="fa fa-star text-primary mr-1"></small>
-                        <small class="fa fa-star text-primary mr-1"></small>
-                        <small class="fa fa-star text-primary mr-1"></small>
+                    '.$limitedDescription.'
                     </div>
                     <div class="d-flex align-items-center justify-content-center mb-1">
                         <form action="index.php?act=giohang" method="post">
