@@ -102,7 +102,6 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                 $pt_tt = $_POST['pt_tt'];
                 $ngay_thd = date('Y/m/d');
 
-
                 $id_bill = insert_bill($ten_nguoi_dung, $email, $so_dien_thoai, $tong_gt_hd, $trang_thai, $dia_chi, $pt_tt, $ngay_thd);
 
                 foreach ($_SESSION['giohang'] as $cart) {
