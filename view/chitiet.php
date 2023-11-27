@@ -160,7 +160,9 @@
                      <input type="hidden" name="id" value="<?= $id ?>">
                      <input type="hidden" name="ten_san_pham" value="<?= $ten_san_pham ?>">
                      <input type="hidden" name="img" value="<?= $img ?>">
-                     <input type="hidden" name="gia" value="<?= $gia ?>">
+                     <input type="hidden" name="gia" value="<?= $gia ?>">   
+                     <input type="hidden" name="soluong" value="1">   
+
                      <button type="submit" name="giohang" class="btn btn-primary px-3"><i class="fa fa-shopping-cart mr-1"></i> Thêm Vào Giỏ Hàng</button>
                  </form>
 

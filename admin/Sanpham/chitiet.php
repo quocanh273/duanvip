@@ -62,7 +62,9 @@
 <!-- Bình luận Start -->
 <div class="comments-section">
     <h4>Bình luận</h4>
-
+<?php
+var_dump($binhluan);
+?>
     
 </div>
 <!-- Bình luận End -->
