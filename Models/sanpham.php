@@ -5,6 +5,25 @@ require_once 'connect.php';
     $listsanpham = pdo_query($sql);
     return $listsanpham;
 }
+function loadpaginate_sanpham($page = 1, $limit = 5)
+{
+    $page = isset($_GET['page']) ? intval($_GET['page']) : 1;
+    $begin = max(0, ($page - 1) * $limit);
+
+    $sql = "SELECT * FROM sanpham ORDER BY id DESC LIMIT $begin, $limit";
+
+    $listsanpham = pdo_query($sql);
+    return $listsanpham;
+}
+
+function total_page($limit = 5)
+{
+    $sql = "SELECT COUNT(*) as count FROM sanpham";
+    $result = pdo_query($sql);
+    $count = $result[0]['count'];
+    $number_pages = ceil($count / $limit);
+    return $number_pages;
+}
 function insert_sanpham($ma_loai,$tensp,$giasp,$quantity,$description,$product_size
 ,$mausac,$trangthai,$khuyenmai,$hinh){
     $sql= "INSERT INTO sanpham(ma_loai,ten_san_pham,gia,so_luong,mo_ta,loai_sp,mau_sac,trangthai,thong_tin_km,img)
@@ -79,4 +98,3 @@ function loadall_sanpham_ok($kyw="",$ma_loai=0){
     return $listsanpham;
 }
 ?>
-

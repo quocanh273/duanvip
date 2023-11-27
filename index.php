@@ -31,7 +31,7 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
             break;
 
         case 'gioithieu':
-           
+
             include "view/gioithieu.php";
             break;
 
@@ -47,6 +47,13 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
 
         case 'sanpham':
             $dssp = loadall_sanpham();
+            if (isset($_GET['page'])) {
+                $page = $_GET['page'];
+            } else {
+                $page = 0;
+            }
+            $list_page = total_page();
+            $dssp = loadpaginate_sanpham($page);
             include "view/sanpham.php";
             break;
 

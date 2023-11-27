@@ -486,10 +486,8 @@ body {
 	padding: 16px 0;
 }
 #content main .table-data .order table tr td:first-child {
-	display: flex;
-	align-items: center;
-	grid-gap: 12px;
-	padding-left: 6px;
+	text-align: center;
+
 }
 #content main .table-data .order table td img {
 	width: 36px;
