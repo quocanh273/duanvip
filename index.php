@@ -124,10 +124,14 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                 $ngay_thd = date('Y-m-d');
                 $formatted_date = date('Y-m-d', strtotime($ngay_thd));
 
+<<<<<<< HEAD
+                $id_bill = insert_bill($ten_nguoi_dung, $email, $so_dien_thoai, $tong_gt_hd, $trang_thai, $dia_chi, $pt_tt, $ngay_thd);
+=======
 
                 $id_bill = insert_bill($_SESSION['ten_dang_nhap']['id'],$ten_nguoi_dung, $email, $so_dien_thoai, $tong_gt_hd, $trang_thai, $dia_chi, $pt_tt, $formatted_date);
                 // var_dump($_SESSION['giohang']);
                 // die;
+>>>>>>> 105a70e11b98cf849a4b6d7815fce3b414760b07
 
                 foreach ($_SESSION['giohang'] as $cart) {
                     // ($name_product,$price, $size, $quantity, $id_bill, $id_user)
