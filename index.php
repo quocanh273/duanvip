@@ -139,12 +139,13 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
 
             include "view/bill.php";
             break;
-            case 'listbill':
-                $listbill=loadone_hoadon_ls($_SESSION['ten_dang_nhap']['id']);
-                
-                include "view/listbill.php";
-                
-                break;
+        case 'listbill':
+            $listbill=loadone_hoadon_ls($_SESSION['ten_dang_nhap']['id']);
+            
+            include "view/listbill.php";
+            
+            break;
+        
         case 'lienhe':
             include "view/lienhe.php";
             break;

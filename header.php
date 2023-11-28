@@ -193,6 +193,7 @@
                                     <div class="dropdown-menu bg-primary rounded-0 border-0 m-0">
                                         <a href="index.php?act=giohang" class="dropdown-item">Giỏ hàng</a>
                                         <a href="index.php?act=thanhtoan" class="dropdown-item">Thanh Toán</a>
+                                        <a href="index.php?act=listbill" class="dropdown-item">Lịch sử hóa đơn</a>
                                     </div>
                                 </div>
                                 <a href="index.php?act=lienhe" class="nav-item nav-link">Liên hệ</a>

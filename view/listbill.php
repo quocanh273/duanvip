@@ -1,34 +1,38 @@
 
-<?php
-extract($listbill);
-var_dump($listbill);
-?>
+
 
 <table class="table table-bordered table-hover">
     <thead class="thead-dark">
       <tr>
         <th>ID</th>
-        <th>Product Name</th>
-        <th>Price</th>
-        <th>Quantity</th>
-        <th>Total</th>
+        <th>ID người dùng</th>
+        <th>Tên người dùng</th>
+        <th>Email</th>
+        <th>Số điện thoại</th>
+        <th>Tổng giá trị hóa đơn</th>
+        <th>Địa chỉ</th>
+        <th>Phương thức thanh toán</th>
+        <th>Trạng thái</th>
+        <th>Ngày tạo hóa đơn</th>
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td>1</td>
-        <td>Laptop</td>
-        <td>$1000</td>
-        <td>2</td>
-        <td>$2000</td>
-      </tr>
-      <tr>
-        <td>2</td>
-        <td>Smartphone</td>
-        <td>$500</td>
-        <td>3</td>
-        <td>$1500</td>
-      </tr>
-      <!-- Add more rows as needed -->
+          <?php
+        foreach ($listbill as $listbill){
+          extract($listbill);
+        echo ' <tr>
+                  <td>'.$id.'</td>
+                  <td>'.$id_user.'</td>
+                  <td>'.$ten_nguoi_dung.'</td>
+                  <td>'.$email.'</td>
+                  <td>'.$so_dien_thoai.'</td>
+                  <td>'.$tong_gt_hd.'</td>
+                  <td>'.$dia_chi.'</td>
+                  <td>'.$pt_tt.'</td>
+                  <td>'.$trang_thai.'</td>
+                  <td>'.$ngay_thd.'</td>
+            </tr>';
+        }
+      ?>
     </tbody>
   </table>

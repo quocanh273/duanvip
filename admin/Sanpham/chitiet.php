@@ -10,7 +10,7 @@
                 extract($sanpham);
                 $hinhpath = "../upload/".$img;
                         if (is_file($hinhpath)) {
-                            $img="<img   src='".$hinhpath."' height='599px'> " ;
+                            $img="<img   src='".$hinhpath."' height='599px'  width='100%'> " ;
                         }else{
                             $img = "không có hình";
                         }
@@ -62,10 +62,37 @@
 <!-- Bình luận Start -->
 <div class="comments-section">
     <h4>Bình luận</h4>
-<?php
-var_dump($binhluan);
-?>
-    
+<table class="table table-bordered table-hover">
+    <thead class="thead-dark">
+      <tr>
+        <th>ID</th>
+        <th>Nội Dung</th>
+        <th>ID Người Dùng</th>
+        <th>ID Sản Phẩm</th>
+        <th>Ngày Bình Luận</th>
+        <th>Thao Tác</th>
+      </tr>
+    </thead>
+    <tbody>
+        <?php 
+         foreach ($binhluan as $binhluan){
+        extract($binhluan);
+        $xoabl = "index.php?act=xoabl&id=" . $id_bl;
+        echo '<tr>
+        <td>'.$id_bl.'</td>
+        <td>'.$noi_dung.'</td>
+        <td>'.$id_user.'</td>
+        <td>'.$idpro.'</td>
+        <td>'.$ngay_bluan.'</td>
+        <td class="d-flex gap-2">   
+        <a href="' . $xoabl . '"><input type="button" class="btn btn-danger" value="Xóa"></a>
+        </td>
+      </tr>';
+         }
+        ?>
+    </tbody>
+  </table>
+
 </div>
 <!-- Bình luận End -->
 
