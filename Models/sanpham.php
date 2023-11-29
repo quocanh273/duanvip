@@ -25,8 +25,8 @@ function total_page($limit = 5)
     return $number_pages;
 }
 function insert_sanpham($ma_loai,$tensp,$giasp,$quantity,$description,$product_size
-,$mausac,$trangthai,$khuyenmai,$hinh){
-    $sql= "INSERT INTO sanpham(ma_loai,ten_san_pham,gia,so_luong,mo_ta,loai_sp,mau_sac,trangthai,thong_tin_km,img)
+,$trangthai,$khuyenmai,$hinh){
+    $sql= "INSERT INTO sanpham(ma_loai,ten_san_pham,gia,so_luong,mo_ta,loai_sp,trangthai,thong_tin_km,img)
      values ('$ma_loai','$tensp','$giasp','$quantity','$description','$product_size'
 ,'$trangthai','$khuyenmai','$hinh')";
     pdo_execute($sql);
@@ -94,7 +94,7 @@ function hang_hoa_select_keyword($keyword){
 function loadall_sanpham_ok($kyw="",$ma_loai=0){
     $sql = "select * from sanpham where 1";
     if($kyw!=""){
-        $sql.=" and name like '%".$kyw."%'";
+        $sql.=" and ten_san_pham like '%".$kyw."%'";
     }
     if($ma_loai>0){
         $sql.=" and ma_loai= '".$ma_loai."'";
@@ -103,4 +103,28 @@ function loadall_sanpham_ok($kyw="",$ma_loai=0){
     $listsanpham = pdo_query($sql);
     return $listsanpham;
 }
+
+// function loadall_sanpham($kyw="",$iddm=0){
+//     $sql = "select * from sanpham where 1";
+//     if($kyw!=""){
+//         $sql.=" and name like '%".$kyw."%'";
+//     }
+//     if($iddm>0){
+//         $sql.=" and iddm= '".$iddm."'";
+//     }
+//     $sql.=" order by id desc";
+//     $listsanpham = pdo_query($sql);
+//     return $listsanpham;
+// }
+function load_ten_dm($ma_loai){
+    if($ma_loai>0){
+    $sql = "select * from loai where ma_loai=".$ma_loai;
+    $dm=pdo_query_one($sql);
+    extract($dm);
+    return  $ten_loai;
+    }else{
+        return "";
+    }
+}
+
 ?>

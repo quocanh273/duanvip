@@ -44,6 +44,7 @@ function delete_kh($id){
     $sql="delete from nguoi_dung where id=".$id;
     pdo_execute($sql);
 }
+
 function checkuser($ten_dang_nhap,$mat_khau){
     $sql = "select * from nguoi_dung where ten_dang_nhap='".$ten_dang_nhap."' AND mat_khau='".$mat_khau."'";
     $sp =pdo_query_one($sql);

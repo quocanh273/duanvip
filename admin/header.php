@@ -44,9 +44,9 @@
 					<span class="text">Trang Chủ</span>
 				</a>
 			</li>
-			
-			
-			<li class="<?php echo (!isset($_GET['act']) || $_GET['act'] === 'listdm') ? 'active' : ''; ?>" >
+			<?php
+			if (isset($_SESSION['ten_dang_nhap'])) {?>
+<li class="<?php echo (!isset($_GET['act']) || $_GET['act'] === 'listdm') ? 'active' : ''; ?>" >
 				<a href="index.php?act=danhmuc">
 					<i class='bx bxs-category' ></i>
 					<span class="text">Danh Mục</span>
@@ -84,6 +84,48 @@
 					<span class="text">Thống Kê</span>
 				</a>
 			</li>
+			<?php
+			}else{?>
+			
+			<li class="<?php echo (!isset($_GET['act']) || $_GET['act'] === 'listdm') ? 'active' : ''; ?>" >
+				<a href="index.php?act=dangnhap">
+					<i class='bx bxs-category' ></i>
+					<span class="text">Danh Mục</span>
+				</a>
+			</li>
+			
+			<li class="<?php echo (!isset($_GET['act']) || $_GET['act'] === 'listsp') ? 'active' : ''; ?>">
+				<a href="index.php?act=dangnhap">
+					<i class='bx bxs-shopping-bag' ></i>
+					<span class="text">Sản Phẩm</span>
+				</a>
+			</li>
+			
+			<li class="<?php echo (!isset($_GET['act']) || $_GET['act'] === 'listkhachhang') ? 'active' : ''; ?>">
+				<a href="index.php?act=dangnhap">
+					<i class='bx bxs-group' ></i>
+					<span class="text">Khách Hàng</span>
+				</a>
+			</li>
+			<!-- <li class="<?php echo (!isset($_GET['act']) || $_GET['act'] === 'listbinhluan') ? 'active' : ''; ?>">
+				<a href="index.php?act=listbinhluan">
+					<i class='bx bxs-message-dots' ></i>
+					<span class="text">Bình Luận</span>
+				</a>
+			</li> -->
+			<li class="<?php echo (!isset($_GET['act']) || $_GET['act'] === 'listdonhang') ? 'active' : ''; ?>">
+				<a href="index.php?act=dangnhap">
+					<i class='bx bxs-shopping-bag-alt' ></i>
+					<span class="text">Quản Lý Đơn Hàng</span>
+				</a>
+			</li>
+            <li class="<?php echo (!isset($_GET['act']) || $_GET['act'] === 'listthongke') ? 'active' : ''; ?>">
+				<a href="index.php?act=dangnhap">
+					<i class='bx bxs-doughnut-chart' ></i>
+					<span class="text">Thống Kê</span>
+				</a>
+			</li>
+			<?php }?>
             <!-- <li class="">
 				<a href="index.php?act=dangnhap">
 					<i class='bx bxs-chart' ></i>
@@ -97,7 +139,8 @@
     <section id="content">
     <nav>
 	<?php
-        if (isset($_SESSION['ten_dang_nhap'])) {?>
+        if (isset($_SESSION['ten_dang_nhap'])) {
+			?>
 			<i class='bx bx-menu' ></i>
 	
 	<form action="index?act=thoat">

@@ -7,7 +7,7 @@
                     <ol class="carousel-indicators">
                         <li data-target="#header-carousel" data-slide-to="0" class="active"></li>
                         <li data-target="#header-carousel" data-slide-to="1"></li>
-                        <li data-target="#header-carousel" data-slide-to="2"></li>
+                    
                     </ol>
                     <div class="carousel-inner">
                         <div class="carousel-item position-relative active" style="height: 430px;">
@@ -15,8 +15,8 @@
                             <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                                 <div class="p-3" style="max-width: 700px;">
                                     <h1 class="display-4 text-white mb-3 animate__animated animate__fadeInDown">Thời Trang Nam</h1>
-                                    <p class="mx-md-5 px-5 animate__animated animate__bounceIn">Lorem rebum magna amet lorem magna erat diam stet. Sadips duo stet amet amet ndiam elitr ipsum diam</p>
-                                    <a class="btn btn-outline-light py-2 px-4 mt-3 animate__animated animate__fadeInUp" href="#">Shop Now</a>
+                                    <p class="mx-md-5 px-5 animate__animated animate__bounceIn">Thời trang nam .Hệ thống thời trang cho phái mạnh hàng đầu Việt Nam, hướng tới phong cách nam tính, lịch lãm và trẻ trung.</p>
+                                    <a class="btn btn-outline-light py-2 px-4 mt-3 animate__animated animate__fadeInUp" href="index.php?act=sanpham">Xem ngay</a>
                                 </div>
                             </div>
                         </div>
@@ -25,21 +25,12 @@
                             <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                                 <div class="p-3" style="max-width: 700px;">
                                     <h1 class="display-4 text-white mb-3 animate__animated animate__fadeInDown">Thời Trang Nữ</h1>
-                                    <p class="mx-md-5 px-5 animate__animated animate__bounceIn">Lorem rebum magna amet lorem magna erat diam stet. Sadips duo stet amet amet ndiam elitr ipsum diam</p>
-                                    <a class="btn btn-outline-light py-2 px-4 mt-3 animate__animated animate__fadeInUp" href="#">Shop Now</a>
+                                    <p class="mx-md-5 px-5 animate__animated animate__bounceIn">Mua Thời trang nữ đẹp, hợp thời trang, hàng hiệu, đa dạng mẫu mã, dễ dàng đổi trả. Giao nhanh trong 2h, miễn phí vận chuyển trên toàn quốc.</p>
+                                    <a class="btn btn-outline-light py-2 px-4 mt-3 animate__animated animate__fadeInUp" href="index.php?act=sanpham">Xem ngay</a>
                                 </div>
                             </div>
                         </div>
-                        <div class="carousel-item position-relative" style="height: 430px;">
-                            <img class="position-absolute w-100 h-100" src="view/img/carousel-3.jpg" style="object-fit: cover;">
-                            <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
-                                <div class="p-3" style="max-width: 700px;">
-                                    <h1 class="display-4 text-white mb-3 animate__animated animate__fadeInDown">Thời Trang Trẻ Em</h1>
-                                    <p class="mx-md-5 px-5 animate__animated animate__bounceIn">Lorem rebum magna amet lorem magna erat diam stet. Sadips duo stet amet amet ndiam elitr ipsum diam</p>
-                                    <a class="btn btn-outline-light py-2 px-4 mt-3 animate__animated animate__fadeInUp" href="#">Shop Now</a>
-                                </div>
-                            </div>
-                        </div>
+                       
                     </div>
                 </div>
             </div>
@@ -47,16 +38,16 @@
                 <div class="product-offer mb-30" style="height: 200px;">
                     <img class="img-fluid" src="view/img/offer-1.jpg" alt="">
                     <div class="offer-text">
-                        <h6 class="text-white text-uppercase">Save 20%</h6>
-                        <h3 class="text-white mb-3">Special Offer</h3>
+                        <h6 class="text-white text-uppercase">Tiết kiệm 20%</h6>
+                        <h3 class="text-white mb-3">Đề nghị đặc biệt</h3>
                         <a href="index.php?act=sanpham" class="btn btn-primary">Xem ngay</a>
                     </div>
                 </div>
                 <div class="product-offer mb-30" style="height: 200px;">
                     <img class="img-fluid" src="view/img/offer-2.jpg" alt="">
                     <div class="offer-text">
-                        <h6 class="text-white text-uppercase">Save 20%</h6>
-                        <h3 class="text-white mb-3">Special Offer</h3>
+                        <h6 class="text-white text-uppercase">Tiết kiệm 20%</h6>
+                        <h3 class="text-white mb-3">Đề nghị đặc biệt</h3>
                         <a href="index.php?act=sanpham" class="btn btn-primary">Xem ngay</a>
                     </div>
                 </div>
@@ -150,7 +141,7 @@
         $hinhpath = "upload/".$img;
         $spct= "index.php?act=ctsanpham&id=".$id;
         if (is_file($hinhpath)) {
-            $imgTag = "<img class='img-fluid' style='width:100%; height:200px;' src='".$hinhpath."' alt='Product Image'>";
+            $imgTag = "<img class='img-fluid' style='width:100%; height:350px;' src='".$hinhpath."' alt='Product Image'>";
         } else {
             $imgTag = "<p>không có hình</p>";
         }
@@ -170,7 +161,7 @@
                 <div class="text-center py-4">
                     <a class="h6 text-decoration-none text-truncate" href="' . $spct . '">' . $ten_san_pham . '</a>
                     <div class="d-flex align-items-center justify-content-center mt-2">
-                        <h5>' . $gia . '</h5>
+                        <h5>' . $gia . ' $</h5>
                     </div>
                     <div class="d-flex align-items-center justify-content-center mb-1">
                     '.$limitedDescription.'

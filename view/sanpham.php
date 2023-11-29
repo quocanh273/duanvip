@@ -42,7 +42,12 @@
 .product-item .text-center {
     padding: 15px;
 }
-
+h3 {
+    font-size: 38px;
+    margin-top: 20px;
+    margin-bottom: 25px;
+    color: #333;
+}
 /* ... (other styles remain unchanged) */
 </style>
 
@@ -58,6 +63,7 @@
         <div class="row pb-3 custom-row">
             <!-- Shop Product Start -->
             <div class="col-lg-9 col-md-8 mx-auto shop-products">
+            <h3>Sản Phẩm</h3>
                 <div class="row pb-3">
                     <?php
                     foreach ($dssp as $sp) {

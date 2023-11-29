@@ -117,12 +117,26 @@
                     </a>
                 </div>
                 <div class="col-lg-4 col-6 text-left">
-                    <form action="">
+                    <style>
+
+        input[name="timkiem"] {
+            padding: 6px 6px;
+            background-color: #ccc;
+            color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 0 5px 5px 0;
+            cursor: pointer;
+        }
+        input[name="timkiem"]:hover {
+            background-color: #eee;
+            border-color: #ccc;
+        }
+                    </style>
+                    <form action="index.php?act=sanphamdm" method="post">
                         <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Tìm kiếm">
+                            <input type="text" name="kyw" class="form-control" placeholder="Tìm kiếm">
                             <div class="input-group-append">
-                                <span class="input-group-text bg-transparent text-primary">
-                                    <i class="fa fa-search"></i>
+                                <input type="submit" value="Tìm Kiếm" name="timkiem">
                                 </span>
                             </div>
                         </div>

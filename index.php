@@ -43,16 +43,37 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
             break;
 
         case 'sanphamdm':
+            if (isset($_POST['kyw'])&&($_POST['kyw']!="") ) {
+                $kyw = $_POST['kyw'];
+            }else{
+                $kyw = "";
+            }
             if (isset($_GET['ma_loai']) && ($_GET['ma_loai'] > 0)) {
                 $ma_loai = $_GET['ma_loai'];
-                $dssp = loadall_sanpham_ok("", $ma_loai);
-                include "view/sanphamdm.php";
-            } else {
-                include "home.php";
+                
+            }else{
+                $ma_loai = 0;
             }
+       
+            $dssp = loadall_sanpham_ok($kyw, $ma_loai);
+           
+            $tendm=load_ten_dm($ma_loai);  
+             
+            include "view/sanphamdm.php";
             break;
 
+        // case 'sanphamdm':
+        //     if (isset($_GET['ma_loai']) && ($_GET['ma_loai'] > 0)) {
+        //         $ma_loai = $_GET['ma_loai'];
+        //         $dssp = loadall_sanpham_ok("", $ma_loai);
+        //         include "view/sanphamdm.php";
+        //     } else {
+        //         include "home.php";
+        //     }
+        //     break;
+
         case 'sanpham':
+          
             $dssp = loadall_sanpham();
             if (isset($_GET['page'])) {
                 $page = $_GET['page'];
@@ -63,34 +84,35 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
             $dssp = loadpaginate_sanpham($page);
             include "view/sanpham.php";
             break;
-            case 'giohang':
-                if (isset($_POST['giohang'])) {
-                    $id = $_POST['id'];
-                    $ten_san_pham = $_POST['ten_san_pham'];
-                    $img = $_POST['img'];
-                    $gia = $_POST['gia'];
-                    $soluong = $_POST['soluong'];
-                    $size = $_POST['size'];
-                    $thanhtien = $gia * $soluong;
-            
-                    // Check if the product is already in the shopping cart
-                    $productExists = false;
-                    foreach ($_SESSION['giohang'] as &$sp) {
-                        if ($sp[0] == $id && $sp[6] == $size) {
-                            // If the product already exists, update the quantity
-                            $sp[4] += $soluong;
-                            $sp[5] = $sp[3] * $sp[4]; // Update the total price
-                            $productExists = true;
-                            break;
-                        }
-                    }
-            
-                    // If the product is not in the shopping cart, add it
-                    if (!$productExists) {
-                        $spadd = [$id, $ten_san_pham, $img, $gia, $soluong, $thanhtien, $size];
-                        array_push($_SESSION['giohang'], $spadd);
+
+        case 'giohang':
+            if (isset($_POST['giohang'])) {
+                $id = $_POST['id'];
+                $ten_san_pham = $_POST['ten_san_pham'];
+                $img = $_POST['img'];
+                $gia = $_POST['gia'];
+                $soluong = $_POST['soluong'];
+                $size = $_POST['size'];
+                $thanhtien = $gia * $soluong;
+        
+                // Check if the product is already in the shopping cart
+                $productExists = false;
+                foreach ($_SESSION['giohang'] as &$sp) {
+                    if ($sp[0] == $id && $sp[6] == $size) {
+                        // If the product already exists, update the quantity
+                        $sp[4] += $soluong;
+                        $sp[5] = $sp[3] * $sp[4]; // Update the total price
+                        $productExists = true;
+                        break;
                     }
                 }
+        
+                // If the product is not in the shopping cart, add it
+                if (!$productExists) {
+                    $spadd = [$id, $ten_san_pham, $img, $gia, $soluong, $thanhtien, $size];
+                    array_push($_SESSION['giohang'], $spadd);
+                }
+            }
                 // Use parentheses for var_dump
                
             
@@ -124,14 +146,10 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                 $ngay_thd = date('Y-m-d');
                 $formatted_date = date('Y-m-d', strtotime($ngay_thd));
 
-<<<<<<< HEAD
-                $id_bill = insert_bill($ten_nguoi_dung, $email, $so_dien_thoai, $tong_gt_hd, $trang_thai, $dia_chi, $pt_tt, $ngay_thd);
-=======
 
                 $id_bill = insert_bill($_SESSION['ten_dang_nhap']['id'],$ten_nguoi_dung, $email, $so_dien_thoai, $tong_gt_hd, $trang_thai, $dia_chi, $pt_tt, $formatted_date);
                 // var_dump($_SESSION['giohang']);
                 // die;
->>>>>>> 105a70e11b98cf849a4b6d7815fce3b414760b07
 
                 foreach ($_SESSION['giohang'] as $cart) {
                     // ($name_product,$price, $size, $quantity, $id_bill, $id_user)

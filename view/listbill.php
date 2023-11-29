@@ -1,6 +1,13 @@
 
-
-
+<style>
+  h3 {
+    font-size: 38px;
+    margin-top: 20px;
+    margin-bottom: 25px;
+    color: #333;
+}
+</style>
+<h3>Lịch sử hóa đơn</h3>
 <table class="table table-bordered table-hover">
     <thead class="thead-dark">
       <tr>

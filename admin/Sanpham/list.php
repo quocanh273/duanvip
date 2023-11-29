@@ -38,7 +38,7 @@
                 <thead>
                     <tr>
 
-                        <th>TÊN DANH MỤC</th>
+                        <th>ID DANH MỤC</th>
                         <th>TÊN SẢN PHẨM</th>
                         <th>ẢNH</th>
                         <th>GIÁ SẢN PHẨM</th>
