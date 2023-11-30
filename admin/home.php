@@ -41,11 +41,7 @@
 			</ul>
 			
 		
-        	<?php 
-		
-
-  include "Thongke/bieudo.php";
-		?>
+      
 	
 			<!-- <div class="table-data">
 				<div class="order">

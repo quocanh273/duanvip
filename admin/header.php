@@ -33,7 +33,7 @@
 
 	<!-- SIDEBAR -->
 	<section id="sidebar">
-		<a href="#" class="brand">
+		<a href="index.php?act=home" class="brand">
 			<i class='bx bxs-alarm-add	'></i>
 			<span class="text">AdminHub</span>
 		</a>

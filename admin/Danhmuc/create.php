@@ -27,10 +27,8 @@
             </div>
             <form action="index.php?act=createdm" class="form-input" method="post" enctype="multipart/form-data">
                <div class="form-group pb-4">
-               <label for="">
-                    Mã Danh Mục
-                </label> <br />
-                <input type="text" name="ma_Loai" readonly class="rounded-2 w-75"> <br />
+             
+                
 
                 <label for="">
                    Ảnh danh mục
