@@ -17,7 +17,14 @@ if (isset($_GET['act'])) {
     switch ($act) {
 
         case 'home':
+            $tongdh =calculate_total_gt_hd();
+            $tongkh =ds_khachhang_count();
+            $tonghd= load_all_hoadon_count();
+            $listthongke = loadall_thongke();
+            $listsphot = sanpham_buyhot();
+            $listuserbuyhot = getTopBuyers();
             include "home.php";
+
             break;
 
 

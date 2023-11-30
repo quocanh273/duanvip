@@ -113,9 +113,10 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                     array_push($_SESSION['giohang'], $spadd);
                 }
             }
-                // Use parentheses for var_dump
+            $_SESSION['giohang_backup'] = [];   
+            // Use parentheses for var_dump
                
-            
+               
                 include "view/giohang.php";
                 break;
             
@@ -156,14 +157,17 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                     // insert_cart($name_product, $image, $price, $size, $color, $quantity, $id_bill, $id_user);
                     insert_cart($cart['1'],  $cart['3'], $cart['6'], 1, $id_bill, $_SESSION['ten_dang_nhap']['id']);
                 }
-                
+                $_SESSION['giohang_backup'] = $_SESSION['giohang'];
+
+        // Reset the giohang session to an empty array
+            $_SESSION['giohang'] = array();
             }
 
             include "view/bill.php";
             break;
         case 'listbill':
             $listbill=loadone_hoadon_ls($_SESSION['ten_dang_nhap']['id']);
-            
+           
             include "view/listbill.php";
             
             break;
