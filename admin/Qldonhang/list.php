@@ -33,7 +33,7 @@
                 // $suadh = "index.php?act=editdh&ma_loai=".$id;
                 // $xoadh = "index.php?act=xoadh&ma_loai=".$id; // đường liên kết 
                 $xemchitiet = "index.php?act=donhangchitiet&id=" . $id;
-                $suadh = "index.php?act=update_order&id=" . $id;
+                $suadh = "index.php?act=suadh&id=" . $id;
                 echo '  <tr>
                           <td>' . $id . '</td>
                           <td>' . $ten_nguoi_dung . '</td>

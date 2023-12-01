@@ -11,10 +11,7 @@ function loadone_hoadon($id){
 function update_dh($id,$trang_thai){
     // var_dump($hinh);
     // die;
-    
         $sql = "update hoa_don set trang_thai='".$trang_thai."' where id='".$id."'";
-        
-
     pdo_execute($sql);
 }
 

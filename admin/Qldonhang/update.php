@@ -30,21 +30,21 @@ if (is_array($dhchitiet)) {
                 <h3>Đơn hàng</h3>
 
             </div>
-            <form action="index.php?act=update_order" class="form-input" method="post">
+            <form action="index.php?act=updatedh" class="form-input" method="post">
                 <div class="form-group pb-4">
                     
                    
                 <label for="trang_thai" class="label pt-2">
                             Trạng Thái:</label>
                         <select id="trang_thai" name="trang_thai">
-                            <option value=""><?= $trang_thai ?></option>
-                            <option value="dathang">Đặt hàng thành công</option>
-                            <option value="vanchuyen">Đang vận chuyển</option>
-                            <option value="thanhcong">Thành công</option>
+                            <option value=""><?= $trang_thai?></option>
+                            <option value="Đặt hàng thành công">Đặt hàng thành công</option>
+                            <option value="Đang vận chuyển">Đang vận chuyển</option>
+                            <option value="Thành công">Thành công</option>
                         </select><br />
                 </div>
                 <input type="hidden" name="id" value="<?= $id?>">
-                <input type="submit" name="updatedh" value="Cập Nhật" class="btn btn-insert  status completed ">
+                <input type="submit" name="capnhat" value="Cập Nhật" class="btn btn-insert  status completed ">
                 <input type="reset" name="reset" id="" value="Nhập Lại" class=" btn btn-reset ">
                 
                 <button class="btn btn-insert  status completed" >Về Trang Danh Sách</button>
