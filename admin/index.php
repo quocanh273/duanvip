@@ -22,7 +22,16 @@ if (isset($_GET['act'])) {
     switch ($act) {
 
         case 'home':
+<<<<<<< HEAD
             
+=======
+            $tongdh =calculate_total_gt_hd();
+            $tongkh =ds_khachhang_count();
+            $tonghd= load_all_hoadon_count();
+            $listthongke = loadall_thongke();
+            $listsphot = sanpham_buyhot();
+            $listuserbuyhot = getTopBuyers();
+>>>>>>> dfc9ec42c5b6da5c622eb9f0de72a32571a0c293
             include "home.php";
 
             break;
