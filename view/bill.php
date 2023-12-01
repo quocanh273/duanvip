@@ -56,7 +56,7 @@
                     //  var_dump($_SESSION['giohang']);
                     $tong = 0;
                     $i = 0;
-                    foreach ($_SESSION['giohang'] as $card) {
+                    foreach ($_SESSION['giohang_backup'] as $card) {
                         $img = isset($card['2']) ? "upload/" . $card['2'] : "";
                         $ttien = isset($card['3']) && isset($card['4']) ? $card['3'] * $card['4'] : 0;
 

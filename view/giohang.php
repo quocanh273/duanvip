@@ -59,7 +59,7 @@ if (isset($_SESSION['giohang']) && count($_SESSION['giohang']) != 0) {
                                                 <i class="fa fa-minus"></i>
                                             </button>
                                         </div> -->
-                                        <input type="number" class="form-control bg-secondary border-0 text-center" value="<?=$soluong?>">
+                                        <input type="number" class="form-control bg-secondary border-0 text-center" value="<?= $card['4'] ?>">
                                         <!-- <div class="input-group-append">
                                             <button class="btn btn-outline-primary btn-plus" type="button">
                                                 <i class="fa fa-plus"></i>

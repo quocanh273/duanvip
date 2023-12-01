@@ -10,14 +10,21 @@ require "../Models/thongke.php";
 require "../Models/hoadon.php";
 require "../Models/cart.php";
 
-
+$tongdh =calculate_total_gt_hd();
+            $tongkh =ds_khachhang_count();
+            $tonghd= load_all_hoadon_count();
+            $listthongke = loadall_thongke();
+            $listsphot = sanpham_buyhot();
+            $listuserbuyhot = getTopBuyers();
 
 if (isset($_GET['act'])) {
     $act = $_GET['act'];
     switch ($act) {
 
         case 'home':
+            
             include "home.php";
+
             break;
 
 
@@ -271,7 +278,7 @@ if (isset($_GET['act'])) {
                 }
                 include "Khachhang/update.php";
                 break;
-                case 'updatekh':
+            case 'updatekh':
                     if (isset($_POST['update']) && ($_POST['update'])) {
                         $id = $_POST['id'];
                         $tenkh = $_POST['tenkh'];
@@ -322,6 +329,30 @@ if (isset($_GET['act'])) {
         case 'order_detail':
             include "Qldonhang/donhangchitiet.php";
             break;
+
+        // case 'update_order':
+            // if (isset($_POST['updatedh']) && ($_POST['updatedh'])) {
+            //     $id = $_POST['id'];
+            //     $trang_thai = $_POST['trang_thai'];
+
+            //     update_dh($id,$trang_thai);
+            //     $thongbao = "Cập nhật thành công";
+            //     include "Qldonhang/update.php";
+            // }
+            case 'update_order':
+                if (isset($_POST['updatedh']) && ($_POST['updatedh'])) {
+                    echo "Form submitted";  // Debugging statement
+                    $id = $_POST['id'];
+                    $trang_thai = $_POST['trang_thai'];
+            
+                    update_dh($id, $trang_thai);
+                    echo "Update successful";  // Debugging statement
+                    $thongbao = "Cập nhật thành công";
+                    include "Qldonhang/update.php";
+                    exit;
+                }
+                break;
+        
         // Thống Kê
         case 'listthongke':
             $listthongke = loadall_thongke();
@@ -345,6 +376,12 @@ if (isset($_GET['act'])) {
     }
 } else {
     include "home.php";
+    $tongdh =calculate_total_gt_hd();
+    $tongkh =ds_khachhang_count();
+    $tonghd= load_all_hoadon_count();
+    $listthongke = loadall_thongke();
+    $listsphot = sanpham_buyhot();
+    $listuserbuyhot = getTopBuyers();
 }
 // FOOTER
 include "footer.php";

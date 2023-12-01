@@ -75,7 +75,7 @@
                         <label for="trangthai" class="label pt-2">
                         Trạng Thái:</label>
                     <select id="trangthai" name="trangthai">
-                    <option value="Còn Hàng">Còn hàng</option>
+                        <option value="Còn Hàng">Còn hàng</option>
                         <option value="Hết hàng">Hết hàng</option>
                     </select><br />
                     Khuyến Mại:

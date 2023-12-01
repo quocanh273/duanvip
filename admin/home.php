@@ -1,4 +1,7 @@
-   
+<?php 
+// extract($tonghd);
+
+?>
    <main>
 			<div class="head-title">
 				<div class="left">
@@ -20,90 +23,78 @@
 				<li>
 					<i class='bx bxs-calendar-check' ></i>
 					<span class="text">
-						<h3>1020</h3>
+						<h3><?= $tonghd ?></h3>
 						<p>Đơn Hàng</p>
 					</span>
 				</li>
 				<li>
 					<i class='bx bxs-group' ></i>
 					<span class="text">
-						<h3>2834</h3>
+						<h3><?= $tongkh?> </h3>
 						<p>Khách Hàng</p>
 					</span>
 				</li>
 				<li>
 					<i class='bx bxs-dollar-circle' ></i>
 					<span class="text">
-						<h3>$2543</h3>
+						<h3>$<?= $tongdh?></h3>
 						<p>Doanh Thu</p>
 					</span>
 				</li>
 			</ul>
 			
+<script src="https://www.gstatic.com/charts/loader.js"></script>
+<div
+id="myChart" style="width:100%; max-width:100%; height:800px;">
+</div>
+
+<script>
+  
+google.charts.load('current', {'packages':['corechart']});
+google.charts.setOnLoadCallback(drawChart);
+
+function drawChart() {
+
+// Set Data
+const data = google.visualization.arrayToDataTable([
+  ['Danh mục', 'Số lượng sản phẩm'],
+  <?php
+  $tongdm = count($listthongke);
+  $i=1;
+foreach($listthongke as $value){
+    extract($value);
+    if($i == $tongdm)
+        $dauplay = "";
+    else
+        $dauplay =",";
+
+        echo "['".$value['ten_loai']."',".$value['countsp']."]".$dauplay;
+$i=+1;
+    }
+
+
+?>
+//   ['Italy',54.8],
+//   ['France',48.6],
+//   ['Spain',44.4],
+//   ['USA',23.9],
+//   ['Argentina',14.5]
+]);
+
+// Set Options
+
+const options = {
+  title:'Biểu đồ thống kê danh mục và danh sách sản phẩm',
+  is3D:true
+};
+
+// Draw
+const chart = new google.visualization.PieChart(document.getElementById('myChart'));
+chart.draw(data, options);
+
+}
+</script>
 		
-      
-	
-			<!-- <div class="table-data">
-				<div class="order">
-					<div class="head">
-						<h3>Đơn Hàng Gần Đây	</h3>
-						<i class='bx bx-search' ></i>
-						<i class='bx bx-filter' ></i>
-					</div>
-					<table>
-						<thead>
-							<tr>
-								<th>Khách Hàng</th>
-								<th>Ngày</th>
-								<th>Trạng Thái</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>
-									<img src="img/people.png">
-									<p>John Doe</p>
-								</td>
-								<td>01-10-2021</td>
-								<td><span class="status completed">Hoàn Thành </span></td>
-							</tr>
-							<tr>
-								<td>
-									<img src="img/people.png">
-									<p>John Doe</p>
-								</td>
-								<td>01-10-2021</td>
-								<td><span class="status pending">Chờ Xử Lý</span></td>
-							</tr>
-							<tr>
-								<td>
-									<img src="img/people.png">
-									<p>John Doe</p>
-								</td>
-								<td>01-10-2021</td>
-								<td><span class="status process">Process</span></td>
-							</tr>
-							<tr>
-								<td>
-									<img src="img/people.png">
-									<p>John Doe</p>
-								</td>
-								<td>01-10-2021</td>
-								<td><span class="status pending">Chờ Xử Lý</span></td>
-							</tr>
-							<tr>
-								<td>
-									<img src="img/people.png">
-									<p>John Doe</p>
-								</td>
-								<td>01-10-2021</td>
-								<td><span class="status completed">Hoàn Thành</span></td>
-							</tr>
-						</tbody>
-					</table>
-				</div>
-				
-			</div> -->
  
 
 			</div>

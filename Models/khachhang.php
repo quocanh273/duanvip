@@ -5,6 +5,15 @@ function ds_khachhang(){
     $listkhachhang=pdo_query($sql);
     return $listkhachhang; 
 }
+function ds_khachhang_count(){
+    $sql = "SELECT COUNT(*) as kh_count FROM nguoi_dung";
+    $result = pdo_query($sql);
+
+    // Lấy giá trị số lượng từ kết quả truy vấn
+    $kh_count = $result[0]['kh_count'];
+
+    return $kh_count;
+}
 
 function insert_khachhang($tenkh,$tendn,$pass,$mail,$ngaysinh,$diachi,$sodienthoai,$image){
     $sql="INSERT INTO nguoi_dung(ten_nguoi_dung,ten_dang_nhap,mat_khau,email,ngay_sinh,dia_chi,so_dien_thoai,img) 
