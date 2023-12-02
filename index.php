@@ -162,14 +162,22 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
         // Reset the giohang session to an empty array
             $_SESSION['giohang'] = array();
             }
-
+            
             include "view/bill.php";
             break;
+
         case 'listbill':
             $listbill=loadone_hoadon_ls($_SESSION['ten_dang_nhap']['id']);
            
             include "view/listbill.php";
             
+            break;
+        case 'huybill':
+            if (isset($_GET['id'])&&($_GET['id']>0)) {
+            huybill($id);
+            }
+            $listbill=loadone_hoadon_ls($_SESSION['ten_dang_nhap']['id']);
+            include "view/listbill.php";
             break;
         
         case 'lienhe':

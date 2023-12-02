@@ -29,7 +29,7 @@
 
  <!-- Checkout Start -->
  <div class="container-fluid">
-     <form action="index.php?act=dathang" method="post">
+ <form action="index.php?act=dathang" method="post" name="checkoutForm">    
          <div class="row px-xl-5">
              <div class="col-lg-8">
                  <h5 class="section-title position-relative text-uppercase mb-3"><span class="bg-secondary pr-3">Thông
@@ -58,6 +58,8 @@
                  </div>
 
              </div>
+
+<!-- Add this script at the end of your HTML file, just before the closing </body> tag -->
 
 
 
@@ -93,8 +95,8 @@
                      <div class="pt-2">
                          <div class="d-flex justify-content-between mt-2">
                              <h5>Tổng Giá</h5>
-                             <h5><?=$tong ?></h5>
-                             <input type="hidden" name="tong_gt_hd" value="<?=$tong ?>">
+                             <span id="totalPrice"><?= $tong ?>$</span>
+                             <input id="totalPrice" type="hidden" name="tong_gt_hd" value="<?=$tong ?>">
                              <input type="hidden" name="trang_thai" value="Thanh Toán">
                          </div>
                      </div>
@@ -137,3 +139,29 @@
  </div>
 
  <!-- Checkout End -->
+ <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Function to validate the form
+        function validateForm() {
+            var tenNguoiDung = document.forms["checkoutForm"]["ten_nguoi_dung"].value;
+            var email = document.forms["checkoutForm"]["email"].value;
+            var soDienThoai = document.forms["checkoutForm"]["so_dien_thoai"].value;
+            var diaChi = document.forms["checkoutForm"]["dia_chi"].value;
+
+            // Simple validation for each field
+            if (tenNguoiDung === "" || email === "" || soDienThoai === "" || diaChi === "") {
+                alert("Vui lòng nhập đầy đủ thông tin khách hàng để tiến hành đặt hàng.");
+                return false;
+            }
+
+            // You can add more complex validation rules if needed
+
+            return true;
+        }
+
+        // Attach the validation function to the form's onsubmit event
+        document.forms["checkoutForm"].onsubmit = function () {
+            return validateForm();
+        };
+    });
+</script>

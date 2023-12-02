@@ -23,6 +23,7 @@ if (isset($_SESSION['giohang']) && count($_SESSION['giohang']) != 0) {
                     <thead class="thead-dark">
                         <tr>
                             <th>Sản phẩm</th>
+                            <th>Size</th>
                             <th>Giá</th>
                             <th>Số lượng</th>
                             <th>Tổng cộng</th>
@@ -90,30 +91,30 @@ if (isset($_SESSION['giohang']) && count($_SESSION['giohang']) != 0) {
                         </div>
                     </div>
                 </form>
-                <div class="bg-light p-4 mb-4">
-                    <div class="d-flex justify-content-between mb-3">
-                        <span>Tổng cộng</span>
-                        <span><?= $tong ?>$</span>
-                    </div>
-                    <div class="d-flex justify-content-between">
-                        <span>Vận chuyển</span>
-                        <span>Miễn phí</span>
-                    </div>
-                </div>
                 <div class="bg-light p-4">
-                    <div class="d-flex justify-content-between">
-                        <h5>Tổng</h5>
-                        <h5><?= $tong ?>$</h5>
-                    </div>
+    <div class="d-flex justify-content-between">
+        <h5>Tổng</h5>
+        <span id="totalPrice"><?= $tong ?>$</span>
+    </div>
+    <?php
+    ob_start();
+    if (isset($_SESSION['ten_dang_nhap'])) {
+        echo '<a href="index.php?act=thanhtoan" class="btn btn-block btn-primary font-weight-bold my-3 py-3">Tiến hành thanh toán</a>';
+    } else {
+        echo '<a href="index.php?act=dangnhap" class="btn btn-block btn-primary font-weight-bold my-3 py-3">Đăng nhập để thanh toán</a>';
+        exit();
+    }
+    ?>
+</div>
 
                     <?php
-                    ob_start();
-                    if (isset($_SESSION['ten_dang_nhap'])) {
-                        echo '<a href="index.php?act=thanhtoan" class="btn btn-block btn-primary font-weight-bold my-3 py-3">Tiến hành thanh toán</a>';
-                    } else {
-                        echo '<a href="index.php?act=dangnhap" class="btn btn-block btn-primary font-weight-bold my-3 py-3">Đăng nhập để thanh toán</a>';
-                        exit();
-                    }
+                    // ob_start();
+                    // if (isset($_SESSION['ten_dang_nhap'])) {
+                    //     echo '<a href="index.php?act=thanhtoan" class="btn btn-block btn-primary font-weight-bold my-3 py-3">Tiến hành thanh toán</a>';
+                    // } else {
+                    //     echo '<a href="index.php?act=dangnhap" class="btn btn-block btn-primary font-weight-bold my-3 py-3">Đăng nhập để thanh toán</a>';
+                    //     exit();
+                    // }
                     ?>
                 </div>
             </div>
@@ -128,4 +129,39 @@ if (isset($_SESSION['giohang']) && count($_SESSION['giohang']) != 0) {
 <?php
 }
 ?>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Get all quantity input elements
+        var quantityInputs = document.querySelectorAll('.quantity input');
+
+        // Add event listeners to quantity input elements
+        quantityInputs.forEach(function (input) {
+            input.addEventListener('input', updateTotalPrice);
+        });
+
+        // Function to update total price based on quantity changes
+        function updateTotalPrice() {
+            var totalPriceElement = document.getElementById('totalPrice');
+            var total = 0;
+
+            // Iterate through each row in the table
+            var rows = document.querySelectorAll('.table tbody tr');
+            rows.forEach(function (row, index) {
+                var quantity = parseInt(row.querySelector('.quantity input').value);
+                var price = parseFloat(row.querySelector('td:nth-child(2)').innerText);
+                var subtotal = quantity * price;
+
+                // Update the displayed subtotal for each row
+                row.querySelector('td:nth-child(4)').innerText = subtotal + '$';
+
+                // Add subtotal to the total
+                total += subtotal;
+            });
+
+            // Update the total price at the bottom of the table
+            totalPriceElement.innerText = total + '$';
+        }
+    });
+</script>
+
 <!-- Giỏ hàng End -->
