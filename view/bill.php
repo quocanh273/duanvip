@@ -66,7 +66,7 @@
                     ?>
                         <div class="d-flex justify-content-between">
                             <p><?= $card['1'] ?></p>
-                            <p><?= $card['3'] ?></p>
+                            <p>x<?= $card['4'] ?></p>
                         </div>
                     <?php } ?>
                     <div class="pt-2">

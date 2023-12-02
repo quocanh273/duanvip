@@ -85,41 +85,47 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
             include "view/sanpham.php";
             break;
 
-        case 'giohang':
-            if (isset($_POST['giohang'])) {
-                $id = $_POST['id'];
-                $ten_san_pham = $_POST['ten_san_pham'];
-                $img = $_POST['img'];
-                $gia = $_POST['gia'];
-                $soluong = $_POST['soluong'];
-                $size = $_POST['size'];
-                $thanhtien = $gia * $soluong;
-        
-                // Check if the product is already in the shopping cart
-                $productExists = false;
-                foreach ($_SESSION['giohang'] as &$sp) {
-                    if ($sp[0] == $id && $sp[6] == $size) {
-                        // If the product already exists, update the quantity
-                        $sp[4] += $soluong;
-                        $sp[5] = $sp[3] * $sp[4]; // Update the total price
-                        $productExists = true;
-                        break;
+            case 'giohang':
+                if (isset($_POST['giohang'])) {
+                    $id = $_POST['id'];
+                    $ten_san_pham = $_POST['ten_san_pham'];
+                    $img = $_POST['img'];
+                    $gia = $_POST['gia'];
+                    $soluong = $_POST['soluong'];
+                    $size = $_POST['size'];
+                    $thanhtien = $gia * $soluong;
+            
+                    // Check if the product is already in the shopping cart
+                    $productExists = false;
+                    foreach ($_SESSION['giohang'] as &$sp) {
+                        if ($sp[0] == $id && $sp[6] == $size) {
+                            // If the product already exists, update the quantity
+                            $sp[4] += $soluong;
+                            $sp[5] = $sp[3] * $sp[4]; // Update the total price
+                            $productExists = true;
+                            break;
+                        }
+                    }
+            
+                    // If the product is not in the shopping cart, add it
+                    if (!$productExists) {
+                        $spadd = [$id, $ten_san_pham, $img, $gia, $soluong, $thanhtien, $size];
+                        array_push($_SESSION['giohang'], $spadd);
                     }
                 }
-        
-                // If the product is not in the shopping cart, add it
-                if (!$productExists) {
-                    $spadd = [$id, $ten_san_pham, $img, $gia, $soluong, $thanhtien, $size];
-                    array_push($_SESSION['giohang'], $spadd);
-                }
-            }
-            $_SESSION['giohang_backup'] = [];   
-            // Use parentheses for var_dump
-               
-               
+            
+                // Use parentheses for var_dump
+            
                 include "view/giohang.php";
                 break;
             
+            case 'chitiethoadon':
+                if (isset($_GET['id'])&&($_GET['id']>0)) {
+                    $chitiethd = get_cart_items_by_ids($_GET['id'], $_GET['id_user']);
+                   
+                }
+             include "view/chitiethoadon.php";  
+                break;
             
 
         case 'delcard':

@@ -130,16 +130,16 @@
                      <div class="d-flex align-items-center mb-4 pt-2">
                          <div class="input-group quantity mr-3" style="width: 130px;">
                              <div class="input-group-btn">
-                                 <button class="btn btn-primary btn-minus" onclick="updateQuantity(-1)">
+                                 <a class="btn btn-primary btn-minus" onclick="updateQuantity(-1)">
                                      <i class="fa fa-minus"></i>
-                                 </button>
+                                 </a>
                              </div>
-                             <input type="text" class="form-control bg-secondary border-0 text-center" value="1"
+                             <input type="text" name="soluong" class="form-control bg-secondary border-0 text-center" value="1"
                                  id="quantityInput">
                              <div class="input-group-btn">
-                                 <button class="btn btn-primary btn-plus" onclick="updateQuantity(1)">
+                                 <a class="btn btn-primary btn-plus" onclick="updateQuantity(1)">
                                      <i class="fa fa-plus"></i>
-                                 </button>
+                                 </a>
                              </div>
                          </div>
                      </div>
@@ -161,7 +161,7 @@
                      <input type="hidden" name="ten_san_pham" value="<?= $ten_san_pham ?>">
                      <input type="hidden" name="img" value="<?= $img ?>">
                      <input type="hidden" name="gia" value="<?= $gia ?>">   
-                     <input type="hidden" name="soluong" value="1">   
+                     <!-- <input type="hidden" name="soluong" value="1">    -->
 
                      <button type="submit" name="giohang" class="btn btn-primary px-3"><i class="fa fa-shopping-cart mr-1"></i> Thêm Vào Giỏ Hàng</button>
                  </form>

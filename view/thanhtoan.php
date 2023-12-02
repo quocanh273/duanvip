@@ -63,8 +63,7 @@
 
 
              <div class="col-lg-4">
-                 <h5 class="section-title position-relative text-uppercase mb-3"><span class="bg-secondary pr-3">Order
-                         Total</span></h5>
+                 <h5 class="section-title position-relative text-uppercase mb-3"><span class="bg-secondary pr-3">Tổng đặt hàng</span></h5>
 
                  <div class="bg-light p-30 mb-5">
                      <div class="border-bottom">
@@ -84,7 +83,8 @@
                   ?>
                          <div class="d-flex justify-content-between">
                              <p><?= $card['1'] ?></p>
-                             <p><?= $card['3'] ?></p>
+                            
+                             <p>x<?= $card['4'] ?></p>
                          </div>
                          <?php }?>
 

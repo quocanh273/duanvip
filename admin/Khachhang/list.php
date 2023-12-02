@@ -39,7 +39,7 @@
                         <th>ID</th>
                         <th>TÊN</th>
                         <th>TÊN ĐĂNG NHẬP</th>
-                        <th>MẬT KHẨU</th>
+                        
                         <th>EMAIL</th>
                         <th>NGÀY SINH</th>
                         <th>ĐỊA CHỈ</th>
@@ -64,7 +64,7 @@
                             <td>' . $id . '</td>
                             <td>' . $ten_nguoi_dung . '</td>
                             <td>' . $ten_dang_nhap . '</td>
-                            <td>' . $mat_khau . '</td>
+                           
                             <td>' . $email . '</td>
                             <td>' . $ngay_sinh . '</td>
                             <td>' . $dia_chi . '</td>
@@ -83,7 +83,7 @@
                         <th>ID</th>
                         <th>TÊN</th>
                         <th>TÊN ĐĂNG NHẬP</th>
-                        <th>MẬT KHẨU</th>
+                       
                         <th>EMAIL</th>
                         <th>NGÀY SINH</th>
                         <th>ĐỊA CHỈ</th>

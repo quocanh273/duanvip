@@ -28,4 +28,9 @@ function getTopBuyers() {
 
     return pdo_query($sql);
 }
+function get_cart_items_by_ids($id_hoadon, $id_nguoidung) {
+    $sql = "SELECT `name_product`, `price`, `size`, `quantity` FROM `cart` WHERE `id_hoadon` = '$id_hoadon' AND `id_nguoidung` = '$id_nguoidung'";
+    return pdo_query($sql);
+}
+
 ?>

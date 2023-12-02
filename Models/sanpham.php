@@ -5,7 +5,7 @@ require_once 'connect.php';
     $listsanpham = pdo_query($sql);
     return $listsanpham;
 }
-function loadpaginate_sanpham($page = 1, $limit = 5)
+function loadpaginate_sanpham($page = 1, $limit = 6)
 {
     $page = isset($_GET['page']) ? intval($_GET['page']) : 1;
     $begin = max(0, ($page - 1) * $limit);
@@ -16,7 +16,7 @@ function loadpaginate_sanpham($page = 1, $limit = 5)
     return $listsanpham;
 }
 
-function total_page($limit = 5)
+function total_page($limit = 6)
 {
     $sql = "SELECT COUNT(*) as count FROM sanpham";
     $result = pdo_query($sql);

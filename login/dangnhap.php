@@ -1,13 +1,14 @@
     <!-- main content start -->
     <div class="main-conten login-panel login-panel-2">
-        <h3 class="panel-title">Đăng nhập</h3>
+        
         <div class="login-body login-body-2">
             <div class="top d-flex justify-content-between align-items-center">
                 
                 <!-- <a href="index.html"><i class="fa-duotone fa-house-chimney"></i></a> -->
             </div>
-            <div class="bottom">
-            <form action="index.php?act=dangnhap" method="post">
+            <div class="d-flex justify-content-center bottom">  
+            <form action="index.php?act=dangky" method="post" style="width:600px">
+            <h3 class="panel-title">Đăng nhập</h3>
                     <div class="input-group mb-25">
                         <input type="text" class="form-control" placeholder="Tên" name="ten_dang_nhap">
                         <span class="input-group-text"><i class="fa-regular fa-user"></i></span>
@@ -18,19 +19,20 @@
                         <span class="input-group-text"><i class="fa-regular fa-lock"></i></span>
                     </div>
                   
-                    <input class="btn btn-primary w-100 login-btn" type="submit" value="Đăng nhập" name="dangnhap">
-                    
-                </form>
-                <div class="other-option">
+                    <input class="btn btn-primary w-100 mt-3 login-btn" type="submit" value="Đăng nhập" name="dangnhap">
+                    <div class="other-option">
                     <p class="mb-0">Bạn chưa có tài khoản ? <a href="index.php?act=dangky" >Tạo</a></p>
                 </div>
-                <?php
+              
+                    <?php
               
               if(isset($thong_bao)&&($thong_bao!="")){
                   echo $thong_bao;
               }
               
               ?>
+                </form>
+               
             </div>
         </div>
 

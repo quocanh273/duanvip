@@ -22,7 +22,7 @@
     <link href="view/css/style.css" rel="stylesheet">
     <link rel="shortcut icon" href="favicon.png">
 
-  
+
 </head>
 
 <body>
@@ -30,12 +30,7 @@
     <div class="container-fluid">
         <div class="row bg-secondary py-1 px-xl-5">
             <div class="col-lg-6 d-none d-lg-block">
-                <div class="d-inline-flex align-items-center h-100">
-                    <!-- <a class="text-body mr-3" href="">About</a> -->
-                    <a class="text-body mr-3" href="index.php?act=lienhe">Liên hệ</a>
-                    <a class="text-body mr-3" href="">Giúp đỡ</a>
-                    <a class="text-body mr-3" href="">Câu hỏi thường gặp</a>
-                </div>
+
             </div>
             <div class="col-lg-6 text-center text-lg-right">
                 <div class="d-inline-flex align-items-center">
@@ -120,19 +115,19 @@
                 </div>
                 <div class="col-lg-4 col-6 text-left">
                     <style>
+                    input[name="timkiem"] {
+                        padding: 6px 6px;
+                        background-color: #ccc;
+                        color: #fff;
+                        border: 1px solid #ccc;
+                        border-radius: 0 5px 5px 0;
+                        cursor: pointer;
+                    }
 
-        input[name="timkiem"] {
-            padding: 6px 6px;
-            background-color: #ccc;
-            color: #fff;
-            border: 1px solid #ccc;
-            border-radius: 0 5px 5px 0;
-            cursor: pointer;
-        }
-        input[name="timkiem"]:hover {
-            background-color: #eee;
-            border-color: #ccc;
-        }
+                    input[name="timkiem"]:hover {
+                        background-color: #eee;
+                        border-color: #ccc;
+                    }
                     </style>
                     <form action="index.php?act=sanphamdm" method="post">
                         <div class="input-group">
@@ -212,7 +207,7 @@
                                         <a href="index.php?act=listbill" class="dropdown-item">Lịch sử hóa đơn</a>
                                     </div>
                                 </div>
-                                <a href="index.php?act=lienhe" class="nav-item nav-link">Liên hệ</a>
+                             
                             </div>
                             <div class="navbar-nav ml-auto py-0 d-none d-lg-block">
                                 <!-- <a href="" class="btn px-0">
@@ -222,8 +217,21 @@
                                 </a> -->
                                 <a href="index.php?act=giohang" class="btn px-0 ml-3">
                                     <i class="fas fa-shopping-cart text-primary"></i>
-                                    <span class="badge text-secondary border border-secondary rounded-circle"
-                                        style="padding-bottom: 2px;"></span>
+
+                                    <?php 
+                                        // Kiểm tra xem session giỏ hàng có tồn tại không và có phần tử không
+                                    if (isset($_SESSION['giohang']) && count($_SESSION['giohang']) > 0) {
+                                        // Đếm số lượng sản phẩm trong giỏ hàng
+                                        $soLuongTrongGioHang = count($_SESSION['giohang']);
+                                    } else {
+                                        // Nếu không có session hoặc không có sản phẩm trong giỏ hàng, đặt số lượng là 0
+                                        $soLuongTrongGioHang = 0;
+                                    }
+
+                                    // Hiển thị số lượng trong badge
+                                    echo '<span class="badge text-secondary border border-secondary rounded-circle" style="padding-bottom: 2px;">' . $soLuongTrongGioHang . '</span>';
+
+                                        ?>
                                 </a>
                             </div>
                         </div>

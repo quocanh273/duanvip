@@ -37,6 +37,7 @@ if (isset($_SESSION['giohang']) && count($_SESSION['giohang']) != 0) {
                         $tong = 0;
                         $i = 0;
                         foreach ($_SESSION['giohang'] as $card) {
+                           
                             $img = isset($card['2']) ? "upload/" . $card['2'] : "";
                             $ttien = isset($card['3']) && isset($card['4']) ? $card['3'] * $card['4'] : 0;
 
@@ -51,8 +52,10 @@ if (isset($_SESSION['giohang']) && count($_SESSION['giohang']) != 0) {
                                         <div class="media-body align-self-center">
                                             <?= $card['1'] ?>
                                         </div>
+                                      
                                     </div>
                                 </td>
+                                <td><?= $card['6'] ?></td>
                                 <td><?= $card['3'] ?>$</td>
                                 <td>
                                     <div class="input-group quantity" style="width: 100px;">

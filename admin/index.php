@@ -1,6 +1,6 @@
 <?php
 session_start();
-require "header.php";
+
 require "../Models/connect.php";
 require "../Models/danhmuc.php";
 require "../Models/sanpham.php";
@@ -9,7 +9,6 @@ require "../Models/binhluan.php";
 require "../Models/thongke.php";
 require "../Models/hoadon.php";
 require "../Models/cart.php";
-
 $tongdh =calculate_total_gt_hd();
             $tongkh =ds_khachhang_count();
             $tonghd= load_all_hoadon_count();
@@ -19,8 +18,9 @@ $tongdh =calculate_total_gt_hd();
 
 if (isset($_GET['act'])) {
     $act = $_GET['act'];
+    require "header.php";
     switch ($act) {
-
+     
         case 'home':
             $tongdh =calculate_total_gt_hd();
             $tongkh =ds_khachhang_count();
@@ -46,12 +46,11 @@ if (isset($_GET['act'])) {
             if ($checkuser && $checkuser['role'] == 1) {
                 // User with role == 1 is authenticated
                 $_SESSION['ten_dang_nhap'] = $checkuser;
-                header('location: index.php');
+                header('location: index.php?act=home');
             } else {
                 $thongbao = "Tài khoản không tồn tại hoặc bạn không có quyền đăng nhập";
             }
         }
-    
         include "login/dangnhap.php";
         break;
     
@@ -373,8 +372,9 @@ case 'chitiet':
             include "home.php";
             break;
     }
+    include "footer.php";
 } else {
-    include "home.php";
+    include "login/dangnhap.php";
     $tongdh =calculate_total_gt_hd();
     $tongkh =ds_khachhang_count();
     $tonghd= load_all_hoadon_count();
@@ -383,5 +383,5 @@ case 'chitiet':
     $listuserbuyhot = getTopBuyers();
 }
 // FOOTER
-include "footer.php";
+
 ?>
