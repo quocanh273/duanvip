@@ -14,7 +14,10 @@ function update_dh($id,$trang_thai){
         $sql = "update hoa_don set trang_thai='".$trang_thai."' where id='".$id."'";
     pdo_execute($sql);
 }
-
+function huybill($id){
+    $sql="delete from hoa_don where id=".$id;
+    pdo_execute($sql);
+}
 
 
 function loadone_hoadon_ls($id_user){
@@ -22,6 +25,8 @@ function loadone_hoadon_ls($id_user){
     $hoadon=pdo_query($sql);
     return  $hoadon;
 }
+
+
 function load_all_hoadon_count(){
     $sql = "SELECT COUNT(*) as hoadon_count FROM hoa_don";
     $result = pdo_query($sql);
