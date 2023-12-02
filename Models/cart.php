@@ -11,8 +11,6 @@ function insert_cart($name_product,$price, $size, $quantity, $id_bill, $id_user)
     $sql = "INSERT INTO `cart`(`name_product`, `price`, `size`, `quantity`, `id_hoadon`, `id_nguoidung`) VALUES ('$name_product', '$price', '$size','$quantity', '$id_bill', '$id_user')";
     return pdo_execute($sql);
 }
-
-
 function sanpham_buyhot()
 {
     $sql = "SELECT name_product, COUNT(name_product) AS product_count

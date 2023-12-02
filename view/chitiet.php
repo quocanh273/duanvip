@@ -78,7 +78,7 @@
 
                  <h3 class="font-weight-semi-bold mb-4"><?= $gia ?>$</h3>
                  <p class="mb-4"><?= $mo_ta ?></p>
-                 <form action="index.php?act=giohang" method="post" onsubmit="return validateForm()">
+                 <form action="index.php?act=giohang" method="post" onsubmit="return validateForm()" >
                      <div class="d-flex mb-3">
                          <strong class="text-dark mr-3">Sizes:</strong>
                          <div class="custom-control custom-radio custom-control-inline">

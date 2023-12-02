@@ -1,18 +1,18 @@
 <main>
     <div class="head-title">
         <div class="left">
-            <h1>Thêm Sản Phẩm</h1>
+            <h1>Thêm khách hàng</h1>
             <ul class="breadcrumb">
                 <li>
                     <a href="index.php">Trang Chủ</a>
                 </li>
                 <li><i class='bx bx-chevron-right'></i></li>
                 <li>
-                    <a class="" href="#">Sản Phẩm </a>
+                    <a class="" href="index.php?act=listkhachhang">Quản lý khách hàng </a>
                 </li>
                 <li><i class='bx bx-chevron-right'></i></li>
                 <li>
-                    <a class="active" href="#">Thêm Sản Phẩm </a>
+                    <a class="active" href="#">Thêm khách hàng </a>
                 </li>
             </ul>
         </div>

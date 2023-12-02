@@ -24,6 +24,7 @@ if (isset($_SESSION['giohang']) && count($_SESSION['giohang']) != 0) {
                         <tr>
                             <th>Sản phẩm</th>
                             <th>Giá</th>
+                            
                             <th>Số lượng</th>
                             <th>Tổng cộng</th>
                             <th>Xóa</th>

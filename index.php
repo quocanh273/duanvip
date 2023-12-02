@@ -151,7 +151,7 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                 $id_bill = insert_bill($_SESSION['ten_dang_nhap']['id'],$ten_nguoi_dung, $email, $so_dien_thoai, $tong_gt_hd, $trang_thai, $dia_chi, $pt_tt, $formatted_date);
                 // var_dump($_SESSION['giohang']);
                 // die;
-
+                
                 foreach ($_SESSION['giohang'] as $cart) {
                     // ($name_product,$price, $size, $quantity, $id_bill, $id_user)
                     // insert_cart($name_product, $image, $price, $size, $color, $quantity, $id_bill, $id_user);
@@ -170,6 +170,14 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
            
             include "view/listbill.php";
             
+            break;
+
+        case "huydh":
+            if (isset($_GET['id'])&&($_GET['id']>0)) {
+                delete_hoadon($_GET['id']);
+            }
+            $listbill=hd_select_all("",0);
+            include "view/listbill.php";
             break;
         
         case 'lienhe':

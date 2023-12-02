@@ -43,7 +43,7 @@
                           <td> 
                                 
                                  <a href="' . $xemchitiet . '"><input type="button" class="btn btn-info" value="Xem chi tiết"></a>
-                                 <a href="' . $suadh . '"><input type="button" class="btn btn-info" value="Sửa đơn hàng"></a>  
+                                 <a href="' . $suadh . '"><input type="button" class="btn btn-danger"  value="Sửa đơn hàng"></a>  
                                  </td>
                       </tr>';
             }

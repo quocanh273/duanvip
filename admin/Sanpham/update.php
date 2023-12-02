@@ -65,17 +65,8 @@ if (is_array($sanpham)) {
                         <option value="M">M</option>
                         <option value="L">L</option>
                     </select><br />
-<<<<<<< HEAD
-                   
-                        Số Lượng
-                    </label><br />
-                    <input type="number" name="quantity" id="" value="<?= $so_luong?>" placeholder="Nhập số lượng "
-                        class="input w-75 rounded-2 "><br />
-                        Mô Tả
-=======
 
                     Số Lượng
->>>>>>> c1fddd673fa9e82a11ad1bb9bfde9f94b714a581
                     </label><br />
                     <input type="number" name="quantity" id="" value="<?= $so_luong ?>" placeholder="Nhập số lượng "
                         class="input w-75 rounded-2 "><br />

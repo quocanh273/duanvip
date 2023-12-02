@@ -53,7 +53,6 @@
                              <label>Địa Chỉ</label>
                              <input class="form-control" type="text" name="dia_chi" value="<?= $dia_chi ?>">
                          </div>
-
                      </div>
                  </div>
 

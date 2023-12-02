@@ -41,6 +41,9 @@ function calculate_total_gt_hd() {
     return $total_gt_hd;
 }
 
-
-
+function delete_hoadon($id){
+    
+    $sql = "delete from hoa_don where id=".$id;
+    pdo_execute($sql);
+}
 ?>

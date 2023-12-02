@@ -94,11 +94,31 @@ chart.draw(data, options);
 
 }
 </script>
-		
- 
 
-			</div>
-			
-		</main>
-	
-      
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    // Chart.js code
+    document.addEventListener('DOMContentLoaded', function () {
+        // Frequent Buyer Chart
+        var frequentBuyerChart = new Chart(document.getElementById('frequentBuyerChart'), {
+            type: 'bar',
+            data: {
+                labels: <?php echo json_encode(array_column($listuserbuyhot, 'ten_dang_nhap')); ?>,
+                datasets: [{
+                    label: 'Số lượng hóa đơn đã thanh toán',
+                    data: <?php echo json_encode(array_column($listuserbuyhot, 'so_luong_hoa_don')); ?>,
+                    backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                    borderColor: 'rgba(255, 99, 132, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    });
+</script>

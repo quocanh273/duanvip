@@ -6,18 +6,18 @@ if (is_array($dhchitiet)) {
 <main>
     <div class="head-title">
         <div class="left">
-            <h1>Cập Nhật Danh Mục</h1>
+            <h1>Sửa đơn hàng</h1>
             <ul class="breadcrumb">
                 <li>
-                    <a href="#">Trang Chủ</a>
+                    <a href="index.php">Trang Chủ</a>
                 </li>
                 <li><i class='bx bx-chevron-right'></i></li>
                 <li>
-                    <a class="" href="#">Danh Mục </a>
+                    <a class="" href="index.php?act=listdonhang">Quản lý đơn hàng </a>
                 </li>
                 <li><i class='bx bx-chevron-right'></i></li>
                 <li>
-                    <a class="active" href="#">Cập Nhật Danh Mục </a>
+                    <a class="active" href="#">Sửa đơn hàng </a>
                 </li>
             </ul>
         </div>
@@ -47,7 +47,7 @@ if (is_array($dhchitiet)) {
                 <input type="submit" name="capnhat" value="Cập Nhật" class="btn btn-insert  status completed ">
                 <input type="reset" name="reset" id="" value="Nhập Lại" class=" btn btn-reset ">
                 
-                <button class="btn btn-insert  status completed" >Về Trang Danh Sách</button>
+              <a href="index.php?act=listdonhang"> <button class="btn btn-insert  status completed" >Về Trang Danh Sách</button> </a> 
             </form>
         </div>
 
