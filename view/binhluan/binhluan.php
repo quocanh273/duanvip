@@ -61,7 +61,7 @@ $dsbl=binhluan_select_all($idpro);
                                     foreach ($dsbl as $bl) {
                                         extract($bl);
                                         echo '<tr><td>'.$noi_dung.'</td>';
-                                        echo '<td>'.$id_user.'</td>';
+                                        echo '<td>'.$ten_nguoi_dung.'</td>';
                                         echo '<td>'.$ngay_bluan.'</td> </tr>';
                                     }
                                     ?>

@@ -68,7 +68,7 @@ h3 {
                     <?php
                     foreach ($dssp as $sp) {
                         extract($sp);
-                        $limitedDescription = implode(' ', array_slice(str_word_count($mo_ta, 2), 0, 3));
+                        $limitedDescription = substr($mo_ta, 0, 50);
                         $hinhpath = "upload/" . $img;
                         $spct = "index.php?act=ctsanpham&id=" . $id;
                         if (is_file($hinhpath)) {
@@ -92,7 +92,7 @@ h3 {
                                                 <h5>' . $gia . '</h5>
                                             </div>
                                             <div class="product-details">
-                                                <div class="column text-left">' . $limitedDescription . '</div>
+                                                <div class="column text-center">' . $limitedDescription . '</div>
                                                 
                                             </div>
                                         </div>

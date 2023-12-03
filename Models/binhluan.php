@@ -6,9 +6,16 @@ function binhluan_insert($noi_dung,$id_user,$idpro,$ngay_bluan){
 }
 
 function binhluan_select_all($idpro){
-    $sql = "SELECT * FROM binh_luan where idpro='".$idpro."' order by id_bl desc";
-    $listbl =pdo_query($sql);
-    return $listbl;
+    $sql = "SELECT binh_luan.*, nguoi_dung.ten_nguoi_dung 
+            FROM binh_luan 
+            JOIN nguoi_dung ON binh_luan.id_user = nguoi_dung.id
+            WHERE binh_luan.idpro = '".$idpro."' 
+            ORDER BY binh_luan.id_bl DESC";
+
+    $listbl = pdo_query($sql);
+    
+    
+return $listbl;
 }
 ?>
 
