@@ -7,7 +7,7 @@
                 <!-- <a href="index.html"><i class="fa-duotone fa-house-chimney"></i></a> -->
             </div>
             <div class="d-flex justify-content-center bottom">  
-            <form action="index.php?act=dangky" method="post" style="width:600px">
+            <form action="index.php?act=dangnhap" method="post" style="width:600px">
             <h3 class="panel-title">Đăng nhập</h3>
                     <div class="input-group mb-25">
                         <input type="text" class="form-control" placeholder="Tên" name="ten_dang_nhap">

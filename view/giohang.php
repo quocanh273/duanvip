@@ -11,6 +11,7 @@
     </div>
 </div>
 <!-- Breadcrumb End -->
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
 <!-- Giỏ hàng Start -->
 <?php
@@ -134,36 +135,33 @@ if (isset($_SESSION['giohang']) && count($_SESSION['giohang']) != 0) {
 }
 ?>
 <script>
-    document.addEventListener('DOMContentLoaded', function () {
+    $(document).ready(function () {
         // Get all quantity input elements
-        var quantityInputs = document.querySelectorAll('.quantity input');
+        var quantityInputs = $('.quantity input');
 
         // Add event listeners to quantity input elements
-        quantityInputs.forEach(function (input) {
-            input.addEventListener('input', updateTotalPrice);
-        });
+        quantityInputs.on('input', updateTotalPrice);
 
         // Function to update total price based on quantity changes
         function updateTotalPrice() {
-            var totalPriceElement = document.getElementById('totalPrice');
+            var totalPriceElement = $('#totalPrice');
             var total = 0;
 
             // Iterate through each row in the table
-            var rows = document.querySelectorAll('.table tbody tr');
-            rows.forEach(function (row, index) {
-                var quantity = parseInt(row.querySelector('.quantity input').value);
-                var price = parseFloat(row.querySelector('td:nth-child(2)').innerText);
+            $('.table tbody tr').each(function (index, row) {
+                var quantity = parseInt($(row).find('.quantity input').val());
+                var price = parseFloat($(row).find('td:nth-child(3)').text());
                 var subtotal = quantity * price;
 
                 // Update the displayed subtotal for each row
-                row.querySelector('td:nth-child(4)').innerText = subtotal + '$';
+                $(row).find('td:nth-child(5)').text(subtotal + '$');
 
                 // Add subtotal to the total
                 total += subtotal;
             });
 
             // Update the total price at the bottom of the table
-            totalPriceElement.innerText = total + '$';
+            totalPriceElement.text(total + '$');
         }
     });
 </script>

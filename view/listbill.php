@@ -23,25 +23,39 @@
       </tr>
     </thead>
     <tbody>
-          <?php
-        foreach ($listbill as $listbill){
-          extract($listbill);
-          $huydh = "index.php?act=huydh&id=" . $id;
-          $chitiethd = "index.php?act=chitiethoadon&id=" . $id."&id_user=".$id_user;
-        echo ' <tr>
-                  <td>'.$ten_nguoi_dung.'</td>
-                  <td>'.$email.'</td>
-                  <td>'.$so_dien_thoai.'</td>
-                  <td>'.$tong_gt_hd.'</td>
-                  <td>'.$dia_chi.'</td>
-                  <td>'.$pt_tt.'</td>
-                  <td>'.$trang_thai.'</td>
-                  <td>'.$ngay_thd.'</td>
-                  <td>          <a href="' . $huydh . '"><input type="button" class="btn btn-danger"  value="Hủy đơn hàng"></a> 
-                  <a href="' . $chitiethd . '"><input type="button" class="btn btn-danger"  value="Xem chi tiết"></a>  
-                  </td>
-            </tr>';
-        }
-      ?>
+    <?php
+foreach ($listbill as $listbill){
+    extract($listbill);
+    $huydh = "index.php?act=huydh&id=" . $id;
+    $chitiethd = "index.php?act=chitiethoadon&id=" . $id."&id_user=".$id_user;
+    
+    echo '<tr>
+            <td>'.$ten_nguoi_dung.'</td>
+            <td>'.$email.'</td>
+            <td>'.$so_dien_thoai.'</td>
+            <td>'.$tong_gt_hd.'</td>
+            <td>'.$dia_chi.'</td>
+            <td>'.$pt_tt.'</td>
+            <td>'.$trang_thai.'</td>
+            <td>'.$ngay_thd.'</td>
+            <td>';
+    
+    // Kiểm tra nếu trạng thái là "Thanh toán"
+    if ($trang_thai == 'Đặt hàng thành công') {
+        echo '<a href="' . $huydh . '"><input type="button" class="btn btn-danger" value="Hủy đơn hàng"></a>';
+    }
+
+    echo '<a href="' . $chitiethd . '"><input type="button" class="btn btn-danger" value="Xem chi tiết"></a>
+          </td>
+        </tr>';
+}
+?>
+
+<script>
+  function showNotification() {
+    alert('Không thể hủy đơn hàng vì trạng thái không phải là "Thanh toán".');
+  }
+</script>
+
     </tbody>
   </table>

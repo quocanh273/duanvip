@@ -152,6 +152,7 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                 $pt_tt = $_POST['pt_tt'];
                 $ngay_thd = date('Y-m-d');
                 $formatted_date = date('Y-m-d', strtotime($ngay_thd));
+                $quantities = $_POST['quantity'];
 
 
                 $id_bill = insert_bill($_SESSION['ten_dang_nhap']['id'],$ten_nguoi_dung, $email, $so_dien_thoai, $tong_gt_hd, $trang_thai, $dia_chi, $pt_tt, $formatted_date);
