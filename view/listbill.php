@@ -42,8 +42,7 @@ foreach ($listbill as $listbill){
     
     // Kiểm tra nếu trạng thái là "Thanh toán"
     if ($trang_thai == 'Đặt hàng thành công') {
-        echo '<a href="' . $huydh . '"><input type="button" class="btn btn-danger" value="Hủy đơn hàng"></a>';
-    }
+      echo '<input type="button" class="btn btn-danger" value="Hủy đơn hàng" onclick="confirmCancelOrder('.$id.')">';    }
 
     echo '<a href="' . $chitiethd . '"><input type="button" class="btn btn-danger" value="Xem chi tiết"></a>
           </td>
@@ -56,6 +55,13 @@ foreach ($listbill as $listbill){
     alert('Không thể hủy đơn hàng vì trạng thái không phải là "Thanh toán".');
   }
 </script>
-
+<script>
+  function confirmCancelOrder(orderId) {
+    var confirmCancel = confirm('Bạn có chắc chắn muốn hủy đơn hàng không?');
+    if (confirmCancel) {
+      window.location.href = 'index.php?act=huydh&id=' + orderId;
+    }
+  }
+</script>
     </tbody>
   </table>

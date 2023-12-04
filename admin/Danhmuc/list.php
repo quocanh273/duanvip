@@ -57,15 +57,14 @@
                             $img = "không có hình";
                         }
                         echo '  <tr>
-                          <td>' . $ma_loai . '</td>
-                          <td>' . $img . '</td>
-                          <td>' . $ten_loai . '</td>
-                          
-                          <td>   <a href="' . $suadm . '"><input type="button" value="Sửa" class="btn btn-info"></a> 
-                                 <a href="' . $xoadm . '"><input type="button" value="Xóa" class="btn btn-danger"></a>
-                                 
-                                 </td>
-                      </tr>';
+          <td>' . $ma_loai . '</td>
+          <td>' . $img . '</td>
+          <td>' . $ten_loai . '</td>
+          <td>
+            <a href="' . $suadm . '"><input type="button" value="Sửa" class="btn btn-info"></a> 
+            <input type="button" value="Xóa" class="btn btn-danger" onclick="confirmDeleteCategory('.$ma_loai.')">
+          </td>
+      </tr>';
                     }
 
                     ?>
@@ -90,6 +89,14 @@
                 </tfoot>
             </table>
 
+            <script>
+  function confirmDeleteCategory(categoryId) {
+    var confirmDelete = confirm('Bạn có chắc chắn muốn xóa danh mục này không?');
+    if (confirmDelete) {
+      window.location.href = 'index.php?act=xoadm&ma_loai=' + categoryId;
+    }
+  }
+</script>
 
 
             <!-- <table>

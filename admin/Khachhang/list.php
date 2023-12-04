@@ -39,7 +39,7 @@
                         <th>ID</th>
                         <th>TÊN</th>
                         <th>TÊN ĐĂNG NHẬP</th>
-                        
+
                         <th>EMAIL</th>
                         <th>NGÀY SINH</th>
                         <th>ĐỊA CHỈ</th>
@@ -61,20 +61,21 @@
                             $img = "không có hình";
                         }
                         echo '<tr>
-                            <td>' . $id . '</td>
-                            <td>' . $ten_nguoi_dung . '</td>
-                            <td>' . $ten_dang_nhap . '</td>
-                           
-                            <td>' . $email . '</td>
-                            <td>' . $ngay_sinh . '</td>
-                            <td>' . $dia_chi . '</td>
-                            <td>' . $so_dien_thoai . '</td>
-                            <td>' . $img . '</td>
-                            <td class="d-flex gap-2">   
-                                <a href="' . $suakh . '"><input type="button" class="btn btn-info" value="Sửa"></a> 
-                                <a href="' . $xoakh . '"><input type="button" class="btn btn-danger" value="Xóa"></a>
-                            </td>
-                        </tr>';
+        <td>' . $id . '</td>
+        <td>' . $ten_nguoi_dung . '</td>
+        <td>' . $ten_dang_nhap . '</td>
+       
+        <td>' . $email . '</td>
+        <td>' . $ngay_sinh . '</td>
+        <td>' . $dia_chi . '</td>
+        <td>' . $so_dien_thoai . '</td>
+        <td>' . $img . '</td>
+        <td class="d-flex gap-2">   
+            <a href="' . $suakh . '"><input type="button" class="btn btn-info" value="Sửa"></a> 
+            <input type="button" class="btn btn-danger" value="Xóa" onclick="confirmDeleteCustomer('.$id.')">
+        </td>
+    </tr>';
+
                     }
                     ?>
                 </tbody>
@@ -83,7 +84,7 @@
                         <th>ID</th>
                         <th>TÊN</th>
                         <th>TÊN ĐĂNG NHẬP</th>
-                       
+
                         <th>EMAIL</th>
                         <th>NGÀY SINH</th>
                         <th>ĐỊA CHỈ</th>
@@ -96,3 +97,11 @@
         </div>
     </div>
 </main>
+<script>
+function confirmDeleteCustomer(customerId) {
+    var confirmDelete = confirm('Bạn có chắc chắn muốn xóa khách hàng này không?');
+    if (confirmDelete) {
+        window.location.href = 'index.php?act=xoakh&id=' + customerId;
+    }
+}
+</script>
