@@ -84,9 +84,9 @@
                 <h5 class="section-title position-relative text-uppercase"><span class="bg-secondary pr-3">Phương Thức
                         Thanh Toán</span></h5>
                 <div class="bg-light p-4">
-                    <!-- Display selected payment method -->
+                   
                     <p><strong>Phương Thức Thanh Toán:</strong> <?php echo $pt_tt; ?></p>
-                    <!-- Add other payment details if needed -->
+                  
                 </div>
             </div>
 
