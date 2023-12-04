@@ -18,11 +18,17 @@ if (isset($_SESSION['ten_dang_nhap'])){
     $so_dien_thoai = $_SESSION['ten_dang_nhap']['so_dien_thoai'];
     $email = $_SESSION['ten_dang_nhap']['email'];
     $dia_chi= $_SESSION['ten_dang_nhap']['dia_chi'];
+    $quan_huyen = isset($_SESSION['ten_dang_nhap']['quan_huyen']) ? $_SESSION['ten_dang_nhap']['quan_huyen'] : "";
+    $xa_phuong = isset($_SESSION['ten_dang_nhap']['xa_phuong']) ? $_SESSION['ten_dang_nhap']['xa_phuong'] : "";
+    $tinh_thanhpho = isset($_SESSION['ten_dang_nhap']['tinh_thanhpho']) ? $_SESSION['ten_dang_nhap']['tinh_thanhpho'] : "";
 } else {
     $ten_nguoi_dung = "";
     $so_dien_thoai = "";
     $email = "";
     $dia_chi= "";
+    $quan_huyen = "";
+    $xa_phuong = "";
+    $tinh_thanhpho = "";
 }
 ?>
 
@@ -46,8 +52,21 @@ if (isset($_SESSION['ten_dang_nhap'])){
                             <label>Số Điện Thoại</label>
                             <input class="form-control" type="text" name="so_dien_thoai" value="<?= $so_dien_thoai ?>">
                         </div>
+                       
                         <div class="col-md-6 form-group">
-                            <label>Địa Chỉ</label>
+                            <label>Phường/Xã</label>
+                            <input class="form-control" type="text" name="quan_huyen" id="quan_huyen">
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <label>Quận/Huyện</label>
+                            <input class="form-control" type="text" name="xa_phuong" id="xa_phuong">
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <label>Tỉnh/Thành phố</label>
+                            <input class="form-control" type="text" name="tinh_thanhpho" id="tinh_thanhpho">
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <label>Địa chỉ chi tiết</label>
                             <input class="form-control" type="text" name="dia_chi" value="<?= $dia_chi ?>">
                         </div>
                     </div>
@@ -113,36 +132,54 @@ if (isset($_SESSION['ten_dang_nhap'])){
 <!-- Checkout End -->
 
 <script>
-    document.addEventListener('DOMContentLoaded', function () {
-        // Function to validate the form
-        function validateForm() {
-            var tenNguoiDung = document.forms["checkoutForm"]["ten_nguoi_dung"].value;
-            var email = document.forms["checkoutForm"]["email"].value;
-            var soDienThoai = document.forms["checkoutForm"]["so_dien_thoai"].value;
-            var diaChi = document.forms["checkoutForm"]["dia_chi"].value;
+  document.addEventListener('DOMContentLoaded', function () {
+    // Function to validate the form
+    function validateForm() {
+        var tenNguoiDung = document.forms["checkoutForm"]["ten_nguoi_dung"].value;
+        var email = document.forms["checkoutForm"]["email"].value;
+        var soDienThoai = document.forms["checkoutForm"]["so_dien_thoai"].value;
+        var diaChi = document.forms["checkoutForm"]["dia_chi"].value;
+        var quanHuyen = document.forms["checkoutForm"]["quan_huyen"].value;
+        var xaPhuong = document.forms["checkoutForm"]["xa_phuong"].value;
+        var tinhThanhPho = document.forms["checkoutForm"]["tinh_thanhpho"].value;
 
-            // Check if any radio button is checked
-            var selectedPayment = document.querySelector('input[name="pt_tt"]:checked');
+        // Check if any radio button is checked
+        var selectedPayment = document.querySelector('input[name="pt_tt"]:checked');
 
-            if (!selectedPayment) {
-                alert("Vui lòng chọn một phương thức thanh toán.");
-                return false;
-            }
-
-            // Simple validation for each field
-            if (tenNguoiDung === "" || email === "" || soDienThoai === "" || diaChi === "") {
-                alert("Vui lòng nhập đầy đủ thông tin khách hàng để tiến hành đặt hàng.");
-                return false;
-            }
-
-            // You can add more complex validation rules if needed
-
-            return true;
+        if (!selectedPayment) {
+            alert("Vui lòng chọn một phương thức thanh toán.");
+            return false;
         }
 
-        // Attach the validation function to the form's onsubmit event
-        document.getElementById("checkoutForm").onsubmit = function () {
-            return validateForm();
-        };
-    });
+        // Simple validation for each field
+        if (tenNguoiDung === "" || email === "" || soDienThoai === "" || diaChi === "" || quanHuyen === "" || xaPhuong === "" || tinhThanhPho === "") {
+            alert("Vui lòng nhập đầy đủ thông tin khách hàng để tiến hành đặt hàng.");
+            return false;
+        }
+
+        // Validate email format
+        var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+            alert("Vui lòng nhập một địa chỉ email hợp lệ.");
+            return false;
+        }
+
+        // Validate phone number format (assuming a Vietnamese phone number)
+        var phoneRegex = /^(0[0-9]{9,10})$/;
+        if (!phoneRegex.test(soDienThoai)) {
+            alert("Vui lòng nhập một số điện thoại hợp lệ.");
+            return false;
+        }
+
+        // You can add more complex validation rules if needed
+
+        return true;
+    }
+
+    // Attach the validation function to the form's onsubmit event
+    document.getElementById("checkoutForm").onsubmit = function () {
+        return validateForm();
+    };
+});
+
 </script>

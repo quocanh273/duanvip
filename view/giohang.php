@@ -23,6 +23,7 @@ if (isset($_SESSION['giohang']) && count($_SESSION['giohang']) != 0) {
                     <tr>
                         <th>Sản phẩm</th>
                         <th>Giá</th>
+                        <th>Size</th>
                         <th>Số lượng</th>
                         <th>Tổng cộng</th>
                         <th>Xóa</th>
@@ -50,6 +51,7 @@ if (isset($_SESSION['giohang']) && count($_SESSION['giohang']) != 0) {
                                 </div>
                             </div>
                         </td>
+                        <td><?= $card['6'] ?></td>
                         <td><?= $card['3'] ?>$</td>
                         <td>
                             <div class="input-group quantity" style="width: 100px;">
@@ -63,7 +65,7 @@ if (isset($_SESSION['giohang']) && count($_SESSION['giohang']) != 0) {
                                     class="form-control bg-secondary border-0 text-center quantity-input"
                                     value="<?= $card['4'] ?>" data-index="<?= $i ?>">
                                 <div class="input-group-append">
-<button class="btn btn-success quantity-increase" data-id="<?= $card[0] ?>"
+                                <button class="btn btn-success quantity-increase" data-id="<?= $card[0] ?>"
                                         data-size="<?= $card[6] ?>">
                                         <i class="fa fa-plus"></i>
                                     </button>
@@ -82,9 +84,7 @@ if (isset($_SESSION['giohang']) && count($_SESSION['giohang']) != 0) {
                         }
                         ?>
                 </tbody>
-                <?php
-                    var_dump($_SESSION['giohang'])
-                    ?>
+               
             </table>
         </div>
         <div class="col-lg-4">
@@ -115,7 +115,7 @@ if (isset($_SESSION['giohang']) && count($_SESSION['giohang']) != 0) {
 
 
                 <a href="index.php?act=thanhtoan" class="btn btn-block btn-primary font-weight-bold my-3 py-3">Tiến hành
-                    thanh toán</a>';
+                    thanh toán</a>
 
             </div>
         </div>

@@ -45,7 +45,7 @@ foreach ($listbill as $listbill){
         echo '<a href="' . $huydh . '"><input type="button" class="btn btn-danger" value="Hủy đơn hàng"></a>';
     }
 
-    echo '<a href="' . $chitiethd . '"><input type="button" class="btn btn-danger" value="Xem chi tiết"></a>
+    echo '<a href="' . $chitiethd . '"><input type="button" class="btn btn-success" value="Xem chi tiết"></a>
           </td>
         </tr>';
 }

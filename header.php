@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-ádas
 <head>
     <meta charset="utf-8">
     <title>MultiShop - Online Shop Website Template</title>

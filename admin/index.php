@@ -31,9 +31,6 @@ if (isset($_GET['act'])) {
             include "home.php";
 
             break;
-
-
-
 // Danh mục
           //create dm
         case 'dangnhap':

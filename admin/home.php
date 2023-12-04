@@ -158,12 +158,50 @@ chart.draw(data, options);
     var userData = <?= json_encode(array_column($listuserbuyhot, 'so_luong_hoa_don')) ?>;
     createBarChart(userLabels, userData, 'Tài khoản thường xuyên mua hàng', 'userPurchasesChart');
 </script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <div class="table-responsive mt-5">
     <h3>Sản phẩm đang bán chạy nhất hiện nay</h3>
     <canvas id="productSalesChart" width="400" height="200"></canvas>
+    
 </div>
 
 <div class="table-responsive mt-5">
     <h3>Tài khoản thường xuyên mua hàng</h3>
     <canvas id="userPurchasesChart" width="400" height="200"></canvas>
 </div>
+<script>
+    // Function to create a bar chart
+    function createBarChart(labels, data, chartTitle, chartContainerId) {
+        var ctx = document.getElementById(chartContainerId).getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: chartTitle,
+                    data: data,
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    }
+
+    // Product Sales Bar Chart
+    var productLabels = <?= json_encode(array_column($listsphot, 'name_product')) ?>;
+    var productData = <?= json_encode(array_column($listsphot, 'product_count')) ?>;
+    createBarChart(productLabels, productData, 'Sản phẩm bán chạy nhất', 'productSalesChart');
+
+    // User Purchases Bar Chart
+    var userLabels = <?= json_encode(array_column($listuserbuyhot, 'ten_dang_nhap')) ?>;
+    var userData = <?= json_encode(array_column($listuserbuyhot, 'so_luong_hoa_don')) ?>;
+    createBarChart(userLabels, userData, 'Tài khoản thường xuyên mua hàng', 'userPurchasesChart');
+</script>
