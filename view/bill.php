@@ -41,7 +41,11 @@
                 <p><strong>Tên Khách Hàng:</strong> <?php echo $ten_nguoi_dung; ?></p>
                 <p><strong>E-mail:</strong> <?php echo $email; ?></p>
                 <p><strong>Số Điện Thoại:</strong> <?php echo $so_dien_thoai; ?></p>
-                <p><strong>Địa Chỉ:</strong> <?php echo $dia_chi; ?></p>
+                
+                <p><strong>Quận/Huyện:</strong> <?php echo $quan_huyen; ?></p>
+                <p><strong>Phường/Xã:</strong> <?php echo $xa_phuong; ?></p>
+                <p><strong>Tỉnh/Thành phố:</strong> <?php echo $tinh_thanhpho; ?></p>
+                <p><strong>Địa chỉ chi tiết:</strong> <?php echo $dia_chi; ?></p>
             </div>
         </div>
 
@@ -53,16 +57,13 @@
                     <h6 class="mb-3">Các Sản Phẩm</h6>
                     <!-- Display ordered products -->
                     <?php
-                    //  var_dump($_SESSION['giohang']);
                     $tong = 0;
-                    $i = 0;
                     foreach ($_SESSION['giohang_backup'] as $card) {
                         $img = isset($card['2']) ? "upload/" . $card['2'] : "";
                         $ttien = isset($card['3']) && isset($card['4']) ? $card['3'] * $card['4'] : 0;
 
                         // Accumulate the total
                         $tong += $ttien;
-
                     ?>
                         <div class="d-flex justify-content-between">
                             <p><?= $card['1'] ?></p>

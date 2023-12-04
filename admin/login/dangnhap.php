@@ -28,13 +28,17 @@
 	<script src="scrip.js"></script>
 </head>
 <body class="light-theme">
-    <!-- main content start -->
-    <div class="main-conten login-panel login-panel-2">
-        <h3 class="panel-title">Đăng nhập</h3>
+<div class="main-conten login-panel login-panel-2">
+        
         <div class="login-body login-body-2">
+            <div class="top d-flex justify-content-between align-items-center">
+                
+                <!-- <a href="index.html"><i class="fa-duotone fa-house-chimney"></i></a> -->
+            </div>
+            <div class="d-flex justify-content-center bottom">  
 
-
-                <form action="index.php?act=dangnhap  " method="post">
+                <form action="index.php?act=dangnhap  " method="post" style="width:600px">
+                <h3 class="panel-title">Đăng nhập</h3>
                     <div class="input-group mb-25">
                         <input type="text" class="form-control" placeholder="Tên đăng nhập" name="ten_dang_nhap">
                     </div>

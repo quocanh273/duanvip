@@ -44,7 +44,7 @@ foreach ($listbill as $listbill){
     if ($trang_thai == 'Đặt hàng thành công') {
       echo '<input type="button" class="btn btn-danger" value="Hủy đơn hàng" onclick="confirmCancelOrder('.$id.')">';    }
 
-    echo '<a href="' . $chitiethd . '"><input type="button" class="btn btn-danger" value="Xem chi tiết"></a>
+    echo '<a href="' . $chitiethd . '"><input type="button" class="btn btn-success" value="Xem chi tiết"></a>
           </td>
         </tr>';
 }

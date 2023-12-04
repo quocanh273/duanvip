@@ -140,39 +140,56 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
         case 'thanhtoan':
             include "view/thanhtoan.php";
             break;
-        case 'dathang':
-            var_dump($_SESSION['giohang']);
-            if (isset($_POST['dat_hang'])) {
-                
-                $ten_nguoi_dung = $_POST['ten_nguoi_dung'];
-                $email = $_POST['email'];
-                $so_dien_thoai = $_POST['so_dien_thoai'];
-                $tong_gt_hd = $_POST['tong_gt_hd'];
-                $trang_thai = $_POST['trang_thai'];
-                $dia_chi = $_POST['dia_chi'];
-                $pt_tt = $_POST['pt_tt'];
-                $ngay_thd = date('Y-m-d');
-                $formatted_date = date('Y-m-d', strtotime($ngay_thd));
-                // $quantities = $_POST['quantity'];
-
-
-                $id_bill = insert_bill($_SESSION['ten_dang_nhap']['id'],$ten_nguoi_dung, $email, $so_dien_thoai, $tong_gt_hd, $trang_thai, $dia_chi, $pt_tt, $formatted_date);
-                // var_dump($_SESSION['giohang']);
-                // die;
-                
-                foreach ($_SESSION['giohang'] as $cart) {
-                    // ($name_product,$price, $size, $quantity, $id_bill, $id_user)
-                    // insert_cart($name_product, $image, $price, $size, $color, $quantity, $id_bill, $id_user);
-                    insert_cart($cart['1'],  $cart['3'], $cart['6'], $cart['4'], $id_bill, $_SESSION['ten_dang_nhap']['id']);
-                }
-                $_SESSION['giohang_backup'] = $_SESSION['giohang'];
-
-        // Reset the giohang session to an empty array
-            $_SESSION['giohang'] = array();
-            }
+            case 'dathang':
+                if (isset($_POST['dat_hang'])) {
+                    $ten_nguoi_dung = $_POST['ten_nguoi_dung'];
+                    $email = $_POST['email'];
+                    $so_dien_thoai = $_POST['so_dien_thoai'];
+                    $tong_gt_hd = $_POST['tong_gt_hd'];
+                    $trang_thai = $_POST['trang_thai'];
+                    $dia_chi = $_POST['dia_chi'];
+                    $quan_huyen = $_POST['quan_huyen']; // Added for district
+                    $xa_phuong = $_POST['xa_phuong'];   // Added for ward
+                    $tinh_thanhpho = $_POST['tinh_thanhpho']; // Added for city/province
+                    $pt_tt = $_POST['pt_tt'];
+                    $ngay_thd = date('Y-m-d');
+                    $formatted_date = date('Y-m-d', strtotime($ngay_thd));
             
-            include "view/bill.php";
-            break;
+                    $id_bill = insert_bill(
+                        $_SESSION['ten_dang_nhap']['id'],
+                        $ten_nguoi_dung,
+                        $email,
+                        $so_dien_thoai,
+                        $tong_gt_hd,
+                        $trang_thai,
+                        $dia_chi,
+                        $pt_tt,
+                        $formatted_date,
+                        $quan_huyen,
+                        $xa_phuong,
+                        $tinh_thanhpho
+                    );
+            
+                    foreach ($_SESSION['giohang'] as $cart) {
+                        insert_cart(
+                            $cart['1'],
+                            $cart['3'],
+                            $cart['6'],
+                            $cart['4'],
+                            $id_bill,
+                            $_SESSION['ten_dang_nhap']['id']
+                        );
+                    }
+            
+                    $_SESSION['giohang_backup'] = $_SESSION['giohang'];
+            
+                    // Reset the giohang session to an empty array
+                    $_SESSION['giohang'] = array();
+                }
+            
+                include "view/bill.php";
+                break;
+            
             case 'increase_quantity':
                 if (isset($_POST['id']) && isset($_POST['size'])) {
                     $id = $_POST['id'];
@@ -192,27 +209,27 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                 // Redirect or output the updated cart as needed
                 include "view/giohang.php";
                 break;
-                case 'decrease_quantity':
-                    if (isset($_POST['id']) && isset($_POST['size'])) {
-                        $id = $_POST['id'];
-                        $size = $_POST['size'];
-                
-                        // Find the product in the shopping cart
-                        foreach ($_SESSION['giohang'] as &$sp) {
-                            if ($sp[0] == $id && $sp[6] == $size) {
-                                // Decrease the quantity by 1
-                                if ($sp[4] > 1) {
-                                    $sp[4]--;
-                                    $sp[5] = $sp[3] * $sp[4]; // Update the total price
-                                }
-                                break;
-                            }
+        case 'decrease_quantity':
+            if (isset($_POST['id']) && isset($_POST['size'])) {
+                $id = $_POST['id'];
+                $size = $_POST['size'];
+        
+                // Find the product in the shopping cart
+                foreach ($_SESSION['giohang'] as &$sp) {
+                    if ($sp[0] == $id && $sp[6] == $size) {
+                        // Decrease the quantity by 1
+                        if ($sp[4] > 1) {
+                            $sp[4]--;
+                            $sp[5] = $sp[3] * $sp[4]; // Update the total price
                         }
+                        break;
                     }
-                
-                    // Redirect or output the updated cart as needed
-                    include "view/giohang.php";
-                    break;
+                }
+            }
+        
+            // Redirect or output the updated cart as needed
+            include "view/giohang.php";
+            break;
 
         case 'listbill':
             $listbill=loadone_hoadon_ls($_SESSION['ten_dang_nhap']['id']);
