@@ -122,7 +122,7 @@ if (isset($_SESSION['ten_dang_nhap'])){
                                 <label class="custom-control-label" for="banktransfer">Thanh Toán Khi Nhận Hàng</label>
                             </div>
                         </div>
-                        <button type="submit" name="dat_hang" class="btn btn-block btn-primary font-weight-bold py-3" onclick ="tb()">Đặt Hàng</button>
+                        <button type="submit" name="dat_hang" class="btn btn-block btn-primary font-weight-bold py-3" onclick ="tb();">Đặt Hàng</button>
                     </div>
                 </div>
             </div>
@@ -132,10 +132,6 @@ if (isset($_SESSION['ten_dang_nhap'])){
 <!-- Checkout End -->
 
 <script>
-    function tb() {
-        alert('Đặt hàng thành công. Đây là hóa đơn của bạn!');
-
-    }
   document.addEventListener('DOMContentLoaded', function () {
     // Function to validate the form
     function validateForm() {
@@ -185,5 +181,8 @@ if (isset($_SESSION['ten_dang_nhap'])){
         return validateForm();
     };
 });
+function tb(){
+    alert("Đặt đơn hàng thành công.");
+}
 
 </script>

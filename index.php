@@ -162,12 +162,13 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                         $so_dien_thoai,
                         $tong_gt_hd,
                         $trang_thai,
-                        $dia_chi,
-                        $pt_tt,
-                        $formatted_date,
                         $quan_huyen,
                         $xa_phuong,
-                        $tinh_thanhpho
+                        $tinh_thanhpho,
+                        $dia_chi,
+                        $pt_tt,
+                        $formatted_date
+                        
                     );
             
                     foreach ($_SESSION['giohang'] as $cart) {
