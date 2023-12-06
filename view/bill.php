@@ -1,6 +1,4 @@
-<script>
-    alert('Đặt hàng thành công đây là hóa đơn của bạn');
-</script>
+
 <style>
     .container-fluid {
         margin-top: 20px;

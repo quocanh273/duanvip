@@ -140,7 +140,7 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
         case 'thanhtoan':
             include "view/thanhtoan.php";
             break;
-            case 'dathang':
+        case 'dathang':
                 if (isset($_POST['dat_hang'])) {
                     $ten_nguoi_dung = $_POST['ten_nguoi_dung'];
                     $email = $_POST['email'];
@@ -189,6 +189,17 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
             
                 include "view/bill.php";
                 break;
+            case 'ctbill':
+   
+                    if ($_GET['id'] && $_GET['id'] > 0) {
+                        $id = $_GET['id'];
+                        $onebill = loadone_hoadon($id);
+                        extract($onebill);
+                       
+        
+                        include "view/bill.php";
+                    } 
+                    break;
             
             case 'increase_quantity':
                 if (isset($_POST['id']) && isset($_POST['size'])) {
