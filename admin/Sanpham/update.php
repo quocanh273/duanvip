@@ -57,14 +57,7 @@ if (is_array($sanpham)) {
                     </label><br />
                     <input type="number" name="giasp" id="" value="<?= $gia ?>" class="input w-75 rounded-2"><br />
 
-                    <label for="product_size" class="label pt-2">
-                        Size:</label>
-                    <select id="product_size" name="product_size">
-                        <option value=""><?= $loai_sp ?></option>
-                        <option value="S">S</option>
-                        <option value="M">M</option>
-                        <option value="L">L</option>
-                    </select><br />
+                   
 
                     Số Lượng
                     </label><br />

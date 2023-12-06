@@ -138,8 +138,7 @@ if (isset($_GET['act'])) {
             $giasp =$_POST['giasp'];
             $quantity =$_POST['quantity']; // so luong
             $description =$_POST['description'];
-            $product_size =$_POST['product_size'];
-            // $mausac =$_POST['mausac'];
+        
             $trangthai =$_POST['trangthai'];
             $khuyenmai =$_POST['khuyenmai'];
             
@@ -152,7 +151,8 @@ if (isset($_GET['act'])) {
                 // echo "Sorry, there was an error uploading your file.";
             }
             
-            insert_sanpham($ma_loai,$tensp,$giasp,$quantity,$description,$product_size,$trangthai,$khuyenmai,$hinh);
+            insert_sanpham($ma_loai,$tensp,$giasp,$quantity,$description
+,$trangthai,$khuyenmai,$hinh);
             $thongbao ="Thêm thành công";
             }
             $listdanhmuc = loai_select_all();
@@ -193,12 +193,9 @@ if (isset($_GET['act'])) {
             $tensp =$_POST['tensp'];
             $giasp =$_POST['giasp'];
             $quantity =$_POST['quantity']; // so luong
-            $description =$_POST['description'];
-            $product_size =$_POST['product_size'];
-            
+            $description =$_POST['description']; 
             $trangthai =$_POST['trangthai'];
             $khuyenmai =$_POST['khuyenmai'];
-            
             $hinh = $_FILES['image']['name'];
             $target_dir = "../upload/";
             $target_file = $target_dir . basename($_FILES["image"]["name"]);
@@ -207,7 +204,7 @@ if (isset($_GET['act'])) {
             } else {
                 // echo "Sorry, there was an error uploading your file.";
             }
-            update_sanpham($id,$tensp,$giasp,$quantity,$description,$product_size
+            update_sanpham($id,$tensp,$giasp,$quantity,$description
             ,$trangthai,$khuyenmai,$hinh,$ma_loai);
             $thongbao ="Cập nhật thành công";
             }

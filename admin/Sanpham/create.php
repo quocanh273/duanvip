@@ -53,13 +53,7 @@
                     <input type="number" name="giasp" id="" value="" placeholder="Nhập GIA "
                         class="input w-75 rounded-2"><br />
 
-                    <label for="product_size" class="label pt-2">
-                        Size:</label>
-                    <select id="product_size" name="product_size">
-                        <option value="S">S</option>
-                        <option value="M">M</option>
-                        <option value="L">L</option>
-                    </select><br />
+                  
                    
                         Số Lượng
                     </label><br />
@@ -77,12 +71,10 @@
                     <select id="trangthai" name="trangthai">
                         <option value="Còn Hàng">Còn hàng</option>
                         <option value="Hết hàng">Hết hàng</option>
-                    </select><br />
-                    Khuyến Mại:
+                        Khuyến Mại:
                     <input type="text" name="khuyenmai" id="" value="" placeholder="Nhập khuyến mại "
                         class="input w-75 rounded-2"><br />
-                        </label>
-                    <br />
+                    </select><br />
                 </div>
 
 

@@ -22,6 +22,7 @@ function huybill($id){
 
 function loadone_hoadon_ls($id_user){
     $sql = "select * from hoa_don where id_user=".$id_user;
+    $sql.=" order by id desc" ;
     $hoadon=pdo_query($sql);
     return  $hoadon;
 }

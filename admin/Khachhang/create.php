@@ -22,7 +22,7 @@
     <div class="table-data">
         <div class="order">
             <div class="head">
-                <h3>Sản Phẩm</h3>
+                <h3>Thêm khách hàng</h3>
 
             </div>
             <form action="index.php?act=createkh" class="form-input" method="post" enctype="multipart/form-data">

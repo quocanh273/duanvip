@@ -42,10 +42,10 @@
                         <th>TÊN SẢN PHẨM</th>
                         <th>ẢNH</th>
                         <th>GIÁ SẢN PHẨM</th>
-                        <th>SIZE</th>
+                        <!-- <th>SIZE</th> -->
                         <th>TRẠNG THÁI</th>
                         <th>SỐ LƯỢNG</th>
-                        <th>KHUYỄN MÃI</th>
+                        <th>KHUYẾN MÃI</th>
                         <th>MÔ TẢ SẢN PHẨM</th>
                         <th>THAO TÁC</th>
                     </tr>
@@ -68,7 +68,6 @@
                           <td>' . $ten_san_pham . '</td>
                           <td>' . $img . '</td>
                           <td>' . $gia . '</td>
-                          <td>' . $loai_sp . '</td>
                          
                           <td>' . $trangthai . '</td>
                           <td>' . $so_luong . '</td>
@@ -113,11 +112,9 @@
                         <th>TÊN SẢN PHẨM</th>
                         <th>ẢNH</th>
                         <th>GIÁ SẢN PHẨM</th>
-                        <th>SIZE</th>
-
                         <th>TRẠNG THÁI</th>
                         <th>SỐ LƯỢNG</th>
-                        <th>KHUYỄN MÃI</th>
+                        <th>KHUYẾN MÃI</th>
                         <th>MÔ TẢ SẢN PHẨM</th>
                         <th>THAO TÁC</th>
                     </tr>

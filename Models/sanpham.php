@@ -24,10 +24,10 @@ function total_page($limit = 6)
     $number_pages = ceil($count / $limit);
     return $number_pages;
 }
-function insert_sanpham($ma_loai,$tensp,$giasp,$quantity,$description,$product_size
+function insert_sanpham($ma_loai,$tensp,$giasp,$quantity,$description
 ,$trangthai,$khuyenmai,$hinh){
-    $sql= "INSERT INTO sanpham(ma_loai,ten_san_pham,gia,so_luong,mo_ta,loai_sp,trangthai,thong_tin_km,img)
-     values ('$ma_loai','$tensp','$giasp','$quantity','$description','$product_size'
+    $sql= "INSERT INTO sanpham(ma_loai,ten_san_pham,gia,so_luong,mo_ta,trangthai,thong_tin_km,img)
+     values ('$ma_loai','$tensp','$giasp','$quantity','$description'
 ,'$trangthai','$khuyenmai','$hinh')";
     pdo_execute($sql);
 }
@@ -47,7 +47,7 @@ function load_sanpham_cungloai($id,$ma_loai){
     return $listsanpham;
 }
 
-function  update_sanpham($id,$tensp,$giasp,$quantity,$description,$product_size
+function  update_sanpham($id,$tensp,$giasp,$quantity,$description
 ,$trangthai,$khuyenmai,$hinh,$ma_loai){
     if ($hinh!="") 
         $sql = "update sanpham set ma_loai='".$ma_loai."',
@@ -55,8 +55,6 @@ function  update_sanpham($id,$tensp,$giasp,$quantity,$description,$product_size
       gia='".$giasp."',
       so_luong='".$quantity."',
       mo_ta='".$description."',
-      loai_sp='".$product_size."',
-    
       trangthai='".$trangthai."',
       thong_tin_km='".$khuyenmai."',
       img='".$hinh."'
@@ -67,8 +65,6 @@ function  update_sanpham($id,$tensp,$giasp,$quantity,$description,$product_size
      gia='".$giasp."',
      so_luong='".$quantity."',
      mo_ta='".$description."',
-     loai_sp='".$product_size."',
-    
      trangthai='".$trangthai."',
      thong_tin_km='".$khuyenmai."'
      
