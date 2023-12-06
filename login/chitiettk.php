@@ -55,7 +55,7 @@
 
                         <div class="col-md-6 form-group">
                             <label>Mật Khẩu</label>
-                            <input class="form-control" type="text" name="pass" value="<?php echo $mat_khau; ?>">
+                            <input class="form-control" type="password" name="pass" value="<?php echo $mat_khau; ?>">
                         </div>
                         <div class="col-md-6 form-group">
                             <label>E-mail</label>

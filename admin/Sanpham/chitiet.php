@@ -77,7 +77,7 @@
         <?php 
          foreach ($binhluan as $binhluan){
         extract($binhluan);
-        $xoabl = "index.php?act=xoabl&id=" . $id_bl;
+        $xoabl = "index.php?act=xoabl&id=".$id_bl;
         echo '<tr>
         <td>'.$id_bl.'</td>
         <td>'.$noi_dung.'</td>

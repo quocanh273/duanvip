@@ -54,17 +54,18 @@
                         </div>
                     </div>
                    <input type="submit" value="Đăng nhập" name="dangnhap" class="btn btn-primary btn-block">
+                               
+    
+                                    <?php
+                    if (isset($thongbao) && ($thongbao != "")) {
+                        echo $thongbao;
+                    }
+                    ?>
+    
                 </form>
 
-
             </div>
-            
-            <?php
-if (isset($thongbao) && ($thongbao != "")) {
-    echo $thongbao;
-}
-?>
-        </div>
+    </div>
 
         <!-- footer start -->
        

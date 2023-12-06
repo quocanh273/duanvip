@@ -1,3 +1,33 @@
+<style>
+    .quantity {
+        display: flex;
+        align-items: center;
+    }
+
+    .quantity-input {
+        text-align: center;
+        width: 60px;
+        font-size: 14px;
+        font-weight: bold;
+        border: 1px solid #ced4da;
+        border-radius: 5px;
+        padding: 5px;
+    }
+
+    .quantity button {
+        background-color: #FFC800;
+        color: #fff;
+        border: none;
+        padding: 8px;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+    }
+
+    .quantity button:hover {
+        background-color: #0056b3;
+    }
+</style>
 <div class="container-fluid">
     <div class="row px-xl-5">
         <div class="col-12">

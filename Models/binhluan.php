@@ -17,5 +17,10 @@ function binhluan_select_all($idpro){
     
 return $listbl;
 }
+function delete_binhluan($id){
+    
+    $sql = "delete from binh_luan where id_bl=".$id;
+    pdo_execute($sql);
+}
 ?>
 

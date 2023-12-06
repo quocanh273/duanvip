@@ -1,4 +1,4 @@
-<style>
+<!-- <style>
     .container-fluid {
         margin-top: 20px;
     }
@@ -30,7 +30,26 @@
         background-color: #007bff;
         border-color: #007bff;
     }
-</style>
+</style> -->
+<?php 
+if (isset($_SESSION['ten_dang_nhap'])){
+    $ten_nguoi_dung = $_SESSION['ten_dang_nhap']['ten_nguoi_dung'];
+    $so_dien_thoai = $_SESSION['ten_dang_nhap']['so_dien_thoai'];
+    $email = $_SESSION['ten_dang_nhap']['email'];
+    $dia_chi= $_SESSION['ten_dang_nhap']['dia_chi'];
+    $quan_huyen = isset($_SESSION['ten_dang_nhap']['quan_huyen']) ? $_SESSION['ten_dang_nhap']['quan_huyen'] : "";
+    $xa_phuong = isset($_SESSION['ten_dang_nhap']['xa_phuong']) ? $_SESSION['ten_dang_nhap']['xa_phuong'] : "";
+    $tinh_thanhpho = isset($_SESSION['ten_dang_nhap']['tinh_thanhpho']) ? $_SESSION['ten_dang_nhap']['tinh_thanhpho'] : "";
+} else {
+    $ten_nguoi_dung = "";
+    $so_dien_thoai = "";
+    $email = "";
+    $dia_chi= "";
+    $quan_huyen = "";
+    $xa_phuong = "";
+    $tinh_thanhpho = "";
+}
+?>
 <div class="container-fluid">
     <div class="row px-xl-5">
         <div class="col-lg-8">
@@ -86,7 +105,14 @@
                 <div class="bg-light p-4">
                    
                     <p><strong>Phương Thức Thanh Toán:</strong> <?php echo $pt_tt; ?></p>
-                  
+                                    <?php
+                if (isset($_POST['dat_hang'])) {
+                    // Process form submission here
+
+                    // Assuming the form submission is successful
+                    echo '<script>alert("Đặt hàng thành công. Cảm ơn bạn!");</script>';
+                }
+                ?>
                 </div>
             </div>
 

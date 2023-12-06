@@ -158,15 +158,15 @@ if (isset($_GET['act'])) {
             $listdanhmuc = loai_select_all();
             include "Sanpham/create.php";
             break;
-case 'chitiet':
-    if (isset($_GET['id'])&&($_GET['id']>0)) {
-        $id = $_GET['id'];
-        $sanpham=loadone_sanpham($_GET['id']);
-        $binhluan =binhluan_select_all($id);
-        include "Sanpham/chitiet.php";}
-        else{
-            include "Sanpham/list.php";
-        }
+    case 'chitiet':
+        if (isset($_GET['id'])&&($_GET['id']>0)) {
+            $id = $_GET['id'];
+            $sanpham=loadone_sanpham($_GET['id']);
+            $binhluan =binhluan_select_all($id);
+            include "Sanpham/chitiet.php";}
+            else{
+                include "Sanpham/list.php";
+            }
     break;
 
     case 'xoasp':
@@ -271,14 +271,13 @@ case 'chitiet':
             $listkhachhang =   ds_khachhang();
             include "Khachhang/list.php";
             break;
-
-            case 'suakh':
-                if (isset($_GET['id'])&&($_GET['id']>0)) {
-                    $nguoi_dung=loadone_kh($_GET['id']);
-                
-                }
-                include "Khachhang/update.php";
-                break;
+        case 'suakh':
+            if (isset($_GET['id'])&&($_GET['id']>0)) {
+                $nguoi_dung=loadone_kh($_GET['id']);
+            
+            }
+            include "Khachhang/update.php";
+            break;
             case 'updatekh':
                     if (isset($_POST['update']) && ($_POST['update'])) {
                         $id = $_POST['id'];
