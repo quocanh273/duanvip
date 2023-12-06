@@ -27,7 +27,7 @@
 foreach ($listbill as $listbill){
     extract($listbill);
     $huydh = "index.php?act=huydh&id=" . $id;
-    $chitiethd = "index.php?act=chitiethoadon&id=" . $id."&id_user=".$id_user;
+    $chitiethd = "index.php?act=ctbill&id=" . $id."&id_user=".$id_user;
     
     echo '<tr>
             <td>'.$ten_nguoi_dung.'</td>
