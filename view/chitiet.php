@@ -1,6 +1,6 @@
  <style>
     #product-carousel img {
-    height: 400px; /* Điều chỉnh chiều cao tùy theo thiết kế của bạn */
+    height: 600px; /* Điều chỉnh chiều cao tùy theo thiết kế của bạn */
 }
 
 /* Nút chuyển đổi trong carousel */
@@ -59,7 +59,7 @@
 
                         $hinhpath = "./upload/" . $img;
                         if (is_file($hinhpath)) {
-                            $imgTag = "<img src='" . $hinhpath . "' height='599px' width='100%'> ";
+                            $imgTag = "<img src='" . $hinhpath . "' height='699px' width='100%'> ";
                         } else {
                             $imgTag = "<p>không có hình</p>";
                         }
@@ -206,6 +206,7 @@ function validateForm() {
         <?php 
         foreach ($sp_cung_loai as $item) {
             extract($item);
+            $spct= "index.php?act=ctsanpham&id=".$id;
             $hinhpath = "./upload/" . $img;
             $imgTag = is_file($hinhpath) ? "<img src='" . $hinhpath . "' height='200px' width='100%'> " : "<p>không có hình</p>";
             
@@ -217,7 +218,7 @@ function validateForm() {
                             <div class="product-action">
                                 <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
                                 <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-sync-alt"></i></a>
-                                <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-search"></i></a>
+                                <a class="btn btn-outline-dark btn-square" href="' . $spct . '"><i class="fa fa-search"></i></a>
                             </div>
                         </div>
                         <div class="text-center py-4">
