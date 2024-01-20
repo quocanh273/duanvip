@@ -46,6 +46,8 @@ if (isset($_GET['act'])) {
                 header('location: index.php?act=home');
             } else {
                 $thongbao = "Tài khoản không tồn tại hoặc bạn không có quyền đăng nhập";
+                session_unset();
+        header('location: index.php');
             }
         }
         include "login/dangnhap.php";
