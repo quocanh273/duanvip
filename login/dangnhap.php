@@ -21,6 +21,7 @@
                   
                     <input class="btn btn-primary w-100 mt-3 login-btn" type="submit" value="Đăng nhập" name="dangnhap">
                     <div class="other-option">
+                    <p class="mb-0"> <a href="index.php?act=quenmk" >Quên mật khẩu</a></p>
                     <p class="mb-0">Bạn chưa có tài khoản ? <a href="index.php?act=dangky" >Tạo</a></p>
                 </div>
               

@@ -328,7 +328,8 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
         case 'quenmk':
             if (isset($_POST['guiemail']) && ($_POST['guiemail'])) {
                 $email = $_POST['email'];
-                $checkemail = checkemail($email);
+                $sendMailMess = sendMail($email);
+                // $checkemail = checkemail($email);
             }
             include "login/quenmk.php";
             break;

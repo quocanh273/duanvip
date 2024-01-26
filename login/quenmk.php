@@ -13,11 +13,11 @@
                         <input type="email" name="email" class="form-control" placeholder="Nhập email">
                     </div>
                     <input type="submit" name="guiemail"class="btn btn-primary w-100 login-btn" value="Gửi">
-                 <?php 
-                 if (isset($checkemail)&& $checkemail !='') {
-                 echo $checkemail;
-                 }
-                 ?>
+                <?php 
+                if(isset($sendMailMess)&&($sendMailMess!="")){
+                    echo $sendMailMess;
+                }
+                                ?>
                   <div class="other-option">
                     <p class="mb-0">Nhớ mật khẩu? <a href="index.php?act=dangnhap">Đăng nhập</a></p>
                 </div>
